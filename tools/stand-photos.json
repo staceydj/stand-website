@@ -156,7 +156,7 @@
   "caption": ""
  },
  "tracking-process.jpg": {
-  "alt": "How Trace Her Case follows every case: seven official stages from report to outcome, with the tracking layer recording each handover",
+  "alt": "How Track Her Case follows every case: seven official stages from report to outcome, with the tracking layer recording each handover",
   "pos": "",
   "label": "",
   "caption": ""
@@ -164,7 +164,7 @@
  "redot-focus-group.jpg": {
   "alt": "Overstrand role players in a focus group circle",
   "pos": "50% 50%",
-  "label": "Trace Her Case",
+  "label": "Track Her Case",
   "caption": "Focus group with Overstrand role players, developing the Red Dot Process."
  },
  "ambassadors-certificates.jpg": {
@@ -292,5 +292,137 @@
   "pos": "40% 40%",
   "label": "CND 2020, Vienna",
   "caption": "With Regina Mattsson, Secretary General of the World Federation Against Drugs."
+ },
+ "interpol-2025-screen.jpg": {
+  "alt": "Opening slide on INTERPOL policing capabilities at the regional workshop",
+  "pos": "",
+  "label": "INTERPOL and SARPCCO, March 2025",
+  "caption": "Regional Drug Trafficking, Gender Imbalance and Harm Reduction Workshop, hosted at the University of the Witwatersrand School of Public Health, Johannesburg."
+ },
+ "interpol-2025-delegate.jpg": {
+  "alt": "A delegate at the regional workshop in Johannesburg",
+  "pos": "50% 35%",
+  "label": "INTERPOL and SARPCCO, March 2025",
+  "caption": "Regional Drug Trafficking, Gender Imbalance and Harm Reduction Workshop, hosted at the University of the Witwatersrand School of Public Health, Johannesburg."
+ },
+ "interpol-2025-group.jpg": {
+  "alt": "Workshop participants at the University of the Witwatersrand School of Public Health",
+  "pos": "",
+  "label": "INTERPOL and SARPCCO, March 2025",
+  "caption": "Regional Drug Trafficking, Gender Imbalance and Harm Reduction Workshop, hosted at the University of the Witwatersrand School of Public Health, Johannesburg."
+ },
+ "cnd2025-group.jpg": {
+  "alt": "Delegates on stage at the United Nations Commission on Narcotic Drugs",
+  "pos": "50% 60%",
+  "label": "CND 2025, Vienna",
+  "caption": "68th Commission on Narcotic Drugs, United Nations Vienna."
+ },
+ "hr25-panel-a.jpg": {
+  "alt": "Panel at the International Harm Reduction Conference in Bogotá",
+  "pos": "50% 60%",
+  "label": "HR25, Bogotá, 2025",
+  "caption": "29th International Harm Reduction Conference."
+ },
+ "hr25-panel-b.jpg": {
+  "alt": "Panel at HR25 beneath the conference banner",
+  "pos": "50% 60%",
+  "label": "HR25, Bogotá, 2025",
+  "caption": "29th International Harm Reduction Conference."
+ },
+ "hr25-bogota.jpg": {
+  "alt": "Two delegates at HR25 in Bogotá",
+  "pos": "50% 40%",
+  "label": "HR25, Bogotá, 2025",
+  "caption": "29th International Harm Reduction Conference."
+ },
+ "apw-2023-group.jpg": {
+  "alt": "Delegates at Africa Policy Week 2023",
+  "pos": "",
+  "label": "Africa Policy Week 2023",
+  "caption": ""
+ },
+ "apw-2023-audience.jpg": {
+  "alt": "Audience at Africa Policy Week 2023",
+  "pos": "",
+  "label": "Africa Policy Week 2023",
+  "caption": ""
+ },
+ "fasd-2026-a.jpg": {
+  "alt": "Delegates at the Africa FASD Network and FARR Conference",
+  "pos": "",
+  "label": "Africa FASD Network and FARR, May 2026",
+  "caption": "2nd Africa Fetal Alcohol Spectrum Disorder (FASD) Network and Foundation for Alcohol Related Research (FARR) Conference."
+ },
+ "fasd-2026-b.jpg": {
+  "alt": "Speakers on stage at the Africa FASD Network and FARR Conference",
+  "pos": "",
+  "label": "Africa FASD Network and FARR, May 2026",
+  "caption": "2nd Africa Fetal Alcohol Spectrum Disorder (FASD) Network and Foundation for Alcohol Related Research (FARR) Conference."
+ },
+ "fasd-2026-c.jpg": {
+  "alt": "Round-table session at the Africa FASD Network and FARR Conference",
+  "pos": "",
+  "label": "Africa FASD Network and FARR, May 2026",
+  "caption": "2nd Africa Fetal Alcohol Spectrum Disorder (FASD) Network and Foundation for Alcohol Related Research (FARR) Conference."
+ },
+ "training-2020-a.jpg": {
+  "alt": "Participants at a STAND training session",
+  "pos": "",
+  "label": "Training and facilitation, 2020",
+  "caption": ""
+ },
+ "training-2020-b.jpg": {
+  "alt": "Participants in group work at a STAND training",
+  "pos": "",
+  "label": "Training and facilitation, 2020",
+  "caption": ""
+ },
+ "training-2021.jpg": {
+  "alt": "Participants at a STAND training session",
+  "pos": "",
+  "label": "Training and facilitation, 2021",
+  "caption": ""
+ },
+ "training-2022.jpg": {
+  "alt": "Large training room during a STAND session",
+  "pos": "",
+  "label": "Training and facilitation, 2022",
+  "caption": ""
+ },
+ "ambassador-training.jpg": {
+  "alt": "GBV ambassadors at a training session",
+  "pos": "",
+  "label": "Department of Social Development",
+  "caption": "GBV ambassador training."
+ },
+ "vpu-meeting.jpg": {
+  "alt": "Partners around the table at a Violence Prevention Unit meeting",
+  "pos": "",
+  "label": "Violence Prevention Unit",
+  "caption": "Meeting with the Violence Prevention Unit."
+ },
+ "zone-mapping.jpg": {
+  "alt": "Participants marking zones on maps",
+  "pos": "",
+  "label": "Zone mapping",
+  "caption": "Mapping where support is needed most."
+ },
+ "field-2025.jpg": {
+  "alt": "A police officer and community members completing a form together",
+  "pos": "",
+  "label": "In the field, 2025",
+  "caption": ""
+ },
+ "citizen-app-guide.jpg": {
+  "alt": "Guide to reporting and following progress on the Overstrand Citizen App",
+  "pos": "",
+  "label": "Overstrand Citizen App",
+  "caption": "Guide to the Citizen App."
+ },
+ "alcohol-tb.jpg": {
+  "alt": "STAND poster on avoiding alcohol when taking TB medication",
+  "pos": "",
+  "label": "Community resource",
+  "caption": "Why you should avoid or limit alcohol when taking TB medication."
  }
 }

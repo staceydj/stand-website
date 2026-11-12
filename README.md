@@ -32,7 +32,7 @@ This checks that every image comes from the new STAND sets, and that none of the
 
 The page keeps the remake's layout. Every word comes from STAND's own site (standaction.co.za), saved in `tools/stand-source.txt` so it can be checked.
 
-- Sections map to STAND's content. The hero becomes "coordinated action", followed by why systems fail in the handovers, the four focus areas, delivery capabilities, recognition and track record, About STAND and its values, field results, support, the Trace Her Case scale-up, and contact.
+- Sections map to STAND's content. The hero becomes "coordinated action", followed by why systems fail in the handovers, the four focus areas, delivery capabilities, recognition and track record, About STAND and its values, field results, support, the Track Her Case scale-up, and contact.
 - The original testimonial slider held client quotes, and STAND's site publishes none. The slider now shows STAND's recognition record as statements attributed to the bodies involved, not as quotes.
 - Links point to the matching sections of standaction.co.za. Contact details are stacey@standaction.co.za and +27 82 554 8831.
 - Removed because they belonged to TO TOP: the info video, the German language switch, the terms PDF, the booking link and the "Created by" credit.

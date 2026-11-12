@@ -43,7 +43,7 @@ Embedded with law enforcement, health, social development, the National Prosecut
 Research
 Active partnership with the University of Cape Town, and earlier the South African Medical Research Council.
 Our flagship initiative
-Trace Her Case, Track Her Justice.
+Track Her Case.
 A survivor-centred way to follow a GBV case across every institution that touches it, from first report to final outcome, so that no case disappears in the handovers. It makes breakdowns visible, strengthens accountability, while protecting the survivor's privacy and working within each department's mandate.
 This is the work STAND is taking to scale, and we are seeking partners to take it across the Global South.
 Live and working in the Overstrand
@@ -211,7 +211,7 @@ Commission STAND to strengthen GBV response, justice pathways, or coordinated he
 Start a conversation
 For donors
 Fund the work
-Direct giving helps us carry Trace Her Case, Track Her Justice from the Overstrand into new districts. Give in the way that suits you:
+Direct giving helps us carry Track Her Case from the Overstrand into new districts. Give in the way that suits you:
 Give with SnapScan
 Donate by EFT (bank transfer)
 Account name
@@ -363,7 +363,7 @@ Innovative Practices in Criminal Justice for Gender-Based Violence in Southern A
 Empowering Justice, May 2024
 Justice-sector and correctional services personnel in session.
 Flagship Programme
-Trace Her Case, Track Her Justice.
+Track Her Case.
 Our flagship closes the gap where GBV systems most often fail: the handovers between the institutions meant to protect survivors. Its live pilot, the Red Dot Process, is working in the Overstrand and dispatched its first case three days after launch.
 Explore the flagship
 Live in the field
@@ -394,15 +394,15 @@ Partner with STAND
 Meet the founder
 
 ######## PAGE trace (54 lines)
-data-title="Trace Her Case, Track Her Justice | STAND">
+data-title="Track Her Case | STAND">
 Flagship Programme
-Trace Her Case, Track Her Justice.
+Track Her Case.
 A survivor's journey through the justice system should never disappear in the handover between the services meant to protect her.
 Gender-based violence systems rarely fail at the policy. They fail where one service hands her over to the next.
 Across South Africa and the wider region, the mandates, laws and services to respond to gender-based violence (GBV) largely exist. What breaks is the coordination between them. A report opened with law enforcement stalls before it reaches the prosecutor. A survivor referred for health care is lost before social development ever hears of her. Information degrades as it passes between institutions, so that by the time a case reaches court it is often incomplete or illegible, and is struck from the court roll for want of clarity rather than merit. Each part of the system does its job, and the woman still falls through the spaces in between.
-Trace Her Case, Track Her Justice is STAND's response: a privacy-conscious way to follow a case across every institution that touches it, from first report through health, social services, policing and the courts, so that no handover becomes a dead end and the information holds together at each step. It makes the breakdowns visible and strengthens accountability across the whole system, while protecting the survivor's privacy and working within each department's existing mandate.
+Track Her Case is STAND's response: a privacy-conscious way to follow a case across every institution that touches it, from first report through health, social services, policing and the courts, so that no handover becomes a dead end and the information holds together at each step. It makes the breakdowns visible and strengthens accountability across the whole system, while protecting the survivor's privacy and working within each department's existing mandate.
 The Red Dot Process: live and working in the Overstrand
-The Red Dot Process is the working pilot of Trace Her Case, operating now in the Overstrand.
+The Red Dot Process is the working pilot of Track Her Case, operating now in the Overstrand.
 Designed by STAND in collaboration with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust, the Red Dot Process is a seven-stage, privacy-conscious GBV track-and-trace workflow built onto Overstrand Municipality's existing Citizen App. The GBV reporting function went live on 24 August 2026. The first incident was dispatched to law enforcement (the South African Police Service) on 27 August 2026.
 GBV Incident, live on the Citizen App
 One tap to medical or police help
@@ -424,7 +424,7 @@ First law-enforcement dispatch 27 August 2026
 VPU-endorsed workflow
 31 ambassadors trained
 Supported by the DG Murray Trust
-Trace Her Case
+Track Her Case
 Focus group with Overstrand role players, developing the Red Dot Process.
 Department of Social Development
 GBV ambassadors receive their certificates after training with the Western Cape Department of Social Development.
@@ -443,7 +443,7 @@ Phase 2 · ready to fund
 A working district model, designed to
 travel across the Global South.
 What we are seeking
-Trace Her Case, Track Her Justice is the vision the Red Dot Process proves: a model that any district can adopt to make GBV response visible, coordinated, and accountable, without new systems or new mandates. The pilot is working. The method is documented. The next step is scale.
+Track Her Case is the vision the Red Dot Process proves: a model that any district can adopt to make GBV response visible, coordinated, and accountable, without new systems or new mandates. The pilot is working. The method is documented. The next step is scale.
 We are seeking grantmakers, funders, corporate social investment partners and individual supporters to carry this across the Global South, beginning with Phase 2 of the Overstrand rollout and extending into new districts.
 You don't have to be an institution to move this. Your gift pays for the people and systems that keep a live case tracking system running, and helps it reach more women.
 Partner with STAND
@@ -624,7 +624,7 @@ A women-led technical and implementation partner working where justice, health, 
 Explore
 About STAND
 Our Work
-Trace Her Case
+Track Her Case
 Board of Directors
 Founder & CEO
 Contact
@@ -640,7 +640,7 @@ A women-led technical and implementation partner working where justice, health, 
 Explore
 About STAND
 Our Work
-Trace Her Case
+Track Her Case
 Board of Directors
 Founder & CEO
 Contact
@@ -650,3 +650,192 @@ Cape Town, South Africa
 Follow
 © 2026 STAND | Social Transformation Action Defined. Registered Non-Profit Company and Public Benefit Organisation (PBO No. 930063426). Section 18A tax-exemption status. Level 1 B-BBEE. All rights reserved.
 Privacy and terms
+
+######## PAGE give (standaction.co.za/give.html)
+Track Her Case | Give | STAND
+STAND
+Track Her Case
+When a woman asks for help, the system should answer.
+We built a live system in the Overstrand that follows every reported case of violence against women through the police, health, social services and the courts until it is resolved. Help us keep it running and take it across the district.
+Give now
+How it works
+The laws exist. The handover breaks.
+South Africa has some of the strongest laws on gender-based violence in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her. Cases reach court incomplete and are struck from the roll.
+Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.
+24 Aug
+System went live, 2026
+3 days
+Until the first case was dispatched to the police
+31
+Trained community ambassadors
+130,000+
+People living in the Overstrand
+How it works
+One tap to report
+An ambassador or survivor presses the help button on the municipality's Citizen App.
+Help is sent
+Police and an ambulance go straight to the location, and the case gets a private number.
+Every handover is tracked
+The number travels with the case through the police docket, the hospital and social services.
+Followed to court
+Each appearance is tracked until the case reaches an outcome, so we can see where the system holds and where it needs strengthening.
+Ambassadors and Overstrand Municipality map hotspots.
+Police and law enforcement officers in training.
+Our ambassadors, trained with the Department of Social Development.
+Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust.
+What your gift does
+R150
+One day's stipend for an ambassador on active duty
+R250
+A month of data so an ambassador can log and follow cases
+R3,000
+A month of community awareness on how to get help
+R7,750
+Data for all 31 ambassadors for a full month
+R12,000
+A month of case tracing across police, health, social services and the courts
+Give now
+Your gift pays for the people and systems that deliver the work.
+SnapScan
+The quickest way to give from your phone.
+Give with SnapScan
+EFT (bank transfer)
+Account name
+Social Transformation Action Defined
+Bank
+FNB
+Account number
+62759591623Copy
+Branch code
+250655
+SWIFT (international)
+FIRNZAJJ
+Reference
+Your name + TRACE
+South African gifts are Section 18A tax-deductible (PBO 930063426). For a certificate, email stacey@standaction.co.za
+with your reference.
+Pass it on
+Sharing costs nothing and reaches people we never could alone.
+Share on WhatsApp
+STAND, Social Transformation Action Defined NPC · PBO 930063426 · Level 1 B-BBEE
+standaction.co.za
+Give now
+Share
+Every case, followed through the system to justice.
+
+######## DOCUMENT Track Her Case project brief (PDF)
+P R O J E C T  B R I E F
+Social Transformation Action Defined (STAND), South Africa
+T R A C K  H E R  C A S E
+Following every case of violence
+against women to justice
+A live case tracking system in the Overstrand, Western Cape, that follows each report
+through the police, hospitals, social services and the courts until it is resolved.
+The challenge
+South Africa has some of the strongest laws on gender-
+based violence in the world. The services exist and the
+mandates exist. What breaks is the handover between them.
+A woman reports violence to the police and her case stalls
+before it reaches the prosecutor. She is referred for medical
+care and social services never hear of her. By the time a case
+reaches court it is often incomplete, and it is struck from the
+roll for want of clarity rather than merit.
+These gaps fall hardest on marginalised and underserved
+women, who are the most likely to need every service at once.
+Our solution
+The Red Dot Process, designed by STAND with Overstrand
+Municipality and the Overberg Violence Prevention Unit, with
+the support of the DG Murray Trust, runs on the municipality's
+existing Citizen App. Each case receives a private reference
+number, so no names are recorded, and every handover is
+mapped across police, prosecutors, the courts, health, social
+development and child protection services.
+A community layer of 31 trained ambassadors supports
+survivors on the ground and helps them follow their cases
+through every service.
+24 Aug 2026
+3 days
+31
+130,000+
+System went live
+Until the first case was dispatched
+to the police
+Trained community ambassadors
+People living in the Overstrand
+STAND NPC · PBO 930063426 · Section 18A tax-exempt · Level 1 B-BBEE Page 1 of 3
+P R O J E C T  B R I E F
+Track Her Case
+How it works
+Why now
+Phase 1 is built and live. Phase 2, the operational rollout across the district, is ready to begin.
+Institutional funding takes months. Your gift keeps a working system running and builds the evidence
+to take the model into new districts across South Africa and the Global South.
+Long-term impact
+Every case followed to its outcome shows where the system holds and where it can be strengthened.
+Over time this builds a district-wide evidence base that helps police, prosecutors and health and
+social services work as one system, so more cases reach court complete and more women see
+justice.
+Who we are
+STAND is a women-led South African organisation working where justice, health and protection meet.
+Since 2018 we have trained more than 500 officials and practitioners, reached more than 700 women
+and community members directly, trained 29 INTERPOL officers from 11 Southern African states, and
+managed more than R16.9 million in donor funding, under an independent Board of Directors.
+STAND NPC · PBO 930063426 · Section 18A tax-exempt · Level 1 B-BBEE Page 2 of 3
+P R O J E C T  B R I E F
+Track Her Case
+What your support delivers: USD 75,000 over 12 months
+Programme leadership and multi-sector coordination
+Meetings, stakeholder engagement, travel and manual case tracking across police, health, social services and
+the courts
+$16,069
+Case tracing coordinator
+Day-to-day follow-up of every case through each handover
+$8,765
+Community ambassador stipends
+31 ambassadors, three days a month
+$10,189
+Ambassador data
+Mobile data so ambassadors can log and follow cases
+$5,661
+Training
+Four training sessions for ambassadors, police and service providers
+$12,174
+Analysis and endline report
+Independent analysis of case outcomes and handover gaps
+$6,087
+Fieldwork
+Community follow-up visits
+$2,922
+Awareness
+Community information on how to use the system
+$2,191
+Travel
+Local travel across the Overstrand
+$1,826
+Independent audit
+Annual audited financial statements
+$1,826
+Devices
+Phones for ambassadors
+$1,217
+Programme subtotal $68,927
+Platform and payment fees
+Online giving and transfer costs (8% of gifts)
+$5,994
+Total, 12 months $74,921
+Converted at USD 1 = ZAR 16.43 (19 October 2026). Programme leadership is the largest line by design: it covers the meetings,
+stakeholder engagement, travel and manual tracking that keep every service working together.
+Fundraising milestones
+$5,000
+October
+$15,000
+November
+$20,000
+December
+$12,000
+January
+$12,000
+February
+$11,000
+March
+Contact: Stacey Doorly-Jones, Founder and Chief Executive Officer · stacey@standaction.co.za Page 3 of 3

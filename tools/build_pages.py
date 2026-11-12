@@ -3,7 +3,7 @@
 Usage: python3 tools/build_pages.py
 
 Rewrites the shared links in index.html, then writes about.html, work.html,
-trace-her-case.html, board.html, founder.html, support.html and privacy.html.
+track-her-case.html, board.html, founder.html, support.html and privacy.html.
 Every word on these pages comes from standaction.co.za (tools/stand-source.txt).
 Photo captions come from tools/stand-photos.json.
 """
@@ -32,7 +32,7 @@ SPECIFIC = {
 GENERIC = {
     "#about": "about.html",
     "#work": "work.html",
-    "#trace": "trace-her-case.html",
+    "#trace": "track-her-case.html",
     "#board": "board.html",
     "#founder": "founder.html",
     "#support": "support.html",
@@ -254,7 +254,7 @@ AREAS = [
      ["STAND develops and supports public-health-oriented, rights-based responses to substance-related harms, with particular expertise in the intersection of substance use, gender-based violence, and justice involvement.",
       "Specific work includes needs assessments and service-landscape analysis, training for health, law enforcement, justice and social services personnel, development of human-centred and gender-responsive service protocols, policy engagement and technical advocacy, systems design for integrated care pathways, and programme evaluation and learning."],
      "STAND understands the full continuum, from harm reduction through to abstinence-oriented approaches. We meet people where they are, without stigma, and support them to move towards health and wellness as their circumstances allow. We design for what the evidence and the context require, never defaulting to a single framework.",
-     [("toolkit-1.jpg", "tall"), ("hr-training-group.jpg", ""), ("alcohol-poverty.jpg", "tall contain")]),
+     [("toolkit-1.jpg", "tall"), ("hr-training-group.jpg", ""), ("alcohol-poverty.jpg", "tall contain"), ("alcohol-tb.jpg", "tall contain"), ("fasd-2026-a.jpg", ""), ("fasd-2026-b.jpg", "")]),
     ("systems", "03", "icon-transformation-light.svg", "Systems Strengthening and Multi-Sector Coordination",
      "Governments, municipalities, international agencies, and civil-society networks working to improve coordination, reduce service fragmentation, and strengthen accountability across sectors.",
      ["STAND designs and implements coordinated response systems, helping institutions move from fragmented, siloed operations to practical, accountable, multi-sector action.",
@@ -315,9 +315,9 @@ work = hero(
       <div class="container split split--even">
         <div>
           <p class="eyebrow reveal" style="text-align:left">Flagship Programme</p>
-          <h2 class="title reveal" id="flag-title">Trace Her Case, Track Her Justice.</h2>
+          <h2 class="title reveal" id="flag-title">Track Her Case.</h2>
           <p class="lead reveal" style="margin-top:1rem">Our flagship closes the gap where GBV systems most often fail: the handovers between the institutions meant to protect survivors. Its live pilot, the Red Dot Process, is working in the Overstrand and dispatched its first case three days after launch.</p>
-          <div class="actions reveal">{pill("trace-her-case.html", "Explore the flagship")}</div>
+          <div class="actions reveal">{pill("track-her-case.html", "Explore the flagship")}</div>
         </div>
         <div class="reveal">
           <span class="kicker">Live in the field</span>
@@ -353,6 +353,14 @@ work = hero(
           {fig("wits-podium.jpg")}
         </div>
       </div>
+      <div class="container photos" style="margin-top:clamp(3rem,6vw,5rem)">
+        {fig("training-2020-a.jpg")}
+        {fig("training-2021.jpg")}
+        {fig("training-2022.jpg")}
+        {fig("interpol-2025-screen.jpg", caption="")}
+        {fig("interpol-2025-group.jpg", caption="")}
+        {fig("training-2020-b.jpg")}
+      </div>
     </section>
 """ + cta(
     "Need a technically credible implementation partner?",
@@ -361,11 +369,11 @@ work = hero(
 )
 page("work.html", "Our Work | STAND", "STAND's four focus areas: gender-responsive justice, substance-related harms, systems strengthening and alternatives to incarceration.", work)
 
-# ================================================================ TRACE HER CASE
+# ================================================================ TRACK HER CASE
 trace = hero(
     "Flagship Programme",
-    "Trace Her Case, Track Her Justice.",
-    "A survivor's journey through the justice system should never disappear in the handover between the services meant to protect her.",
+    "Track Her Case.",
+    "Every case, followed through the system to justice. A survivor's journey through the justice system should never disappear in the handover between the services meant to protect her.",
     scene="peak3.webp",
 ) + f"""
     <section class="band band--cream" aria-labelledby="gap-title">
@@ -375,7 +383,7 @@ trace = hero(
         </div>
         <div class="split split--even prose" style="max-width:none">
           <p class="reveal">Across South Africa and the wider region, the mandates, laws and services to respond to gender-based violence (GBV) largely exist. What breaks is the coordination between them. A report opened with law enforcement stalls before it reaches the prosecutor. A survivor referred for health care is lost before social development ever hears of her. Information degrades as it passes between institutions, so that by the time a case reaches court it is often incomplete or illegible, and is struck from the court roll for want of clarity rather than merit. Each part of the system does its job, and the woman still falls through the spaces in between.</p>
-          <p class="reveal">Trace Her Case, Track Her Justice is STAND's response: a privacy-conscious way to follow a case across every institution that touches it, from first report through health, social services, policing and the courts, so that no handover becomes a dead end and the information holds together at each step. It makes the breakdowns visible and strengthens accountability across the whole system, while protecting the survivor's privacy and working within each department's existing mandate.</p>
+          <p class="reveal">Track Her Case is STAND's response: a privacy-conscious way to follow a case across every institution that touches it, from first report through health, social services, policing and the courts, so that no handover becomes a dead end and the information holds together at each step. It makes the breakdowns visible and strengthens accountability across the whole system, while protecting the survivor's privacy and working within each department's existing mandate.</p>
         </div>
       </div>
     </section>
@@ -386,7 +394,7 @@ trace = hero(
         <div class="prose">
           <h2 class="title reveal" id="dot-title">The Red Dot Process: live and working in the Overstrand</h2>
           <div class="reveal" style="margin-top:1.5rem">
-            <p>The Red Dot Process is the working pilot of Trace Her Case, operating now in the Overstrand.</p>
+            <p>The Red Dot Process is the working pilot of Track Her Case, operating now in the Overstrand.</p>
             <p>Designed by STAND in collaboration with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust, the Red Dot Process is a seven-stage, privacy-conscious GBV track-and-trace workflow built onto Overstrand Municipality's existing Citizen App. The GBV reporting function went live on 24 August 2026. The first incident was dispatched to law enforcement (the South African Police Service) on 27 August 2026.</p>
           </div>
         </div>
@@ -429,10 +437,10 @@ trace = hero(
             </div>
           </div>
           <div class="stats reveal" style="align-self:center">
-            <div class="stat"><b>24 Aug</b><span>Live since 24 August 2026</span></div>
-            <div class="stat"><b>27 Aug</b><span>First law-enforcement dispatch 27 August 2026</span></div>
-            <div class="stat"><b>31</b><span>31 ambassadors trained</span></div>
-            <div class="stat"><b>VPU</b><span>VPU-endorsed workflow</span></div>
+            <div class="stat"><b>24 Aug</b><span>System went live, 2026</span></div>
+            <div class="stat"><b>3 days</b><span>Until the first case was dispatched to the police</span></div>
+            <div class="stat"><b>31</b><span>Trained community ambassadors</span></div>
+            <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
           </div>
         </div>
         <p class="center reveal" style="margin-top:2rem;font-weight:600">Supported by the DG Murray Trust</p>
@@ -443,7 +451,13 @@ trace = hero(
           {fig("redot-mapping.jpg")}
           {fig("citizen-app-design.jpg")}
           {fig("ambassador-phone.jpg")}
+          {fig("vpu-meeting.jpg")}
+          {fig("zone-mapping.jpg")}
+          {fig("ambassador-training.jpg")}
+          {fig("field-2025.jpg")}
+          {fig("citizen-app-guide.jpg", "contain")}
         </div>
+        <div class="actions center reveal" style="justify-content:center">{pill("assets/docs/STAND_Track_Her_Case_Project_Brief.pdf", "Download the project brief (PDF)", ghost=True)}</div>
       </div>
     </section>
 
@@ -461,7 +475,7 @@ trace = hero(
         <div class="prose reveal">
           <p>The Red Dot Process is live in the Overstrand and dispatched its first case three days after launch. Phase 1 is built and running, and the back end is ready for the next step. Phase 2 takes it across the whole district, and that is where funding partners come in. With the right support, it scales.</p>
           <h3>What we are seeking</h3>
-          <p>Trace Her Case, Track Her Justice is the vision the Red Dot Process proves: a model that any district can adopt to make GBV response visible, coordinated, and accountable, without new systems or new mandates. The pilot is working. The method is documented. The next step is scale.</p>
+          <p>Track Her Case is the vision the Red Dot Process proves: a model that any district can adopt to make GBV response visible, coordinated, and accountable, without new systems or new mandates. The pilot is working. The method is documented. The next step is scale.</p>
           <p>We are seeking grantmakers, funders, corporate social investment partners and individual supporters to carry this across the Global South, beginning with Phase 2 of the Overstrand rollout and extending into new districts.</p>
         </div>
       </div>
@@ -469,9 +483,9 @@ trace = hero(
 """ + cta(
     "The next step is scale.",
     "You don't have to be an institution to move this. Your gift pays for the people and systems that keep a live case tracking system running, and helps it reach more women.",
-    [PARTNER, pill("support.html#fund", "Back the scale-up", ghost=True)],
+    [PARTNER, pill("give.html", "Back the scale-up", ghost=True)],
 )
-page("trace-her-case.html", "Trace Her Case, Track Her Justice | STAND", "STAND's flagship programme follows a GBV case across every institution that touches it. Its live pilot, the Red Dot Process, is working in the Overstrand.", trace)
+page("track-her-case.html", "Track Her Case | STAND", "STAND's flagship programme follows a GBV case across every institution that touches it. Its live pilot, the Red Dot Process, is working in the Overstrand.", trace)
 
 # ================================================================ BOARD
 BOARD = [
@@ -622,6 +636,12 @@ founder = hero(
           {fig("cnd2020-plenary.jpg")}
           {fig("cnd2025-flyer.jpg", "contain")}
           {fig("cnd2020-regina.jpg")}
+          {fig("cnd2025-group.jpg")}
+          {fig("hr25-panel-a.jpg")}
+          {fig("hr25-panel-b.jpg")}
+          {fig("hr25-bogota.jpg", caption="")}
+          {fig("apw-2023-group.jpg")}
+          {fig("fasd-2026-c.jpg", caption="")}
         </div>
         <div class="split split--even" style="margin-top:clamp(3rem,6vw,5rem)">
           <ul class="years reveal">
@@ -669,8 +689,8 @@ support = hero(
         <article class="card give-card reveal" id="fund">
           <p class="for">For donors</p>
           <h3>Fund the work</h3>
-          <p>Direct giving helps us carry Trace Her Case, Track Her Justice from the Overstrand into new districts. Give in the way that suits you:</p>
-          <a class="btn-pill" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a>
+          <p>Direct giving helps us carry Track Her Case from the Overstrand into new districts. Give in the way that suits you:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn-pill" href="give.html">Give now</a><a class="btn-ghost" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a></div>
           <p style="font-weight:700;margin-top:.5rem">Donate by EFT (bank transfer)</p>
           <dl class="bank">
             {bank_row("Account name", "Social Transformation Action Defined")}
@@ -738,3 +758,111 @@ privacy = hero(
     </section>
 """
 page("privacy.html", "Privacy and terms | STAND", "How STAND handles personal information, donations, photographs and copyright.", privacy)
+
+# ================================================================ GIVE (Track Her Case appeal)
+give = hero(
+    "Track Her Case",
+    "When a woman asks for help, the system should answer.",
+    "We built a live system in the Overstrand that follows every reported case of violence against women through the police, health, social services and the courts until it is resolved. Help us keep it running and take it across the district.",
+    scene="peak3.webp",
+    extra=f'\n        <div class="hero-actions">{pill("#give", "Give now")}</div>',
+) + f"""
+    <section class="band band--cream" aria-labelledby="breaks-title">
+      <div class="container split split--even">
+        <div class="prose">
+          <span class="kicker reveal">How it works</span>
+          <h2 class="title reveal" id="breaks-title">The laws exist. The handover breaks.</h2>
+          <div class="reveal" style="margin-top:1.5rem">
+            <p>South Africa has some of the strongest laws on gender-based violence in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her. Cases reach court incomplete and are struck from the roll.</p>
+            <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
+          </div>
+        </div>
+        <div class="stats reveal" style="align-self:center">
+          <div class="stat"><b>24 Aug</b><span>System went live, 2026</span></div>
+          <div class="stat"><b>3 days</b><span>Until the first case was dispatched to the police</span></div>
+          <div class="stat"><b>31</b><span>Trained community ambassadors</span></div>
+          <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--cream2" aria-labelledby="steps-title">
+      <div class="container split">
+        <div class="sticky">
+          <h2 class="title reveal" id="steps-title">How it works</h2>
+          <div class="phones" style="margin-top:2rem;justify-content:flex-start">
+            {fig("gbv-home.png", "contain", label="", caption="")}
+            {fig("gbv-service.png", "contain", label="", caption="")}
+          </div>
+        </div>
+        <ol class="stages">
+          <li class="reveal"><b>One tap to report.</b> An ambassador or survivor presses the help button on the municipality's Citizen App.</li>
+          <li class="reveal"><b>Help is sent.</b> Police and an ambulance go straight to the location, and the case gets a private number.</li>
+          <li class="reveal"><b>Every handover is tracked.</b> The number travels with the case through the police docket, the hospital and social services.</li>
+          <li class="reveal"><b>Followed to court.</b> Each appearance is tracked until the case reaches an outcome, so we can see where the system holds and where it needs strengthening.</li>
+        </ol>
+      </div>
+      <div class="container">
+        <div class="photos" style="margin-top:clamp(3rem,6vw,5rem)">
+          {fig("redot-mapping.jpg", label="", caption="Ambassadors and Overstrand Municipality map hotspots.")}
+          {fig("le-training-stand.jpg", label="", caption="Police and law enforcement officers in training.")}
+          {fig("ambassadors-certificates.jpg", label="", caption="Our ambassadors, trained with the Department of Social Development.")}
+        </div>
+        <p class="center reveal" style="margin-top:2rem;font-weight:600;max-width:44rem;margin-inline:auto">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust.</p>
+      </div>
+    </section>
+
+    <section class="band band--cream" aria-labelledby="gift-title">
+      <div class="container">
+        <div class="head center"><h2 class="title reveal" id="gift-title">What your gift does</h2></div>
+        <div class="cards gifts">
+          <article class="card reveal"><h3>R150</h3><p>One day's stipend for an ambassador on active duty</p></article>
+          <article class="card reveal"><h3>R250</h3><p>A month of data so an ambassador can log and follow cases</p></article>
+          <article class="card reveal"><h3>R3,000</h3><p>A month of community awareness on how to get help</p></article>
+          <article class="card reveal"><h3>R7,750</h3><p>Data for all 31 ambassadors for a full month</p></article>
+          <article class="card reveal"><h3>R12,000</h3><p>A month of case tracing across police, health, social services and the courts</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--teal" id="give" aria-labelledby="givenow-title">
+      <img class="contours" src="assets/art/contours-footer.svg" alt="" aria-hidden="true" loading="lazy">
+      <div class="container">
+        <div class="head center">
+          <h2 class="title reveal" id="givenow-title">Give now</h2>
+          <p class="lead reveal">Your gift pays for the people and systems that deliver the work.</p>
+        </div>
+        <div class="cards cards--2 cards--plain">
+          <article class="card reveal">
+            <p class="for" style="font-family:var(--font-hand);font-size:1.7rem;color:var(--green-500)">SnapScan</p>
+            <h3>The quickest way to give from your phone.</h3>
+            <a class="btn-pill" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener" style="margin-top:auto">Give with SnapScan</a>
+          </article>
+          <article class="card reveal">
+            <p class="for" style="font-family:var(--font-hand);font-size:1.7rem;color:var(--yellow)">EFT (bank transfer)</p>
+            <dl class="bank">
+              {bank_row("Account name", "Social Transformation Action Defined")}
+              {bank_row("Bank", "FNB", copy=False)}
+              {bank_row("Account number", "62759591623")}
+              {bank_row("Branch code", "250655")}
+              {bank_row("SWIFT (international)", "FIRNZAJJ")}
+              {bank_row("Reference", "Your name + TRACE", copy=False)}
+            </dl>
+            <p class="give-note">South African gifts are Section 18A tax-deductible (PBO 930063426). For a certificate, email <a href="mailto:stacey@standaction.co.za">stacey@standaction.co.za</a> with your reference.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+""" + cta(
+    "Pass it on",
+    "Sharing costs nothing and reaches people we never could alone.",
+    ['<a class="btn-pill" href="https://wa.me/" data-share-wa target="_blank" rel="noopener">Share on WhatsApp</a>',
+     pill("track-her-case.html", "About Track Her Case", ghost=True)],
+)
+page("give.html", "Track Her Case | Give | STAND", "Track Her Case follows every reported case through the police, health, social services and the courts. Help us keep it running and take it across the district.", give)
+
+# Share image for the appeal page
+g = (ROOT / "give.html").read_text()
+g = g.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="website">\n  <meta property="og:image" content="assets/stand/give-share.jpg">', 1)
+g = g.replace('<meta property="og:title" content="Track Her Case | Give | STAND">', '<meta property="og:title" content="When a woman asks for help, the system should answer.">')
+(ROOT / "give.html").write_text(g)
