@@ -48,3 +48,10 @@ Every photograph is STAND's own, from standaction.co.za or supplied by STAND, an
 - `incoming/`: STAND's original uploads, kept as supplied. The site uses the resized copies in `assets/stand/`.
 
 Run `python3 tools/build_pages.py` after changing copy or photos. It rebuilds every inner page from the homepage's nav and footer.
+
+## November 2026 update
+
+- `campaign.html` is the Track Her Case giving campaign. It is the only page that says "Give now".
+- Paste the GlobalGiving and BackaBuddy page links into `GLOBALGIVING_URL` and `BACKABUDDY_URL` in `tools/build_pages.py`, then run `python3 tools/build_pages.py`. Until then their cards show "page opening soon".
+- Fonts are free (SIL Open Font License) and served from `assets/fonts`: Playfair Display for headings, Montserrat for text.
+- WhatsApp and social previews use the `og:image` tags. The site-wide card is `assets/social/stand-share.jpg`; the campaign uses `assets/stand/give-share.jpg`. These need the live domain to work.

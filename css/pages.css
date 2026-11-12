@@ -507,3 +507,14 @@ ol.stages, ol.timeline { list-style: none; margin: 0; padding: 0; }
 /* Photo grids fill whole rows: three across on desktop, two on tablets */
 @media (min-width: 900px) { .photos:not(.photos--2) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (min-width: 600px) and (max-width: 899px) { .photos:not(.photos--2) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Online giving buttons wait for their page links */
+.btn-pill.is-pending { opacity: 0.6; cursor: default; pointer-events: none; background: transparent; color: inherit; border: 1.5px dashed currentColor; }
+.ways { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); align-items: stretch; }
+.ways .card { display: flex; flex-direction: column; }
+.ways .card .btn-pill { margin-top: auto; }
+.ways .card .give-note { margin: 0.25rem 0 1rem; }
+@media (min-width: 900px) { .ways { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Campaign gift amounts */
+.gift-cards .num { display: block; font-family: var(--font-serif); font-size: clamp(2rem, 3.4vw, 2.6rem); font-weight: 700; opacity: 1; color: inherit; margin-bottom: 0.4rem; }

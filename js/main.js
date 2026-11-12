@@ -156,7 +156,7 @@
         data.get('phone') ? `Phone: ${data.get('phone')}` : '',
       ].filter((l, i) => i < 2 || l).join('\n');
       const subject = `Inquiry via website from ${data.get('name')}`;
-      window.location.href = `mailto:stacey@standaction.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:info@standaction.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       status.textContent = 'Thank you very much. Your e-mail program should now open with your message.';
     });
   }
@@ -172,9 +172,29 @@
       setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
     });
   });
-  /* ---------- WhatsApp share (appeal page) ---------- */
+  /* ---------- WhatsApp share ----------
+     The message is a pull phrase plus the page's public link. WhatsApp builds the
+     preview card (image, title, description) from that page's og: tags. */
   document.querySelectorAll('[data-share-wa]').forEach((a) => {
-    const msg = 'STAND works where justice, health, protection and implementation meet, so support reaches the people too often failed by the systems meant to serve them. Support the work and share: ' + window.location.href.split('#')[0];
-    a.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    const url = a.dataset.shareUrl || window.location.href.split('#')[0];
+    const lead = a.dataset.shareText || 'STAND works where justice, health, protection and implementation meet.';
+    a.href = 'https://wa.me/?text=' + encodeURIComponent(lead + '\n\n' + url);
   });
+
+  /* ---------- Land exactly on #section links ----------
+     Images and web fonts can change the page height after the browser has jumped
+     to an anchor. Re-align the target once they have settled. */
+  const settle = () => {
+    if (!location.hash || location.hash.length < 2) return;
+    let el = null;
+    try { el = document.querySelector(decodeURIComponent(location.hash)); } catch (err) { return; }
+    if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
+  };
+  if (location.hash) {
+    const imgs = [...document.images].filter((i) => !i.complete);
+    imgs.forEach((i) => { i.loading = 'eager'; });
+    const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+    fonts.then(settle);
+    window.addEventListener('load', () => { settle(); setTimeout(settle, 250); });
+  }
 })();

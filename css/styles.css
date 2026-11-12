@@ -1,17 +1,27 @@
 /* STAND homepage */
 
+/* Free fonts (SIL Open Font License), served from this site */
 @font-face {
-  font-family: "Bonvivant";
-  src: url("../assets/fonts/bonvivantserif.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
+  font-family: "Playfair Display";
+  src: url("../assets/fonts/playfair-display-latin-wght-normal.woff2") format("woff2");
+  font-weight: 400 900; font-style: normal; font-display: swap;
 }
 @font-face {
-  font-family: "Bonvivant";
-  src: url("../assets/fonts/bonvivantserifbold.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
+  font-family: "Playfair Display";
+  src: url("../assets/fonts/playfair-display-latin-wght-italic.woff2") format("woff2");
+  font-weight: 400 900; font-style: italic; font-display: swap;
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-latin-wght-italic.woff2") format("woff2");
+  font-weight: 100 900; font-style: italic; font-display: swap;
+}
+
 @font-face {
   font-family: "Handwritten";
   src: url("../assets/fonts/nothingyoucoulddo-regular.ttf") format("truetype");
@@ -34,7 +44,7 @@
   --text-dark: #0d352e;
 
   --font-sans: "Montserrat", Arial, sans-serif;
-  --font-serif: "Bonvivant", "Times New Roman", serif;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-hand: "Handwritten", Georgia, cursive;
 
   --radius-lg: 1.875rem;
@@ -240,7 +250,7 @@ button { font: inherit; cursor: pointer; }
   padding-inline: var(--gutter);
 }
 .nav-logo { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; }
-.brand-mark { width: 2.9rem; height: auto; flex: none; }
+.brand-mark { width: 2.6rem; height: auto; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-wm { font-weight: 700; letter-spacing: 0.14em; font-size: 1.2rem; color: var(--white); }
 .brand-strap { margin-top: 0.3rem; font-weight: 600; letter-spacing: 0.16em; font-size: 0.56rem; text-transform: uppercase; color: var(--turquoise, #00cfea); }
@@ -775,7 +785,7 @@ button { font: inherit; cursor: pointer; }
   padding: clamp(5rem, 10vw, 9rem) 0 clamp(5rem, 9vw, 8rem);
   background:
     linear-gradient(180deg, var(--green-950) 0%, rgba(4, 21, 15, 0) 22%, rgba(4, 21, 15, 0) 80%, var(--green-800) 100%),
-    url("../assets/stand/plenary-wide.jpg") center / cover no-repeat,
+    url("../assets/stand/roundtable-2.jpg") center / cover no-repeat,
     #1f4d1d;
   overflow: hidden;
 }
@@ -1609,7 +1619,7 @@ a.video-btn { text-decoration: none; text-align: center; }
 .offers {
   background:
     linear-gradient(180deg, var(--green-950) 0%, rgba(4, 21, 15, 0.78) 25%, rgba(4, 21, 15, 0.78) 80%, var(--green-800) 100%),
-    url("../assets/stand/plenary-wide.jpg") center / cover no-repeat,
+    url("../assets/stand/roundtable-2.jpg") center / cover no-repeat,
     var(--green-900);
 }
 .about-scene .am1 { filter: brightness(0.7); }
@@ -1652,3 +1662,10 @@ a.video-btn { text-decoration: none; text-align: center; }
 .backpack .snap img { aspect-ratio: 4 / 5; }
 .footer-support { margin-top: 1.5rem; align-self: flex-start; }
 .footer-main { display: flex; flex-direction: column; }
+
+/* Anchor targets land below the fixed header */
+[id] { scroll-margin-top: 6.5rem; }
+
+/* Only the page being viewed is a filled pill: the header call to action is outlined */
+.nav-right .nav-cta { background: transparent; color: var(--yellow); box-shadow: inset 0 0 0 2px var(--yellow); }
+.nav-right .nav-cta:hover, .nav-right .nav-cta:focus-visible { background: var(--yellow); color: var(--green-800); }

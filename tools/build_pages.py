@@ -66,13 +66,15 @@ header = header.replace('href="#contact"', 'href="index.html#contact"')
 head_tpl = index[:index.index("<body>")]
 
 
-def page(slug, title, desc, body, current=None):
+def page(slug, title, desc, body, current=None, share_img=None):
     head = head_tpl
     head = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)}</title>", head)
     head = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + html.escape(desc), head)
     head = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m.group(1) + html.escape(title), head)
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m.group(1) + html.escape(desc), head)
-    head = head.replace('<link rel="preload" href="assets/fonts/bonvivantserifbold.ttf"', '<link rel="preload" href="assets/fonts/bonvivantserifbold.ttf"')
+    head = head.replace('<meta property="og:url" content="https://standaction.co.za/">', f'<meta property="og:url" content="https://standaction.co.za/{slug}">')
+    if share_img:
+        head = head.replace('assets/social/stand-share.jpg', share_img)
     head = head.replace('<link rel="stylesheet" href="css/styles.css">', '<link rel="stylesheet" href="css/styles.css">\n  <link rel="stylesheet" href="css/pages.css">')
     nav = header
     if current == "involved":
@@ -429,7 +431,7 @@ trace = hero(
           <li class="reveal">Handovers are defined across law enforcement and its specialised Family Violence, Child Protection and Sexual Offences (FCS) units, the Department of Justice, the National Prosecuting Authority, the Department of Health, Hermanus Hospital, the Department of Social Development, child protection non-profit organisations and municipal structures</li>
           <li class="reveal">The Violence Prevention Unit signed off the workflow; Health confirmed its stage in the pathway</li>
           <li class="reveal">A trained community layer, embedded in the Department of Social Development's existing GBV Ambassador Programme, supports survivors and peer-led safety systems</li>
-          <li class="reveal">The case is traced to resolution, producing a replicable, district-level record of where justice moves and where it stalls</li>
+          <li class="reveal">The case is traced to resolution, producing a replicable, district-level record of where justice moves and where it stalls. No identifying data is visible, and no departmental statutory systems or mandates are impeded</li>
         </ol>
       </div>
     </section>
@@ -441,7 +443,7 @@ trace = hero(
             <h2 class="title reveal" id="built-title">Built on what already exists</h2>
             <div class="reveal" style="margin-top:1.5rem">
               <p>The design discipline is deliberate. The Red Dot Process adds no parallel database, requires no institution to change its mandate, and shares no identifying client records. It works through the systems that partners already use, and the roles they already hold. That is why it went from design to a live dispatch to law enforcement inside a single programme cycle.</p>
-              <p>The community layer is equally grounded. STAND equipped and further trained 31 screened GBV ambassadors within the Department of Social Development's existing GBV Ambassador Programme, supported testing and peer-led safety systems, and documented a replicable district model.</p>
+              <p>The community layer is equally grounded. STAND equipped and further trained 31 screened gender-based violence (GBV) ambassadors within the Department of Social Development's existing GBV Ambassador Programme, supported testing and peer-led safety systems, and documented a replicable district model.</p>
             </div>
           </div>
           <div class="stats reveal" style="align-self:center">
@@ -460,9 +462,9 @@ trace = hero(
           {fig("citizen-app-design.jpg")}
           {fig("ambassador-phone.jpg")}
           {fig("vpu-meeting.jpg")}
-          {fig("zone-mapping.jpg")}
+          {fig("le-overstrand-2025.jpg")}
           {fig("ambassador-training.jpg")}
-          {fig("field-2025.jpg")}
+          {fig("le-training-hall.jpg")}
           {fig("citizen-app-guide.jpg", "contain")}
           {fig("le-training-stand.jpg")}
         </div>
@@ -492,7 +494,7 @@ trace = hero(
 """ + cta(
     "The next step is scale.",
     "You don't have to be an institution to move this. Your gift pays for the people and systems that keep a live case tracking system running, and helps it reach more women.",
-    [PARTNER, pill("support.html#ways", "Support the work", ghost=True)],
+    [PARTNER, pill("campaign.html", "Back the campaign", ghost=True), pill("support.html#ways", "Support the work", ghost=True)],
 )
 page("track-her-case.html", "Track Her Case | STAND", "STAND's flagship programme follows a GBV case across every institution that touches it. Its live pilot, the Red Dot Process, is working in the Overstrand.", trace, current="work.html")
 
@@ -512,7 +514,7 @@ BOARD = [
       "Her career spans operational harm-reduction delivery, research and training commissioned by the United Nations Office on Drugs and Crime (UNODC) and the United Nations Development Programme (UNDP), national policy advocacy, and international engagement. At TB HIV Care, where she served for a decade, she established drop-in centres, designed programme frameworks for people who use drugs, and delivered training on harm reduction, gender-based violence (GBV), and the health and rights of women affected by substance use. She is the editor and lead for the internationally developed Pregnancy and Substance Use Toolkit for Health Care Workers, and co-authored the published account of SANPUD's COVID-19 emergency response for the International Drug Policy Consortium.",
       "She brings to STAND's governance a grounded, community-tested understanding of what implementation actually requires."],
      ["Harm reduction, operational delivery and programme design", "Human rights and drug policy", "UNODC, HRI and UNDP-commissioned research", "Women affected by substance use: health, rights and justice (a special interest)", "Rural and remote implementation", "Financial governance and organisational management"],
-     [("Current position:", "Director, JMD Consulting."),
+     [("Current position:", "Director, JMD Consulting & Training."),
       ("Selected affiliations:", "Technical adviser and consultant to the South African Network of People Who Use Drugs (SANPUD); External Consultant to the UNODC Regional Office for Southern Africa.")]),
     ("leon", "board-leon.jpg", "Prof. Leon Holtzhausen", "Director & Secretary · Member since January 2021", None,
      ["Professor Leon Holtzhausen is a senior academic, researcher, and practitioner with deep expertise in criminal-justice social work, substance use disorders, and interpersonal violence. He serves as Associate Professor and Head of the Department of Social Work and Social Development at the University of Cape Town, a position he has held since 2010.",
@@ -609,7 +611,7 @@ founder = hero(
         </div>
         <ol class="timeline">
           <li class="reveal"><span class="kicker">Aug 2025 to Aug 2026 · Programme Lead, STAND / DG Murray Trust</span><h3>Breaking the Cycle: gender-based violence (GBV) systems design and the Red Dot Process</h3><p>Designed the Red Dot Process, a seven-stage, privacy-conscious GBV track-and-trace workflow on Overstrand Municipality's Citizen App. The GBV function went live on 24 August 2026; the first incident was dispatched to law enforcement on 27 August. Convened statutory partners through the Western Cape Violence Prevention Unit, which signed off the workflow, and embedded a community layer of 31 trained GBV ambassadors.</p></li>
-          <li class="reveal"><span class="kicker">2025 to 2026 · Senior Technical Specialist and Advocacy Lead</span><h3>Pregnancy and Substance Use Toolkit, national advocacy (EJAF / JMD Consulting / SANPUD)</h3><p>Led district-to-national advocacy to position a practical, rights-based clinical toolkit for pregnant women affected by substance use within South African maternal and primary healthcare systems. The work was supported by the Elton John AIDS Foundation (EJAF), with the grant channelled through SANPUD, and delivered with JMD Consulting. Authored the final advocacy report, <em>From Field Evidence to National Endorsement</em>, and secured formal written support from the National Department of Health in June 2026, conditional on defined revisions. The Western Cape confirmed routes to incorporate the content into antenatal and community health-worker training.</p></li>
+          <li class="reveal"><span class="kicker">2025 to 2026 · Senior Technical Specialist and Advocacy Lead</span><h3>Pregnancy and Substance Use Toolkit, national advocacy (EJAF / JMD Consulting &amp; Training / SANPUD)</h3><p>Led district-to-national advocacy to position a practical, rights-based clinical toolkit for pregnant women affected by substance use within South African maternal and primary healthcare systems. The work was supported by the Elton John AIDS Foundation (EJAF), with the grant channelled through SANPUD, and delivered with JMD Consulting &amp; Training. Authored the final advocacy report, <em>From Field Evidence to National Endorsement</em>, and secured formal written support from the National Department of Health in June 2026, conditional on defined revisions. The Western Cape confirmed routes to incorporate the content into antenatal and community health-worker training.</p></li>
           <li class="reveal"><span class="kicker">Mar 2025 · Key Facilitator and Technical Consultant</span><h3>INTERPOL Regional Bureau for Southern Africa / SARPCCO</h3><p>Key facilitator at the first regional Gender and Harm Reduction Workshop, convened with SARPCCO (the Southern African Regional Police Chiefs Cooperation Organisation), with representatives from 11 SADC member states. Developed evidence-informed policing modules and co-authored the report setting out ten regional recommendations, recognised with a formal Letter of Appreciation from the Head of the INTERPOL Regional Bureau / SARPCCO Coordination Office.</p></li>
           <li class="reveal"><span class="kicker">Jul 2025 to Aug 2026 · Consultant and Lead African Consultant</span><h3>Harm Reduction International, Breaking Point and the Divest/Invest series</h3><p>Led the South Africa country rapid assessment of the impact of donor-funding withdrawal (34 key-informant interviews, 128 desk reviews and a national dialogue) and authored <em>Breaking Point: The Impact of US Funding Cuts on Harm Reduction in South Africa</em>. As Lead African Consultant for the Divest/Invest case-study series, authored three published country studies: South Africa (on the Community Oriented Substance Use Programme, COSUP), Mauritius, and Ghana.</p></li>
         </ol>
@@ -646,12 +648,12 @@ founder = hero(
           {fig("cnd2020-plenary.jpg")}
           {fig("cnd2020-regina.jpg")}
           {fig("cnd2025-group.jpg")}
-          {fig("hr25-panel-a.jpg")}
-          {fig("hr25-panel-e.jpg")}
-          {fig("hr25-bogota.jpg", caption="")}
-          {fig("hr25-sign.jpg")}
+          {fig("zambia-1.jpg")}
+          {fig("cross-sectionality.jpg")}
+          {fig("interpol-2025-delegate.jpg")}
+          {fig("inhsu-plenary.jpg")}
+          {fig("inhsu-2025.jpg")}
           {fig("inhsu-delegate.jpg")}
-          {fig("inhsu-2025.jpg", caption="")}
         </div>
         <div class="split split--even" style="margin-top:clamp(3rem,6vw,5rem)">
           <ul class="years reveal">
@@ -661,7 +663,7 @@ founder = hero(
             <li><b>2019</b><span>Finalist, Impumelelo Innovation Awards, for a rural, evidence-based outpatient community treatment model.</span></li>
           </ul>
           <div class="prose reveal">
-            <p>She has also taken part in the International Network on Health and Hepatitis in Substance Users (INHSU) forums.</p>
+            <p>She has also taken part in the forums of the International Network on Health and Hepatitis in Substance Users (INHSU), including its 13th international conference at the Century City Conference Centre in Cape Town.</p>
             <p><b>Education and specialist training:</b> Higher Certificate in Counselling and Interpersonal Skills (SACAP, 2016); Certificate in Leading Financial Sustainability (TSIBA, 2017); UNODC Training of Trainers, Evidence-Based Opioid Agonist Services (2023); Gender-Based Violence and Harm Reduction, UNODC / WHRIN (2024).</p>
           </div>
         </div>
@@ -677,15 +679,51 @@ founder = hero(
 page("founder.html", "Stacey Doorly-Jones | STAND", "Stacey Doorly-Jones, founder and CEO of STAND: strategist, qualitative researcher, technical writer and facilitator.", founder.replace('<h1 id="page-title">', '<h1 id="page-title" class="name">', 1), current="board.html")
 
 # ================================================================ SUPPORT
-def online_card(name, text, url, label):
-    if not url:
-        return ""
-    return f'<article class="card reveal"><p class="for">{e(name)}</p><h3>{e(text)}</h3><a class="btn-pill" href="{url}" target="_blank" rel="noopener">{e(label)}</a></article>'
+def online_card(name, text, url, label, note=""):
+    nt = f'<p class="give-note">{note}</p>' if note else ""
+    if url:
+        btn = f'<a class="btn-pill" href="{url}" target="_blank" rel="noopener">{e(label)}</a>'
+    else:  # until the page link is pasted in above
+        btn = f'<span class="btn-pill is-pending" aria-disabled="true">{e(name)} page opening soon</span>'
+    return f'<article class="card reveal"><p class="for">{e(name)}</p><h3>{e(text)}</h3>{nt}{btn}</article>'
+
+
+GG_NOTE = ("<b>Tax relief by country</b>GlobalGiving is a US 501(c)(3) charity (EIN 30-0108263), so gifts are tax-deductible for US taxpayers. "
+           "UK taxpayers giving in pounds can add Gift Aid at checkout (an extra 25p for every £1). "
+           "Donors in Belgium, Bulgaria, France, Germany, Greece, Hungary, Italy, Spain and Switzerland can claim local relief through Transnational Giving Europe. "
+           "Gifts in euros, Canadian or Australian dollars are generally not deductible; Canadian donors may qualify under the Canada-US tax treaty. Check with your tax adviser.")
+BB_NOTE = ("<b>Section 18A</b>South African donors can request a Section 18A tax certificate from STAND. "
+           'Email <a href="mailto:info@standaction.co.za">info@standaction.co.za</a> with your name and the date of your gift.')
 
 
 def bank_row(k, v, copy=True):
     btn = f'<button class="copy" type="button" data-copy="{html.escape(v)}" aria-label="Copy {html.escape(k)}">Copy</button>' if copy else ""
     return f"<div><dt>{e(k)}</dt><dd>{e(v)}{btn}</dd></div>"
+
+
+def ways(ref="Your name, plus “donation”", cta="Give with SnapScan"):
+    return f"""        <div class="ways">
+          <article class="card reveal">
+            <p class="for">SnapScan</p>
+            <h3>The quickest way to give from your phone.</h3>
+            <a class="btn-pill" href="{SNAPSCAN_URL}" target="_blank" rel="noopener">{cta}</a>
+          </article>
+          {online_card("GlobalGiving", "Give online from anywhere in the world.", GLOBALGIVING_URL, "Give through GlobalGiving", GG_NOTE)}
+          {online_card("BackaBuddy", "Give online in South Africa.", BACKABUDDY_URL, "Give through BackaBuddy", BB_NOTE)}
+          <article class="card reveal ways-eft">
+            <p class="for">EFT (bank transfer)</p>
+            <dl class="bank">
+              {bank_row("Account name", "Social Transformation Action Defined")}
+              {bank_row("Bank", "First National Bank (FNB)", copy=False)}
+              {bank_row("Account number", "62759591623")}
+              {bank_row("Branch code", "250655")}
+              {bank_row("SWIFT (international)", "FIRNZAJJ")}
+              {bank_row("Reference", ref, copy=False)}
+            </dl>
+            <p class="give-note"><b>International donors</b>You can give by international bank transfer using the SWIFT code in the EFT details. Email us and we will confirm receipt.</p>
+            <p class="give-note">For a South African Section 18A certificate, email <a href="mailto:info@standaction.co.za">info@standaction.co.za</a> with your EFT reference.</p>
+          </article>
+"""
 
 
 support = hero(
@@ -742,27 +780,7 @@ support = hero(
           <h2 class="title reveal" id="ways-title">Support the work</h2>
           <p class="lead reveal">Give in the way that suits you. All South African giving is Section 18A tax-deductible (PBO 930063426).</p>
         </div>
-        <div class="ways">
-          <article class="card reveal">
-            <p class="for">SnapScan</p>
-            <h3>The quickest way to give from your phone.</h3>
-            <a class="btn-pill" href="{SNAPSCAN_URL}" target="_blank" rel="noopener">Give with SnapScan</a>
-          </article>
-          {online_card("GlobalGiving", "Give online from anywhere in the world.", GLOBALGIVING_URL, "Give through GlobalGiving")}
-          {online_card("BackaBuddy", "Give online in South Africa.", BACKABUDDY_URL, "Give through BackaBuddy")}
-          <article class="card reveal ways-eft">
-            <p class="for">EFT (bank transfer)</p>
-            <dl class="bank">
-              {bank_row("Account name", "Social Transformation Action Defined")}
-              {bank_row("Bank", "First National Bank (FNB)", copy=False)}
-              {bank_row("Account number", "62759591623")}
-              {bank_row("Branch code", "250655")}
-              {bank_row("SWIFT (international)", "FIRNZAJJ")}
-              {bank_row("Reference", "Your name, plus “donation”", copy=False)}
-            </dl>
-            <p class="give-note"><b>International donors</b>You can give by international bank transfer using the SWIFT code in the EFT details. Email us and we will confirm receipt.</p>
-            <p class="give-note">For a South African Section 18A certificate, email <a href="mailto:stacey@standaction.co.za">stacey@standaction.co.za</a> with your EFT reference.</p>
-          </article>
+{ways()}
         </div>
       </div>
     </section>
@@ -772,8 +790,8 @@ support = hero(
         <div class="head center"><h2 class="title reveal" id="partners-title">Who we work alongside</h2></div>
         <div class="cards cards--plain">
           <article class="card reveal"><h3>Funders and commissioning partners</h3>{ul(["UN Office on Drugs & Crime", "Netherlands Ministry of Foreign Affairs", "DG Murray Trust", "AIDSFONDS", "Elton John AIDS Foundation", "Graham & Rhona Beck Development Trust", "Harm Reduction International"])}</article>
-          <article class="card reveal"><h3>Research and delivery partners</h3>{ul(["University of Cape Town", "SA Medical Research Council", "SANPUD"])}</article>
-          <article class="card reveal"><h3>Government partners we work alongside</h3>{ul(["National Department of Health", "South African Police Service", "Western Cape Violence Prevention Unit"])}</article>
+          <article class="card reveal"><h3>Research and delivery partners</h3>{ul(["University of Cape Town", "SA Medical Research Council", "Open Society Foundations", "Harm Reduction International", "United Nations Office on Drugs and Crime", "SANPUD"])}</article>
+          <article class="card reveal"><h3>Government partners we work alongside</h3>{ul(["National Department of Health", "Western Cape Department of Health and Wellness", "National and Western Cape Departments of Social Development", "Department of Justice", "National Prosecuting Authority", "South African Police Service, including the FCS units", "Western Cape Violence Prevention Unit", "Overstrand Municipality", "INTERPOL Regional Bureau for Southern Africa and SARPCCO", "Drug Enforcement Commission, Zambia"])}</article>
         </div>
         <div class="photos" style="margin-top:clamp(3rem,6vw,5rem)">
           {fig("cnd2025-group.jpg")}
@@ -785,11 +803,106 @@ support = hero(
 """ + cta(
     "Pass it on",
     "Sharing costs nothing and reaches people we never could alone.",
-    ['<a class="btn-pill" href="https://wa.me/" data-share-wa target="_blank" rel="noopener">Share on WhatsApp</a>',
+    ['<a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/support.html" data-share-text="When a woman asks for help, the system should answer. STAND follows every reported case of gender-based violence through police, health, social services and the courts. Support the work and pass it on:" target="_blank" rel="noopener">Share on WhatsApp</a>',
      pill("index.html#contact", "Send an enquiry", ghost=True)],
     small="You don't have to be an institution to move this. Individuals can back the work directly and help a live system reach more women.",
 )
 page("support.html", "Support the work | STAND", "Partner with STAND, fund the work or collaborate. All giving is Section 18A tax-deductible.", support, current="involved")
+
+# ================================================================ CAMPAIGN
+# Campaign work is the one place the site says "Give now".
+GIVE = pill("#give", "Give now")
+SHARE_CAMPAIGN = "When a woman asks for help, the system should answer. Track Her Case follows every reported case of violence against women in the Overstrand through police, health, social services and the courts. Give now and pass it on:"
+campaign = hero(
+    "Track Her Case · Campaign",
+    "When a woman asks for help, the system should answer.",
+    "We built a live system in the Overstrand that follows every reported case of violence against women through the police, health, social services and the courts until it is resolved. Help us keep it running and take it across the district.",
+    scene="ambassadors-certificates.jpg",
+    extra=f'\n        <div class="hero-actions">{GIVE}{pill("#how", "How it works", ghost=True)}</div>',
+) + f"""
+    <section class="band band--cream" aria-labelledby="laws-title">
+      <div class="container split split--even">
+        <div class="prose">
+          <h2 class="title reveal" id="laws-title">The laws exist. The handover breaks.</h2>
+          <div class="reveal" style="margin-top:1.5rem">
+            <p>South Africa has some of the strongest laws on gender-based violence (GBV) in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her. Cases reach court incomplete and are struck from the roll.</p>
+            <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
+          </div>
+        </div>
+        <div class="stats reveal" style="align-self:center">
+          <div class="stat"><b>24 Aug</b><span>System went live, 2026</span></div>
+          <div class="stat"><b>3 days</b><span>Until the first case was dispatched to the police</span></div>
+          <div class="stat"><b>31</b><span>Trained community ambassadors</span></div>
+          <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--cream2" id="how" aria-labelledby="how-title">
+      <div class="container split split--even">
+        <div>
+          <h2 class="title reveal" id="how-title">How it works</h2>
+          <ol class="stages" style="margin-top:2rem">
+            <li class="reveal"><b>One tap to report.</b> An ambassador or survivor presses the help button on the municipality's Citizen App.</li>
+            <li class="reveal"><b>Help is sent.</b> Police and an ambulance go straight to the location, and the case gets a private number.</li>
+            <li class="reveal"><b>Every handover is tracked.</b> The number travels with the case through the police docket, the hospital and social services.</li>
+            <li class="reveal"><b>Followed to court.</b> Each appearance is tracked until the case reaches an outcome, so we can see where the system holds and where it needs strengthening.</li>
+          </ol>
+        </div>
+        <div class="phones">
+          {fig("gbv-home.png", "contain", label="", caption="GBV Incident, live on the Citizen App")}
+          {fig("gbv-service.png", "contain", label="", caption="One tap to medical or police help")}
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--cream" aria-label="The work on the ground">
+      <div class="container">
+        <div class="photos">
+          {fig("redot-mapping.jpg", caption="Ambassadors and Overstrand Municipality map hotspots.")}
+          {fig("le-training-stand.jpg", caption="Police and law enforcement officers in training.")}
+          {fig("ambassador-training.jpg")}
+        </div>
+        <p class="center reveal" style="margin-top:2rem;font-weight:600">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS.</p>
+        <div class="actions center reveal" style="justify-content:center">{pill("track-her-case.html", "Read the full programme", ghost=True)}{pill("assets/docs/STAND_Track_Her_Case_Project_Brief.pdf", "Download the project brief (PDF)", ghost=True)}</div>
+      </div>
+    </section>
+
+    <section class="band band--cream2" aria-labelledby="gift-title">
+      <div class="container">
+        <div class="head center">
+          <h2 class="title reveal" id="gift-title">What your gift does</h2>
+          <p class="lead reveal">Your gift pays for the people and systems that deliver the work.</p>
+        </div>
+        <div class="cards cards--3 gift-cards">
+          <article class="card reveal"><span class="num">R150</span><p>One day's stipend for an ambassador on active duty</p></article>
+          <article class="card reveal"><span class="num">R250</span><p>A month of data so an ambassador can log and follow cases</p></article>
+          <article class="card reveal"><span class="num">R3,000</span><p>A month of community awareness on how to get help</p></article>
+          <article class="card reveal"><span class="num">R7,750</span><p>Data for all 31 ambassadors for a full month</p></article>
+          <article class="card reveal"><span class="num">R12,000</span><p>A month of case tracing across police, health, social services and the courts</p></article>
+          <article class="card reveal"><span class="num">Any amount</span><p>Every gift keeps a live case tracking system running and helps it reach more women.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--teal" id="give" aria-labelledby="give-title">
+      <img class="contours" src="assets/art/contours-footer.svg" alt="" aria-hidden="true" loading="lazy">
+      <div class="container">
+        <div class="head center">
+          <h2 class="title reveal" id="give-title">Give now</h2>
+          <p class="lead reveal">Give in the way that suits you. South African gifts are Section 18A tax-deductible (PBO 930063426).</p>
+        </div>
+{ways(ref="Your name + TRACK", cta="Give now with SnapScan")}
+      </div>
+    </section>
+""" + cta(
+    "Pass it on",
+    "Sharing costs nothing and reaches people we never could alone.",
+    [f'<a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/campaign.html" data-share-text="{SHARE_CAMPAIGN}" target="_blank" rel="noopener">Share on WhatsApp</a>',
+     pill("#give", "Give now", ghost=True)],
+    small="STAND, Social Transformation Action Defined NPC · PBO 930063426 · Level 1 B-BBEE",
+)
+page("campaign.html", "Track Her Case: Give now | STAND", "When a woman asks for help, the system should answer. Help keep Track Her Case running in the Overstrand and take it across the district.", campaign, current="involved", share_img="assets/stand/give-share.jpg")
 
 # ================================================================ PRIVACY
 privacy = hero(
@@ -812,7 +925,7 @@ privacy = hero(
           <h3>Publications and copyright</h3>
           <p>Reports and publications by partner organisations, including Harm Reduction International, remain the property of their publishers and are referenced with acknowledgement. All other content on this site, including text, design and the STAND name and logo, is © 2026 Social Transformation Action Defined NPC. All rights reserved. Content may be quoted for non-commercial purposes with clear attribution to STAND.</p>
           <h3>Cookies</h3>
-          <p>This site does not use advertising or tracking cookies. Fonts are loaded from Google Fonts, which receives your IP address in order to deliver them.</p>
+          <p>This site does not use advertising or tracking cookies. Its fonts are served from this site, so no third party receives your details when you visit.</p>
         </div>
       </div>
     </section>

@@ -184,7 +184,7 @@ async function checkUrl(url) {
     add(`${w}px: no horizontal page scroll`, info.overflow <= 0, `overflow ${info.overflow}px`);
     add(`${w}px: every image loads`, info.broken.length === 0, info.broken.length ? info.broken.join(', ') : `${await page.evaluate(() => document.images.length)} images loaded`);
     add(`${w}px: all reveal elements become visible after scrolling`, info.hidden === 0, `${info.hidden} still hidden`);
-    add(`${w}px: brand fonts load (Bonvivant, Handwritten)`, info.fonts.includes('Bonvivant') && info.fonts.includes('Handwritten'), `loaded: ${info.fonts.join(', ')}`);
+    add(`${w}px: brand fonts load (Playfair Display, Handwritten)`, info.fonts.includes('Playfair Display') && info.fonts.includes('Handwritten'), `loaded: ${info.fonts.join(', ')}`);
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(300);
     await page.screenshot({ path: path.join(SHOTS, `remake-${w}.png`), fullPage: true });

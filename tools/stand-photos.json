@@ -180,10 +180,10 @@
   "caption": ""
  },
  "apw-2023-speaking.jpg": {
-  "alt": "Stacey Doorly-Jones speaking at Africa Policy Week 2023",
+  "alt": "Stacey Doorly-Jones speaking at Africa Policy Week",
   "pos": "50% 30%",
   "label": "Africa Policy Week",
-  "caption": "Stacey Doorly-Jones on the link between substance dependence, domestic abuse and rape culture in South Africa."
+  "caption": "Stacey Doorly-Jones on the link between substance dependence, domestic violence and rape culture in South Africa."
  },
  "hri-national-dialogue.jpg": {
   "alt": "Panel at the national dialogue for the HRI country rapid assessment",
@@ -216,10 +216,10 @@
   "caption": "With Nombulelo Mkhuma of Tintswalo Home Based Care."
  },
  "awwhr-founders.jpg": {
-  "alt": "Founding members of African Women Working in Harm Reduction at Africa Policy Week 2023",
+  "alt": "Founding members of African Women Working in Harm Reduction at Africa Policy Week",
   "pos": "50% 40%",
   "label": "Africa Policy Week",
-  "caption": "Founding members of African Women Working in Harm Reduction: Kalvanya Padayachee (NACOSA), Dimakatso S. Nonyane (COSUP), Julie Mac Donnell and Stacey Doorly-Jones."
+  "caption": "Founding members of African Women Working in Harm Reduction: Kalvanya Padayachee (NACOSA), Dimakatso S. Nonyane (COSUP), Julie Mac Donnell (JMD Consulting & Training) and Stacey Doorly-Jones."
  },
  "wfad-gender-2020.jpg": {
   "alt": "Founding members of the WFAD Global Gender Committee in Vienna",
@@ -302,26 +302,14 @@
  "ambassador-training.jpg": {
   "alt": "GBV ambassadors at a training session",
   "pos": "",
-  "label": "Department of Social Development",
-  "caption": "GBV ambassador training."
+  "label": "Overstrand",
+  "caption": "STAND's community GBV response training, multi-sectoral referral networking."
  },
  "vpu-meeting.jpg": {
   "alt": "Partners around the table at a Violence Prevention Unit meeting",
   "pos": "",
   "label": "Violence Prevention Unit",
   "caption": "Meeting with the Violence Prevention Unit."
- },
- "zone-mapping.jpg": {
-  "alt": "Participants marking zones on maps",
-  "pos": "",
-  "label": "Zone mapping",
-  "caption": "Mapping where support is needed most."
- },
- "field-2025.jpg": {
-  "alt": "A police officer and community members completing a form together",
-  "pos": "",
-  "label": "In the field",
-  "caption": ""
  },
  "citizen-app-guide.jpg": {
   "alt": "Guide to reporting and following progress on the Overstrand Citizen App",
@@ -336,10 +324,10 @@
   "caption": "Why you should avoid or limit alcohol when taking TB medication."
  },
  "inhsu-2025.jpg": {
-  "alt": "Round-table session at the INHSU 2025 conference",
+  "alt": "Round-table session at the INHSU conference in Cape Town",
   "pos": "",
-  "label": "INHSU",
-  "caption": "International Network on Health and Hepatitis in Substance Users conference."
+  "label": "INHSU, Cape Town",
+  "caption": "Round-table discussion at the International Network on Health and Hepatitis in Substance Users (INHSU) conference."
  },
  "hr25-panel-c.jpg": {
   "alt": "Women-led panel presenting STAND's work at the International Harm Reduction Conference",
@@ -368,7 +356,19 @@
  "inhsu-delegate.jpg": {
   "alt": "A delegate taking notes at the INHSU conference",
   "pos": "50% 35%",
-  "label": "INHSU",
-  "caption": "International Network on Health and Hepatitis in Substance Users conference."
+  "label": "INHSU, Cape Town",
+  "caption": "A delegate at a round-table session of the 13th International Conference on Health and Hepatitis in Substance Users, Century City Conference Centre."
+ },
+ "inhsu-plenary.jpg": {
+  "alt": "A full plenary hall at the INHSU conference in Cape Town",
+  "pos": "",
+  "label": "INHSU, Cape Town",
+  "caption": "Plenary session of the 13th International Conference on Health and Hepatitis in Substance Users, Century City Conference Centre."
+ },
+ "hero-conference.jpg": {
+  "alt": "Delegates' flags at the 2nd Africa FASD Network and FARR Conference",
+  "pos": "",
+  "label": "Africa FASD Network and FARR",
+  "caption": "Delegates from across Africa and beyond at the 2nd Africa Fetal Alcohol Spectrum Disorder (FASD) Network and Foundation for Alcohol Related Research (FARR) Conference."
  }
 }
