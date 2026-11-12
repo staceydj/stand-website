@@ -1,13 +1,13 @@
 # STAND homepage report (layout from the to-top.ch/en remake, STAND pictures and copy)
 
-Generated: 2026-11-11T11:56:27.782Z
+Generated: 2026-11-12T11:41:26.585Z
 
 | Result | Check | Detail |
 |---|---|---|
-| PASS | Local files referenced by HTML/CSS exist | 66 references OK |
-| PASS | Every image is from the new STAND sets (generated, STAND photos, new line art) | 49 distinct images, all in assets/gen/, assets/stand/, assets/art/ |
-| PASS | No file in assets/ is a copy of an original TO TOP image | 77 shipped files compared against 110 originals |
-| PASS | Links to standaction.co.za resolve (HTTP 200) | 1 URL(s) OK |
+| PASS | Local files referenced by all 8 pages and the CSS exist | 609 references OK |
+| PASS | Every image is from the new STAND sets (generated, STAND photos, new line art) | 85 distinct images, all in assets/gen/, assets/stand/, assets/art/ |
+| PASS | No file in assets/ is a copy of an original TO TOP image | 120 shipped files compared against 110 originals |
+| PASS | Every link between pages lands on an existing page and anchor | 228 internal links OK |
 | PASS | No TO TOP names, contacts or copy remain (text, alt text, links) | 11 TO TOP terms and 88 original sentences checked |
 | PASS | Every figure on the page appears on standaction.co.za | 11 figures checked: 2025, 2018, 500, 700, 24, 2026, 18, 2, +27 82 554 8831, 930063426, 1 |
 | PASS | 375px: no JS errors or failed local requests | clean |

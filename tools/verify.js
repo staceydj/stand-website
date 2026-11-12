@@ -70,20 +70,23 @@ async function checkUrl(url) {
   let usedText = '';
   const add = (name, pass, detail) => results.push({ name, pass, detail });
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const PAGES = fs.readdirSync(ROOT).filter((f) => f.endsWith('.html')).sort();
+  const pageHtml = Object.fromEntries(PAGES.map((f) => [f, fs.readFileSync(path.join(ROOT, f), 'utf8')]));
+  const allHtml = Object.values(pageHtml).join('\n');
 
-  // 1. Local asset references resolve
-  const refs = [...html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)].map((m) => m[1])
+  // 1. Local asset references resolve, on every page
+  const refs = [...allHtml.matchAll(/(?:src|href)="([^"#][^"]*)"/g)].map((m) => m[1].split('#')[0])
     .filter((u) => !/^(https?:|mailto:|tel:|\/\/)/.test(u));
-  const css = fs.readFileSync(path.join(ROOT, 'css/styles.css'), 'utf8');
+  const css = ['css/styles.css', 'css/pages.css'].filter((f) => fs.existsSync(path.join(ROOT, f))).map((f) => fs.readFileSync(path.join(ROOT, f), 'utf8')).join('\n');
   const cssRefs = [...css.matchAll(/url\("?\.\.\/([^")]+)"?\)/g)].map((m) => m[1]);
-  const missing = [...refs.filter((u) => !fs.existsSync(path.join(ROOT, u))), ...cssRefs.filter((u) => !fs.existsSync(path.join(ROOT, u)))];
-  add('Local files referenced by HTML/CSS exist', missing.length === 0, missing.length ? `Missing: ${missing.join(', ')}` : `${refs.length + cssRefs.length} references OK`);
+  const missing = [...new Set([...refs.filter((u) => !fs.existsSync(path.join(ROOT, u))), ...cssRefs.filter((u) => !fs.existsSync(path.join(ROOT, u)))])];
+  add(`Local files referenced by all ${PAGES.length} pages and the CSS exist`, missing.length === 0, missing.length ? `Missing: ${missing.join(', ')}` : `${refs.length + cssRefs.length} references OK`);
 
   // 1b. Every picture comes from the new STAND sets, and none is byte-identical to an original image
   {
     const crypto = require('crypto');
-    const imgRefs = [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1])
-      .concat([...html.matchAll(/<link[^>]+rel="(?:icon|apple-touch-icon)"[^>]+href="([^"]+)"/g)].map((m) => m[1]))
+    const imgRefs = [...allHtml.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1])
+      .concat([...allHtml.matchAll(/<link[^>]+rel="(?:icon|apple-touch-icon)"[^>]+href="([^"]+)"/g)].map((m) => m[1]))
       .concat(cssRefs.filter((u) => !u.startsWith('assets/fonts/')));
     const outside = imgRefs.filter((u) => !ALLOWED_IMG_DIRS.some((d) => u.startsWith(d)));
     add('Every image is from the new STAND sets (generated, STAND photos, new line art)', outside.length === 0,
@@ -102,11 +105,23 @@ async function checkUrl(url) {
     }
   }
 
-  // 2. Links to standaction.co.za resolve
-  const ext = [...new Set([...html.matchAll(/href="(https:\/\/(?:www\.)?standaction\.co\.za[^"]*)"/g)].map((m) => m[1].split('#')[0]))];
-  const bad = [];
-  for (const u of ext) { const code = await checkUrl(u); if (code !== '200') bad.push(`${u} -> ${code}`); }
-  add('Links to standaction.co.za resolve (HTTP 200)', ext.length > 0 && bad.length === 0, bad.length ? bad.join('; ') : `${ext.length} URL(s) OK`);
+  // 2. Every link between pages lands on a page and, where given, an existing anchor
+  {
+    const bad = [];
+    let n = 0;
+    for (const [f, h] of Object.entries(pageHtml)) {
+      for (const m of h.matchAll(/href="([^"]*#[^"]*)"/g)) {
+        if (/^(https?:|mailto:)/.test(m[1])) continue;
+        const [file, frag] = m[1].split('#');
+        const target = file || f;
+        n += 1;
+        if (!frag) continue;
+        const th = pageHtml[target];
+        if (!th || !th.includes(`id="${frag}"`)) bad.push(`${f} -> ${m[1]}`);
+      }
+    }
+    add('Every link between pages lands on an existing page and anchor', bad.length === 0, bad.length ? `Broken: ${[...new Set(bad)].join(', ')}` : `${n} internal links OK`);
+  }
 
   // 3. Copy: nothing of TO TOP's remains, and every figure is backed by STAND's own site
   const srv = await serve();

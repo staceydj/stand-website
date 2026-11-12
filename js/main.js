@@ -160,4 +160,16 @@
       status.textContent = 'Thank you very much. Your e-mail program should now open with your message.';
     });
   }
+  /* ---------- Copy buttons (bank details) ---------- */
+  document.querySelectorAll('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        btn.textContent = 'Copied';
+      } catch (err) {
+        btn.textContent = 'Select to copy';
+      }
+      setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+    });
+  });
 })();
