@@ -157,10 +157,10 @@ def pill(href, text, ghost=False, ext=False):
 PARTNER = pill("index.html#contact", "Partner with STAND")
 SUPPORT = pill("support.html#ways", "Support the work")
 
-# Online giving pages. Paste each link between the quotes to switch its button on.
-GLOBALGIVING_URL = ""
-BACKABUDDY_URL = ""
-SNAPSCAN_URL = "https://pos.snapscan.io/qr/XAGQiq-2"
+# Online giving pages live in tools/links.py, shared with the campaign page.
+import sys
+sys.path.insert(0, str(ROOT / "tools"))
+from links import GLOBALGIVING_URL, BACKABUDDY_URL, SNAPSCAN_URL  # noqa: E402
 
 # ================================================================ ABOUT
 about = hero(
@@ -809,100 +809,7 @@ support = hero(
 )
 page("support.html", "Support the work | STAND", "Partner with STAND, fund the work or collaborate. All giving is Section 18A tax-deductible.", support, current="involved")
 
-# ================================================================ CAMPAIGN
-# Campaign work is the one place the site says "Give now".
-GIVE = pill("#give", "Give now")
-SHARE_CAMPAIGN = "When a woman asks for help, the system should answer. Track Her Case follows every reported case of violence against women in the Overstrand through police, health, social services and the courts. Give now and pass it on:"
-campaign = hero(
-    "Track Her Case · Campaign",
-    "When a woman asks for help, the system should answer.",
-    "We built a live system in the Overstrand that follows every reported case of violence against women through the police, health, social services and the courts until it is resolved. Help us keep it running and take it across the district.",
-    scene="ambassadors-certificates.jpg",
-    extra=f'\n        <div class="hero-actions">{GIVE}{pill("#how", "How it works", ghost=True)}</div>',
-) + f"""
-    <section class="band band--cream" aria-labelledby="laws-title">
-      <div class="container split split--even">
-        <div class="prose">
-          <h2 class="title reveal" id="laws-title">The laws exist. The handover breaks.</h2>
-          <div class="reveal" style="margin-top:1.5rem">
-            <p>South Africa has some of the strongest laws on gender-based violence (GBV) in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her. Cases reach court incomplete and are struck from the roll.</p>
-            <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
-          </div>
-        </div>
-        <div class="stats reveal" style="align-self:center">
-          <div class="stat"><b>24 Aug</b><span>System went live, 2026</span></div>
-          <div class="stat"><b>3 days</b><span>Until the first case was dispatched to the police</span></div>
-          <div class="stat"><b>31</b><span>Trained community ambassadors</span></div>
-          <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--cream2" id="how" aria-labelledby="how-title">
-      <div class="container split split--even">
-        <div>
-          <h2 class="title reveal" id="how-title">How it works</h2>
-          <ol class="stages" style="margin-top:2rem">
-            <li class="reveal"><b>One tap to report.</b> An ambassador or survivor presses the help button on the municipality's Citizen App.</li>
-            <li class="reveal"><b>Help is sent.</b> Police and an ambulance go straight to the location, and the case gets a private number.</li>
-            <li class="reveal"><b>Every handover is tracked.</b> The number travels with the case through the police docket, the hospital and social services.</li>
-            <li class="reveal"><b>Followed to court.</b> Each appearance is tracked until the case reaches an outcome, so we can see where the system holds and where it needs strengthening.</li>
-          </ol>
-        </div>
-        <div class="phones">
-          {fig("gbv-home.png", "contain", label="", caption="GBV Incident, live on the Citizen App")}
-          {fig("gbv-service.png", "contain", label="", caption="One tap to medical or police help")}
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--cream" aria-label="The work on the ground">
-      <div class="container">
-        <div class="photos">
-          {fig("redot-mapping.jpg", caption="Ambassadors and Overstrand Municipality map hotspots.")}
-          {fig("le-training-stand.jpg", caption="Police and law enforcement officers in training.")}
-          {fig("ambassador-training.jpg")}
-        </div>
-        <p class="center reveal" style="margin-top:2rem;font-weight:600">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS.</p>
-        <div class="actions center reveal" style="justify-content:center">{pill("track-her-case.html", "Read the full programme", ghost=True)}{pill("assets/docs/STAND_Track_Her_Case_Project_Brief.pdf", "Download the project brief (PDF)", ghost=True)}</div>
-      </div>
-    </section>
-
-    <section class="band band--cream2" aria-labelledby="gift-title">
-      <div class="container">
-        <div class="head center">
-          <h2 class="title reveal" id="gift-title">What your gift does</h2>
-          <p class="lead reveal">Your gift pays for the people and systems that deliver the work.</p>
-        </div>
-        <div class="cards cards--3 gift-cards">
-          <article class="card reveal"><span class="num">R150</span><p>One day's stipend for an ambassador on active duty</p></article>
-          <article class="card reveal"><span class="num">R250</span><p>A month of data so an ambassador can log and follow cases</p></article>
-          <article class="card reveal"><span class="num">R3,000</span><p>A month of community awareness on how to get help</p></article>
-          <article class="card reveal"><span class="num">R7,750</span><p>Data for all 31 ambassadors for a full month</p></article>
-          <article class="card reveal"><span class="num">R12,000</span><p>A month of case tracing across police, health, social services and the courts</p></article>
-          <article class="card reveal"><span class="num">Any amount</span><p>Every gift keeps a live case tracking system running and helps it reach more women.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--teal" id="give" aria-labelledby="give-title">
-      <img class="contours" src="assets/art/contours-footer.svg" alt="" aria-hidden="true" loading="lazy">
-      <div class="container">
-        <div class="head center">
-          <h2 class="title reveal" id="give-title">Give now</h2>
-          <p class="lead reveal">Give in the way that suits you. South African gifts are Section 18A tax-deductible (PBO 930063426).</p>
-        </div>
-{ways(ref="Your name + TRACK", cta="Give now with SnapScan")}
-      </div>
-    </section>
-""" + cta(
-    "Pass it on",
-    "Sharing costs nothing and reaches people we never could alone.",
-    [f'<a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/campaign.html" data-share-text="{SHARE_CAMPAIGN}" target="_blank" rel="noopener">Share on WhatsApp</a>',
-     pill("#give", "Give now", ghost=True)],
-    small="STAND, Social Transformation Action Defined NPC · PBO 930063426 · Level 1 B-BBEE",
-)
-page("campaign.html", "Track Her Case: Give now | STAND", "When a woman asks for help, the system should answer. Help keep Track Her Case running in the Overstrand and take it across the district.", campaign, current="involved", share_img="assets/stand/give-share.jpg")
+# CAMPAIGN: see tools/build_campaign.py
 
 # ================================================================ PRIVACY
 privacy = hero(

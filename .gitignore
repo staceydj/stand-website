@@ -3,3 +3,6 @@ tools/original-en.html
 __pycache__/
 .DS_Store
 *.zip
+
+# Large campaign films: shared directly, not deployed with the site
+campaign-kit/*.mp4
