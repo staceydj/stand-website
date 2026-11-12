@@ -40,10 +40,11 @@ The page keeps the remake's layout. Every word comes from STAND's own site (stan
 
 ## Where every picture comes from
 
-None of the original site's images ship with this remake. `tools/verify.js` checks this on every run: each image must live in one of the three folders below, and no file may match an original image byte for byte.
+Every photograph is STAND's own, from standaction.co.za or supplied by STAND, and graded to the brand teal. No AI-generated imagery is used.
 
-- `assets/gen/`: scenery generated in Canva for STAND, graded to the brand palette. These are the hero landscape, four service peaks, clouds, blanket, compass, torch, grass, the About hillside, forest, rocks, the hiker on boulders, the summit with a plain turquoise flag, and the backpack. `tools/cutout.py` removes the plain backgrounds and writes WebP.
-- `assets/stand/`: STAND's own logo mark, headshots (Stacey Doorly-Jones, Charity Monareng) and work photos, taken from standaction.co.za. The favicon and touch icon are built from the logo mark.
-- `assets/art/`: line icons, dashed journey paths, contour lines and the route map, all drawn in code by `tools/make_art.py`.
+- `assets/stand/`: STAND's logo mark, headshots, work and conference photos, app screenshots and the share image.
+- `assets/docs/`: the Track Her Case project brief.
+- `assets/art/`: line icons, dashed paths, contour lines and the route map, drawn in code by `tools/make_art.py`.
+- `incoming/`: STAND's original uploads, kept as supplied. The site uses the resized copies in `assets/stand/`.
 
-The original image set was moved out of the project and kept outside it, for the comparison check only.
+Run `python3 tools/build_pages.py` after changing copy or photos. It rebuilds every inner page from the homepage's nav and footer.

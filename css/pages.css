@@ -480,3 +480,4 @@ ol.stages, ol.timeline { list-style: none; margin: 0; padding: 0; }
 .gifts .card h3 { font-size: clamp(2rem, 3.4vw, 2.8rem); }
 .stages li b { font-weight: 700; }
 .band--teal .card .give-note a, .card .give-note a { color: inherit; font-weight: 700; }
+.page-hero .scene { object-position: center 45%; }

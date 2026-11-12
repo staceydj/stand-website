@@ -359,12 +359,6 @@
   "label": "Africa FASD Network and FARR, May 2026",
   "caption": "2nd Africa Fetal Alcohol Spectrum Disorder (FASD) Network and Foundation for Alcohol Related Research (FARR) Conference."
  },
- "fasd-2026-c.jpg": {
-  "alt": "Round-table session at the Africa FASD Network and FARR Conference",
-  "pos": "",
-  "label": "Africa FASD Network and FARR, May 2026",
-  "caption": "2nd Africa Fetal Alcohol Spectrum Disorder (FASD) Network and Foundation for Alcohol Related Research (FARR) Conference."
- },
  "training-2020-a.jpg": {
   "alt": "Participants at a STAND training session",
   "pos": "",
@@ -424,5 +418,11 @@
   "pos": "",
   "label": "Community resource",
   "caption": "Why you should avoid or limit alcohol when taking TB medication."
+ },
+ "inhsu-2025.jpg": {
+  "alt": "Round-table session at the INHSU 2025 conference",
+  "pos": "",
+  "label": "INHSU 2025",
+  "caption": "International Network on Health and Hepatitis in Substance Users conference."
  }
 }

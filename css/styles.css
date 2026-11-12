@@ -775,7 +775,7 @@ button { font: inherit; cursor: pointer; }
   padding: clamp(5rem, 10vw, 9rem) 0 clamp(5rem, 9vw, 8rem);
   background:
     linear-gradient(180deg, var(--green-950) 0%, rgba(4, 21, 15, 0) 22%, rgba(4, 21, 15, 0) 80%, var(--green-800) 100%),
-    url("../assets/gen/grass.webp") center / 420px repeat,
+    url("../assets/stand/plenary-wide.jpg") center / cover no-repeat,
     #1f4d1d;
   overflow: hidden;
 }
@@ -1584,3 +1584,69 @@ a.video-btn { text-decoration: none; text-align: center; }
 .sign-card.c2 .icon { opacity: 0.25; }
 .sign-card h3, .sign-card ul, .offer-tile h3, .offer-tile .tile-text, .offer-tile .num { position: relative; z-index: 1; }
 .service-text h3 { font-size: clamp(2rem, 4.6cqw, 3.4rem); hyphens: manual; }
+
+/* ---------- Photography in place of scenery ---------- */
+.hero-layers .m0 { filter: brightness(0.82) saturate(1.05); }
+.service-photo {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 56%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  filter: grayscale(0.15);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+  transition: transform 0.8s var(--ease);
+}
+.service-card:hover .service-photo { transform: scale(1.03); }
+@media (max-width: 700px) {
+  .service-photo { width: 100%; opacity: 0.28; -webkit-mask-image: none; mask-image: none; }
+  .service-text { max-width: none; }
+}
+.offers {
+  background:
+    linear-gradient(180deg, var(--green-950) 0%, rgba(4, 21, 15, 0.78) 25%, rgba(4, 21, 15, 0.78) 80%, var(--green-800) 100%),
+    url("../assets/stand/plenary-wide.jpg") center / cover no-repeat,
+    var(--green-900);
+}
+.about-scene .am1 { filter: brightness(0.7); }
+.resources .forest { opacity: 0.45; }
+.resources-floor { height: clamp(3rem, 6vw, 5rem); }
+.cta-photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  width: min(100% - 2 * var(--gutter), 70rem);
+  margin: 0 auto;
+  padding-bottom: clamp(7rem, 12vw, 10rem);
+}
+.snap {
+  margin: 0;
+  background: var(--white);
+  padding: 0.6rem 0.6rem 0.9rem;
+  border-radius: 1rem;
+  box-shadow: 0 22px 44px rgba(13, 53, 46, 0.14);
+  transition: transform 0.5s var(--ease);
+}
+.snap:nth-child(1) { transform: rotate(-2deg); }
+.snap:nth-child(2) { transform: rotate(1.5deg) translateY(1.5rem); }
+.snap:nth-child(3) { transform: rotate(-1deg); }
+.snap:hover { transform: rotate(0) scale(1.02); }
+.snap img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0.6rem; }
+.snap figcaption { margin-top: 0.6rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green-500); }
+@media (max-width: 700px) {
+  .cta-photos { grid-template-columns: 1fr 1fr; }
+  .cta-photos .snap:nth-child(3) { display: none; }
+}
+.summit-mountain {
+  mix-blend-mode: normal;
+  width: min(100%, 80rem);
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.backpack .snap { max-width: 22rem; margin-inline: auto; transform: rotate(-2deg); }
+.backpack .snap img { aspect-ratio: 4 / 5; }

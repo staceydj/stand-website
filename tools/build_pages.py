@@ -110,7 +110,7 @@ def fig(name, cls="", label=None, caption=None, alt=None, eager=False):
 
 
 def hero(eyebrow, h1, lead, scene=None, extra=""):
-    scene_html = f'\n      <img class="ridge" src="assets/gen/{scene}" alt="" aria-hidden="true">' if scene else ""
+    scene_html = f'\n      <img class="scene" src="assets/stand/{scene}" alt="" aria-hidden="true">' if scene else ""
     cls = "page-hero" if scene else "page-hero no-scene"
     return f"""
     <section class="{cls}" aria-labelledby="page-title">
@@ -157,7 +157,7 @@ about = hero(
     "About STAND",
     "A specialist technical and implementation partner.",
     "We are a women-led technical and implementation partner working where justice, health, protection, and implementation meet.",
-    scene="peak4.webp",
+    scene="apw-2023-audience.jpg",
 ) + f"""
     <section class="band band--cream" aria-labelledby="who-title">
       <div class="container split">
@@ -300,7 +300,7 @@ work = hero(
     "Our Work",
     "Technically rigorous. Grounded in practice.",
     "Every programme is grounded in evidence, designed for implementation, and shaped by the realities of the people it serves.",
-    scene="peak2.webp",
+    scene="training-2021.jpg",
 ) + f"""
     <section class="band band--cream band--tight" id="focus-areas" aria-labelledby="areas-title">
       <div class="container center">
@@ -374,7 +374,7 @@ trace = hero(
     "Flagship Programme",
     "Track Her Case.",
     "Every case, followed through the system to justice. A survivor's journey through the justice system should never disappear in the handover between the services meant to protect her.",
-    scene="peak3.webp",
+    scene="vpu-meeting.jpg",
 ) + f"""
     <section class="band band--cream" aria-labelledby="gap-title">
       <div class="container">
@@ -531,7 +531,7 @@ board = hero(
     "Governance",
     "Board of Directors",
     "STAND is governed by directors who bring substantive expertise in criminal justice, public law, drug-policy reform, harm reduction, and human rights, grounded in implementation experience and international engagement.",
-    scene="peak1.webp",
+    scene="cnd2025-group.jpg",
 ) + f"""
     <section class="band band--cream" aria-labelledby="ov-title">
       <div class="container split split--even">
@@ -641,7 +641,7 @@ founder = hero(
           {fig("hr25-panel-b.jpg")}
           {fig("hr25-bogota.jpg", caption="")}
           {fig("apw-2023-group.jpg")}
-          {fig("fasd-2026-c.jpg", caption="")}
+          {fig("inhsu-2025.jpg", caption="")}
         </div>
         <div class="split split--even" style="margin-top:clamp(3rem,6vw,5rem)">
           <ul class="years reveal">
@@ -676,7 +676,7 @@ support = hero(
     "Get involved",
     "Support the systems that reach people.",
     "STAND is lean and senior-led by design. Your support pays for the people and systems that deliver the work. There are three ways to work with us.",
-    scene="peak4.webp",
+    scene="plenary-wide.jpg",
 ) + f"""
     <section class="band band--cream" aria-label="Three ways to work with us">
       <div class="container give-grid">
@@ -690,7 +690,7 @@ support = hero(
           <p class="for">For donors</p>
           <h3>Fund the work</h3>
           <p>Direct giving helps us carry Track Her Case from the Overstrand into new districts. Give in the way that suits you:</p>
-          <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn-pill" href="give.html">Give now</a><a class="btn-ghost" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a></div>
+          <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn-pill" href="give.html">Support the work</a><a class="btn-ghost" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a></div>
           <p style="font-weight:700;margin-top:.5rem">Donate by EFT (bank transfer)</p>
           <dl class="bank">
             {bank_row("Account name", "Social Transformation Action Defined")}
@@ -764,7 +764,7 @@ give = hero(
     "Track Her Case",
     "When a woman asks for help, the system should answer.",
     "We built a live system in the Overstrand that follows every reported case of violence against women through the police, health, social services and the courts until it is resolved. Help us keep it running and take it across the district.",
-    scene="peak3.webp",
+    scene="zone-mapping.jpg",
     extra=f'\n        <div class="hero-actions">{pill("#give", "Give now")}</div>',
 ) + f"""
     <section class="band band--cream" aria-labelledby="breaks-title">
