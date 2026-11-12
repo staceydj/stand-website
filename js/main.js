@@ -174,7 +174,7 @@
   });
   /* ---------- WhatsApp share (appeal page) ---------- */
   document.querySelectorAll('[data-share-wa]').forEach((a) => {
-    const msg = 'When a woman asks for help, the system should answer. STAND built a live system in the Overstrand that follows every reported case of violence against women until it reaches justice. Please give and share: ' + window.location.href.split('#')[0];
+    const msg = 'STAND works where justice, health, protection and implementation meet, so support reaches the people too often failed by the systems meant to serve them. Support the work and share: ' + window.location.href.split('#')[0];
     a.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
   });
 })();

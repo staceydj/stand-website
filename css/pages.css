@@ -481,3 +481,29 @@ ol.stages, ol.timeline { list-style: none; margin: 0; padding: 0; }
 .stages li b { font-weight: 700; }
 .band--teal .card .give-note a, .card .give-note a { color: inherit; font-weight: 700; }
 .page-hero .scene { object-position: center 45%; }
+
+/* Current page in the main nav: same pill as "Partner with STAND" */
+.nav-link[aria-current="page"],
+.nav-toggle.is-current {
+  background: var(--yellow);
+  color: var(--green-800) !important;
+  border-radius: 40px;
+}
+.nav-item:has(.nav-link[aria-current="page"]) .nav-toggle { color: var(--green-800); }
+.nav-item:has(.nav-link[aria-current="page"]) { background: var(--yellow); border-radius: 40px; }
+.nav-item:has(.nav-link[aria-current="page"]) .nav-link[aria-current="page"] { background: transparent; }
+
+/* Founder name on one line */
+.page-hero h1.name { max-width: none; white-space: nowrap; font-size: clamp(2rem, 7.4vw, 6rem); }
+
+/* Ways to support */
+.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); align-items: start; }
+.ways .ways-eft { grid-column: 1 / -1; }
+.ways .card { transform: none; }
+.ways .for { font-family: var(--font-hand); font-size: 1.7rem; line-height: 1.1; }
+.ways .btn-pill { align-self: flex-start; margin-top: 0.5rem; }
+.ways-eft .bank { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); display: grid; column-gap: 2rem; }
+@media (min-width: 900px) { .cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Photo grids fill whole rows: three across on desktop, two on tablets */
+@media (min-width: 900px) { .photos:not(.photos--2) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 600px) and (max-width: 899px) { .photos:not(.photos--2) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

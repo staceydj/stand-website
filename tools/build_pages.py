@@ -75,7 +75,9 @@ def page(slug, title, desc, body, current=None):
     head = head.replace('<link rel="preload" href="assets/fonts/bonvivantserifbold.ttf"', '<link rel="preload" href="assets/fonts/bonvivantserifbold.ttf"')
     head = head.replace('<link rel="stylesheet" href="css/styles.css">', '<link rel="stylesheet" href="css/styles.css">\n  <link rel="stylesheet" href="css/pages.css">')
     nav = header
-    if current:
+    if current == "involved":
+        nav = nav.replace('<button class="nav-toggle" aria-expanded="false" aria-controls="dd-involved"', '<button class="nav-toggle is-current" aria-expanded="false" aria-controls="dd-involved"', 1)
+    elif current:
         nav = nav.replace(f'<a class="nav-link" href="{current}">', f'<a class="nav-link" href="{current}" aria-current="page">', 1)
     doc = (
         head
@@ -151,13 +153,19 @@ def pill(href, text, ghost=False, ext=False):
 
 
 PARTNER = pill("index.html#contact", "Partner with STAND")
+SUPPORT = pill("support.html#ways", "Support the work")
+
+# Online giving pages. Paste each link between the quotes to switch its button on.
+GLOBALGIVING_URL = ""
+BACKABUDDY_URL = ""
+SNAPSCAN_URL = "https://pos.snapscan.io/qr/XAGQiq-2"
 
 # ================================================================ ABOUT
 about = hero(
     "About STAND",
     "A specialist technical and implementation partner.",
     "We are a women-led technical and implementation partner working where justice, health, protection, and implementation meet.",
-    scene="apw-2023-audience.jpg",
+    scene="fasd-2026-a.jpg",
 ) + f"""
     <section class="band band--cream" aria-labelledby="who-title">
       <div class="container split">
@@ -170,7 +178,7 @@ about = hero(
           </div>
         </div>
         <div class="photo-stack">
-          {fig("advocacy-session.jpg", "wide")}
+          {fig("training-2020-a.jpg", "wide", label="STAND training", caption="Training and facilitation in practice.")}
           {fig("hr-session.jpg", "wide")}
         </div>
       </div>
@@ -260,13 +268,13 @@ AREAS = [
      ["STAND designs and implements coordinated response systems, helping institutions move from fragmented, siloed operations to practical, accountable, multi-sector action.",
       "Specific work includes inter-agency coordination framework design, stakeholder mapping and systems analysis, referral-pathway development and formalisation, monitoring and accountability system design, facilitation of multi-sector coordination processes, and technical drafting of coordination protocols and tools."],
      "STAND has direct implementation experience across district, municipal, and national levels. We understand how coordination works, and how it fails. Every framework we produce is designed to survive contact with real institutions and real constraints.",
-     [("coord-2019-a.jpg", ""), ("coord-2019-b.jpg", "")]),
+     [("vpu-meeting.jpg", ""), ("wits-group.jpg", "tall"), ("wits-wide.jpg", "")]),
     ("alternatives", "04", "icon-culture-light.svg", "Alternatives to Incarceration and Restorative Justice",
      "Justice-sector partners, government departments, civil-society organisations, and international funders supporting diversion, restorative practice, and community-based justice responses.",
      ["STAND provides technical support for the development and implementation of evidence-based alternatives to incarceration, including diversion frameworks, restorative-justice programme design, and institutional capacity building for justice-sector personnel.",
       "Specific work includes diversion framework development and review, restorative-justice programme design, technical writing and policy engagement, institutional capacity building for justice and social-work personnel, and monitoring and learning support."],
      "STAND operates at the evidence-policy-practice interface, engaging both the research base and institutional realities to produce outputs that are analytically grounded, operationally feasible, and appropriately calibrated for the conditions in which they will run.",
-     [("empowering-justice-2.jpg", ""), ("empowering-justice-3.jpg", "")]),
+     [("cnd2025-group.jpg", ""), ("hr25-panel-d.jpg", ""), ("hr25-panel-e.jpg", "")]),
 ]
 
 chips = "".join(
@@ -300,7 +308,7 @@ work = hero(
     "Our Work",
     "Technically rigorous. Grounded in practice.",
     "Every programme is grounded in evidence, designed for implementation, and shaped by the realities of the people it serves.",
-    scene="training-2021.jpg",
+    scene="interpol-2025-group.jpg",
 ) + f"""
     <section class="band band--cream band--tight" id="focus-areas" aria-labelledby="areas-title">
       <div class="container center">
@@ -354,12 +362,12 @@ work = hero(
         </div>
       </div>
       <div class="container photos" style="margin-top:clamp(3rem,6vw,5rem)">
-        {fig("training-2020-a.jpg")}
-        {fig("training-2021.jpg")}
         {fig("training-2022.jpg")}
-        {fig("interpol-2025-screen.jpg", caption="")}
+        {fig("inhsu-delegate.jpg")}
+        {fig("hr25-panel-c.jpg")}
         {fig("interpol-2025-group.jpg", caption="")}
-        {fig("training-2020-b.jpg")}
+        {fig("inhsu-2025.jpg")}
+        {fig("hr25-sign.jpg", "tall")}
       </div>
     </section>
 """ + cta(
@@ -367,7 +375,7 @@ work = hero(
     "STAND scopes every engagement specifically, from short technical assignments to multi-year programme partnerships. Scope is agreed, outputs are specified, and reporting is thorough, transparent and evidence-based.",
     [PARTNER, pill("founder.html", "Meet the founder", ghost=True)],
 )
-page("work.html", "Our Work | STAND", "STAND's four focus areas: gender-responsive justice, substance-related harms, systems strengthening and alternatives to incarceration.", work)
+page("work.html", "Our Work | STAND", "STAND's four focus areas: gender-responsive justice, substance-related harms, systems strengthening and alternatives to incarceration.", work, current="work.html")
 
 # ================================================================ TRACK HER CASE
 trace = hero(
@@ -395,7 +403,7 @@ trace = hero(
           <h2 class="title reveal" id="dot-title">The Red Dot Process: live and working in the Overstrand</h2>
           <div class="reveal" style="margin-top:1.5rem">
             <p>The Red Dot Process is the working pilot of Track Her Case, operating now in the Overstrand.</p>
-            <p>Designed by STAND in collaboration with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust, the Red Dot Process is a seven-stage, privacy-conscious GBV track-and-trace workflow built onto Overstrand Municipality's existing Citizen App. The GBV reporting function went live on 24 August 2026. The first incident was dispatched to law enforcement (the South African Police Service) on 27 August 2026.</p>
+            <p>Designed by STAND in collaboration with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS, the Red Dot Process is a seven-stage, privacy-conscious GBV track-and-trace workflow built onto Overstrand Municipality's existing Citizen App. The GBV reporting function went live on 24 August 2026. The first incident was dispatched to law enforcement (the South African Police Service) on 27 August 2026.</p>
           </div>
         </div>
         <div class="phones">
@@ -443,7 +451,7 @@ trace = hero(
             <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
           </div>
         </div>
-        <p class="center reveal" style="margin-top:2rem;font-weight:600">Supported by the DG Murray Trust</p>
+        <p class="center reveal" style="margin-top:2rem;font-weight:600">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS.</p>
         <div class="photos" style="margin-top:clamp(2.5rem,5vw,4rem)">
           {fig("redot-focus-group.jpg", "wide")}
           {fig("ambassadors-certificates.jpg", "wide")}
@@ -456,6 +464,7 @@ trace = hero(
           {fig("ambassador-training.jpg")}
           {fig("field-2025.jpg")}
           {fig("citizen-app-guide.jpg", "contain")}
+          {fig("le-training-stand.jpg")}
         </div>
         <div class="actions center reveal" style="justify-content:center">{pill("assets/docs/STAND_Track_Her_Case_Project_Brief.pdf", "Download the project brief (PDF)", ghost=True)}</div>
       </div>
@@ -483,9 +492,9 @@ trace = hero(
 """ + cta(
     "The next step is scale.",
     "You don't have to be an institution to move this. Your gift pays for the people and systems that keep a live case tracking system running, and helps it reach more women.",
-    [PARTNER, pill("give.html", "Back the scale-up", ghost=True)],
+    [PARTNER, pill("support.html#ways", "Support the work", ghost=True)],
 )
-page("track-her-case.html", "Track Her Case | STAND", "STAND's flagship programme follows a GBV case across every institution that touches it. Its live pilot, the Red Dot Process, is working in the Overstrand.", trace)
+page("track-her-case.html", "Track Her Case | STAND", "STAND's flagship programme follows a GBV case across every institution that touches it. Its live pilot, the Red Dot Process, is working in the Overstrand.", trace, current="work.html")
 
 # ================================================================ BOARD
 BOARD = [
@@ -497,20 +506,21 @@ BOARD = [
      ["Drug-policy reform and decriminalisation", "Public law and human rights", "Harm reduction, strategy and advocacy", "International drug-policy engagement (CND, Vienna)", "Youth and gender-responsive policy", "Non-profit organisational leadership"],
      [("Current position:", "Executive Director, Students for Sensible Drug Policy International."),
       ("Credentials:", "PhD in Public Law (in progress, expected 2027), University of Cape Town; Honours in Social Development, UCT; BA in Criminology and International Studies, Monash South Africa.")]),
-    ("leon", "board-leon.jpg", "Prof. Leon Holtzhausen", "Director & Secretary · Member since January 2021", None,
-     ["Professor Leon Holtzhausen is a senior academic, researcher, and practitioner with deep expertise in criminal-justice social work, substance use disorders, and interpersonal violence. He serves as Associate Professor and Head of the Department of Social Work and Social Development at the University of Cape Town, a position he has held since 2010.",
-      "His career began with more than six years of clinical social work in a super-maximum prison, specialising in offender profiling, assessment, and the mental-health treatment of adult and juvenile offenders. He was promoted by the National Department of Correctional Services to Deputy Director for Research, overseeing research across the Department, and then Deputy Director for Correctional Programmes, before taking up an Assistant Professorship at the United Arab Emirates University, where he extended his work into transnational and cross-cultural social work. His published research spans adverse childhood experiences as a risk factor for antisocial behaviour, compassion fatigue among child-protection workers, and the user-centred development of the web-based Western Cape Substance Use Assessment Tool (WC-SUDAT). He co-led a major Open Society Foundation study on services for people experiencing homelessness during COVID-19, and serves on the National and Provincial Accreditation Committee of the Department of Social Development, the Child Justice Alliance, and the South African Violence and Safety Initiative.",
-      "He brings to STAND's governance the combination of University of Cape Town academic credibility, criminal-justice practice depth, and active national advisory roles that serious institutional donors require."],
-     ["Criminal-justice social work", "Substance use disorders, assessment and intervention", "Adverse childhood experiences and interpersonal violence", "Academic research and evidence production", "Government advisory and accreditation", "Child and youth justice"],
-     [("Current position:", "Associate Professor and Head of Department, Social Work and Social Development, University of Cape Town."),
-      ("Credentials:", "D Litt et Phil in Social Work, specialisation Criminal Justice, University of Johannesburg (2003); MSW (Community Development), University of Johannesburg; BA Social Work, University of North West.")]),
-    ("julie", "board-julie.jpg", "Julie Mac Donnell", "Treasurer · Associated with STAND since 2019", None,
+    ("julie", "board-julie.jpg", "Julie Mac Donnell", "Treasurer · Associated with STAND since 2019",
+     "https://www.linkedin.com/in/julie-mac-donnell",
      ["Julie Mac Donnell is a harm-reduction specialist, human-rights consultant, trainer, and project manager with over a decade of frontline and technical experience in South Africa's drug-policy, healthcare, and civil-society sectors.",
       "Her career spans operational harm-reduction delivery, research and training commissioned by the United Nations Office on Drugs and Crime (UNODC) and the United Nations Development Programme (UNDP), national policy advocacy, and international engagement. At TB HIV Care, where she served for a decade, she established drop-in centres, designed programme frameworks for people who use drugs, and delivered training on harm reduction, gender-based violence (GBV), and the health and rights of women affected by substance use. She is the editor and lead for the internationally developed Pregnancy and Substance Use Toolkit for Health Care Workers, and co-authored the published account of SANPUD's COVID-19 emergency response for the International Drug Policy Consortium.",
       "She brings to STAND's governance a grounded, community-tested understanding of what implementation actually requires."],
      ["Harm reduction, operational delivery and programme design", "Human rights and drug policy", "UNODC, HRI and UNDP-commissioned research", "Women affected by substance use: health, rights and justice (a special interest)", "Rural and remote implementation", "Financial governance and organisational management"],
      [("Current position:", "Director, JMD Consulting."),
       ("Selected affiliations:", "Technical adviser and consultant to the South African Network of People Who Use Drugs (SANPUD); External Consultant to the UNODC Regional Office for Southern Africa.")]),
+    ("leon", "board-leon.jpg", "Prof. Leon Holtzhausen", "Director & Secretary · Member since January 2021", None,
+     ["Professor Leon Holtzhausen is a senior academic, researcher, and practitioner with deep expertise in criminal-justice social work, substance use disorders, and interpersonal violence. He serves as Associate Professor and Head of the Department of Social Work and Social Development at the University of Cape Town, a position he has held since 2010.",
+      "His career began with more than six years of clinical social work in a super-maximum prison, specialising in offender profiling, assessment, and the mental-health treatment of adult and juvenile offenders. He was promoted by the National Department of Correctional Services to Deputy Director for Research, overseeing research across the Department, and then Deputy Director for Correctional Programmes, before taking up an Assistant Professorship at the United Arab Emirates University, where he extended his work into transnational and cross-cultural social work. His published research spans adverse childhood experiences as a risk factor for antisocial behaviour, compassion fatigue among child-protection workers, and the user-centred development of the web-based Western Cape Substance Use Assessment Tool (WC-SUDAT). He co-led a major Open Society Foundation study on services for people experiencing homelessness during COVID-19, and serves on the National and Provincial Accreditation Committee of the Department of Social Development, the Child Justice Alliance, and the South African Violence and Safety Initiative.",
+      "He brings to STAND's governance the combination of University of Cape Town academic credibility, criminal-justice practice depth, and active national advisory roles that serious institutional donors require."],
+     ["Criminal-justice social work", "Substance use disorders, assessment and intervention", "Adverse childhood experiences and interpersonal violence", "Academic research and evidence production", "Government advisory and accreditation", "Child and youth justice"],
+     [("Current position:", "Associate Professor and Head of Department, Social Work and Social Development, University of Cape Town."),
+      ("Credentials:", "D Litt et Phil in Social Work, specialisation Criminal Justice, University of Johannesburg (2003); MSW (Community Development), University of Johannesburg; BA Social Work, University of North West.")])
 ]
 profiles = ""
 for pid, img, name, role, li, bio, tags, creds in BOARD:
@@ -634,13 +644,13 @@ founder = hero(
           {fig("wfad-gender-2020.jpg")}
           {fig("cnd2020-stand-place.jpg")}
           {fig("cnd2020-plenary.jpg")}
-          {fig("cnd2025-flyer.jpg", "contain")}
           {fig("cnd2020-regina.jpg")}
           {fig("cnd2025-group.jpg")}
           {fig("hr25-panel-a.jpg")}
-          {fig("hr25-panel-b.jpg")}
+          {fig("hr25-panel-e.jpg")}
           {fig("hr25-bogota.jpg", caption="")}
-          {fig("apw-2023-group.jpg")}
+          {fig("hr25-sign.jpg")}
+          {fig("inhsu-delegate.jpg")}
           {fig("inhsu-2025.jpg", caption="")}
         </div>
         <div class="split split--even" style="margin-top:clamp(3rem,6vw,5rem)">
@@ -664,9 +674,15 @@ founder = hero(
      pill("https://www.linkedin.com/in/stacey-doorly-jones", "Connect on LinkedIn", ghost=True, ext=True),
      pill("about.html", "About STAND", ghost=True)],
 )
-page("founder.html", "Stacey Doorly-Jones | STAND", "Stacey Doorly-Jones, founder and CEO of STAND: strategist, qualitative researcher, technical writer and facilitator.", founder)
+page("founder.html", "Stacey Doorly-Jones | STAND", "Stacey Doorly-Jones, founder and CEO of STAND: strategist, qualitative researcher, technical writer and facilitator.", founder.replace('<h1 id="page-title">', '<h1 id="page-title" class="name">', 1), current="board.html")
 
 # ================================================================ SUPPORT
+def online_card(name, text, url, label):
+    if not url:
+        return ""
+    return f'<article class="card reveal"><p class="for">{e(name)}</p><h3>{e(text)}</h3><a class="btn-pill" href="{url}" target="_blank" rel="noopener">{e(label)}</a></article>'
+
+
 def bank_row(k, v, copy=True):
     btn = f'<button class="copy" type="button" data-copy="{html.escape(v)}" aria-label="Copy {html.escape(k)}">Copy</button>' if copy else ""
     return f"<div><dt>{e(k)}</dt><dd>{e(v)}{btn}</dd></div>"
@@ -677,9 +693,10 @@ support = hero(
     "Support the systems that reach people.",
     "STAND is lean and senior-led by design. Your support pays for the people and systems that deliver the work. There are three ways to work with us.",
     scene="plenary-wide.jpg",
+    extra=f'\n        <div class="hero-actions">{SUPPORT}</div>',
 ) + f"""
     <section class="band band--cream" aria-label="Three ways to work with us">
-      <div class="container give-grid">
+      <div class="container cards">
         <article class="card give-card reveal" id="partner">
           <p class="for">For funders &amp; institutions</p>
           <h3>Partner with us</h3>
@@ -689,47 +706,90 @@ support = hero(
         <article class="card give-card reveal" id="fund">
           <p class="for">For donors</p>
           <h3>Fund the work</h3>
-          <p>Direct giving helps us carry Track Her Case from the Overstrand into new districts. Give in the way that suits you:</p>
-          <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn-pill" href="give.html">Support the work</a><a class="btn-ghost" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a></div>
-          <p style="font-weight:700;margin-top:.5rem">Donate by EFT (bank transfer)</p>
-          <dl class="bank">
-            {bank_row("Account name", "Social Transformation Action Defined")}
-            {bank_row("Bank", "First National Bank (FNB)", copy=False)}
-            {bank_row("Account number", "62759591623")}
-            {bank_row("Branch code", "250655")}
-            {bank_row("SWIFT (international)", "FIRNZAJJ")}
-            {bank_row("Reference", "Your name, plus “donation”", copy=False)}
-          </dl>
-          <p class="give-note"><b>South African donors</b>All giving is Section 18A tax-deductible. PBO 930063426.</p>
-          <p class="give-note"><b>International donors</b>You can give by international bank transfer using the SWIFT code in the EFT details. Email us and we will confirm receipt.</p>
-          <p class="give-note">For a South African Section 18A certificate, email <a href="mailto:stacey@standaction.co.za">stacey@standaction.co.za</a> with your EFT reference.</p>
+          <p>Direct giving helps us carry Track Her Case from the Overstrand into new districts. Give in the way that suits you.</p>
+          <a class="btn-learn" href="#ways">Support the work <span class="arrow" aria-hidden="true">&rarr;</span></a>
         </article>
         <article class="card give-card reveal" id="collaborate">
           <p class="for">For organisations</p>
           <h3>Collaborate</h3>
           <p>Bring STAND in as a technical partner on research, training, assessments, or systems design, from community level through to regional and UN-facing work.</p>
-          <a class="btn-learn" href="mailto:stacey@standaction.co.za?subject=Collaboration%20with%20STAND">Explore collaboration <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn-learn" href="mailto:info@standaction.co.za?subject=Collaboration%20with%20STAND">Explore collaboration <span class="arrow" aria-hidden="true">&rarr;</span></a>
         </article>
       </div>
     </section>
 
-    <section class="band band--cream2" aria-labelledby="partners-title">
+    <section class="band band--cream2" aria-labelledby="does-title">
+      <div class="container">
+        <div class="head center">
+          <h2 class="title reveal" id="does-title">What your support does</h2>
+          <p class="lead reveal">Your support pays for the people and systems that deliver the work.</p>
+        </div>
+        <div class="cards cards--3">
+          <article class="card reveal"><h3>Ambassadors on active duty</h3><p>Stipends for trained community ambassadors who support survivors on the ground and help them follow their cases through every service.</p></article>
+          <article class="card reveal"><h3>Data to log and follow cases</h3><p>Mobile data so ambassadors can log and follow cases.</p></article>
+          <article class="card reveal"><h3>Case tracing</h3><p>Day-to-day follow-up of every case through each handover, across police, health, social services and the courts.</p></article>
+          <article class="card reveal"><h3>Training</h3><p>Training sessions for ambassadors, police and service providers.</p></article>
+          <article class="card reveal"><h3>Community awareness</h3><p>Community information on how to get help and how to use the system.</p></article>
+          <article class="card reveal"><h3>Evidence for scale</h3><p>Independent analysis of case outcomes and handover gaps, building the evidence to take the model into new districts across South Africa and the Global South.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--teal" id="ways" aria-labelledby="ways-title">
+      <img class="contours" src="assets/art/contours-footer.svg" alt="" aria-hidden="true" loading="lazy">
+      <div class="container">
+        <div class="head center">
+          <h2 class="title reveal" id="ways-title">Support the work</h2>
+          <p class="lead reveal">Give in the way that suits you. All South African giving is Section 18A tax-deductible (PBO 930063426).</p>
+        </div>
+        <div class="ways">
+          <article class="card reveal">
+            <p class="for">SnapScan</p>
+            <h3>The quickest way to give from your phone.</h3>
+            <a class="btn-pill" href="{SNAPSCAN_URL}" target="_blank" rel="noopener">Give with SnapScan</a>
+          </article>
+          {online_card("GlobalGiving", "Give online from anywhere in the world.", GLOBALGIVING_URL, "Give through GlobalGiving")}
+          {online_card("BackaBuddy", "Give online in South Africa.", BACKABUDDY_URL, "Give through BackaBuddy")}
+          <article class="card reveal ways-eft">
+            <p class="for">EFT (bank transfer)</p>
+            <dl class="bank">
+              {bank_row("Account name", "Social Transformation Action Defined")}
+              {bank_row("Bank", "First National Bank (FNB)", copy=False)}
+              {bank_row("Account number", "62759591623")}
+              {bank_row("Branch code", "250655")}
+              {bank_row("SWIFT (international)", "FIRNZAJJ")}
+              {bank_row("Reference", "Your name, plus “donation”", copy=False)}
+            </dl>
+            <p class="give-note"><b>International donors</b>You can give by international bank transfer using the SWIFT code in the EFT details. Email us and we will confirm receipt.</p>
+            <p class="give-note">For a South African Section 18A certificate, email <a href="mailto:stacey@standaction.co.za">stacey@standaction.co.za</a> with your EFT reference.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--cream" aria-labelledby="partners-title">
       <div class="container">
         <div class="head center"><h2 class="title reveal" id="partners-title">Who we work alongside</h2></div>
         <div class="cards cards--plain">
-          <article class="card reveal"><h3>Funders and commissioning partners</h3>{ul(["UN Office on Drugs & Crime", "Netherlands Ministry of Foreign Affairs", "DG Murray Trust", "Elton John AIDS Foundation", "Graham & Rhona Beck Development Trust", "Harm Reduction International"])}</article>
+          <article class="card reveal"><h3>Funders and commissioning partners</h3>{ul(["UN Office on Drugs & Crime", "Netherlands Ministry of Foreign Affairs", "DG Murray Trust", "AIDSFONDS", "Elton John AIDS Foundation", "Graham & Rhona Beck Development Trust", "Harm Reduction International"])}</article>
           <article class="card reveal"><h3>Research and delivery partners</h3>{ul(["University of Cape Town", "SA Medical Research Council", "SANPUD"])}</article>
           <article class="card reveal"><h3>Government partners we work alongside</h3>{ul(["National Department of Health", "South African Police Service", "Western Cape Violence Prevention Unit"])}</article>
+        </div>
+        <div class="photos" style="margin-top:clamp(3rem,6vw,5rem)">
+          {fig("cnd2025-group.jpg")}
+          {fig("interpol-2025-group.jpg")}
+          {fig("hr25-panel-c.jpg")}
         </div>
       </div>
     </section>
 """ + cta(
-    "Evidence points the way. STAND works to close that gap.",
-    "If you are a grantmaker, funder, government partner, or civil society organisation looking for a technically credible implementation partner, we would welcome the conversation. We respond to all substantive enquiries within five working days.",
-    [pill("index.html#contact", "Send an enquiry"), pill("mailto:stacey@standaction.co.za", "stacey@standaction.co.za", ghost=True)],
+    "Pass it on",
+    "Sharing costs nothing and reaches people we never could alone.",
+    ['<a class="btn-pill" href="https://wa.me/" data-share-wa target="_blank" rel="noopener">Share on WhatsApp</a>',
+     pill("index.html#contact", "Send an enquiry", ghost=True)],
     small="You don't have to be an institution to move this. Individuals can back the work directly and help a live system reach more women.",
 )
-page("support.html", "Support the work | STAND", "Partner with STAND, fund the work or collaborate. All giving is Section 18A tax-deductible.", support)
+page("support.html", "Support the work | STAND", "Partner with STAND, fund the work or collaborate. All giving is Section 18A tax-deductible.", support, current="involved")
 
 # ================================================================ PRIVACY
 privacy = hero(
@@ -758,111 +818,3 @@ privacy = hero(
     </section>
 """
 page("privacy.html", "Privacy and terms | STAND", "How STAND handles personal information, donations, photographs and copyright.", privacy)
-
-# ================================================================ GIVE (Track Her Case appeal)
-give = hero(
-    "Track Her Case",
-    "When a woman asks for help, the system should answer.",
-    "We built a live system in the Overstrand that follows every reported case of violence against women through the police, health, social services and the courts until it is resolved. Help us keep it running and take it across the district.",
-    scene="zone-mapping.jpg",
-    extra=f'\n        <div class="hero-actions">{pill("#give", "Give now")}</div>',
-) + f"""
-    <section class="band band--cream" aria-labelledby="breaks-title">
-      <div class="container split split--even">
-        <div class="prose">
-          <span class="kicker reveal">How it works</span>
-          <h2 class="title reveal" id="breaks-title">The laws exist. The handover breaks.</h2>
-          <div class="reveal" style="margin-top:1.5rem">
-            <p>South Africa has some of the strongest laws on gender-based violence in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her. Cases reach court incomplete and are struck from the roll.</p>
-            <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
-          </div>
-        </div>
-        <div class="stats reveal" style="align-self:center">
-          <div class="stat"><b>24 Aug</b><span>System went live, 2026</span></div>
-          <div class="stat"><b>3 days</b><span>Until the first case was dispatched to the police</span></div>
-          <div class="stat"><b>31</b><span>Trained community ambassadors</span></div>
-          <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--cream2" aria-labelledby="steps-title">
-      <div class="container split">
-        <div class="sticky">
-          <h2 class="title reveal" id="steps-title">How it works</h2>
-          <div class="phones" style="margin-top:2rem;justify-content:flex-start">
-            {fig("gbv-home.png", "contain", label="", caption="")}
-            {fig("gbv-service.png", "contain", label="", caption="")}
-          </div>
-        </div>
-        <ol class="stages">
-          <li class="reveal"><b>One tap to report.</b> An ambassador or survivor presses the help button on the municipality's Citizen App.</li>
-          <li class="reveal"><b>Help is sent.</b> Police and an ambulance go straight to the location, and the case gets a private number.</li>
-          <li class="reveal"><b>Every handover is tracked.</b> The number travels with the case through the police docket, the hospital and social services.</li>
-          <li class="reveal"><b>Followed to court.</b> Each appearance is tracked until the case reaches an outcome, so we can see where the system holds and where it needs strengthening.</li>
-        </ol>
-      </div>
-      <div class="container">
-        <div class="photos" style="margin-top:clamp(3rem,6vw,5rem)">
-          {fig("redot-mapping.jpg", label="", caption="Ambassadors and Overstrand Municipality map hotspots.")}
-          {fig("le-training-stand.jpg", label="", caption="Police and law enforcement officers in training.")}
-          {fig("ambassadors-certificates.jpg", label="", caption="Our ambassadors, trained with the Department of Social Development.")}
-        </div>
-        <p class="center reveal" style="margin-top:2rem;font-weight:600;max-width:44rem;margin-inline:auto">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust.</p>
-      </div>
-    </section>
-
-    <section class="band band--cream" aria-labelledby="gift-title">
-      <div class="container">
-        <div class="head center"><h2 class="title reveal" id="gift-title">What your gift does</h2></div>
-        <div class="cards gifts">
-          <article class="card reveal"><h3>R150</h3><p>One day's stipend for an ambassador on active duty</p></article>
-          <article class="card reveal"><h3>R250</h3><p>A month of data so an ambassador can log and follow cases</p></article>
-          <article class="card reveal"><h3>R3,000</h3><p>A month of community awareness on how to get help</p></article>
-          <article class="card reveal"><h3>R7,750</h3><p>Data for all 31 ambassadors for a full month</p></article>
-          <article class="card reveal"><h3>R12,000</h3><p>A month of case tracing across police, health, social services and the courts</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--teal" id="give" aria-labelledby="givenow-title">
-      <img class="contours" src="assets/art/contours-footer.svg" alt="" aria-hidden="true" loading="lazy">
-      <div class="container">
-        <div class="head center">
-          <h2 class="title reveal" id="givenow-title">Give now</h2>
-          <p class="lead reveal">Your gift pays for the people and systems that deliver the work.</p>
-        </div>
-        <div class="cards cards--2 cards--plain">
-          <article class="card reveal">
-            <p class="for" style="font-family:var(--font-hand);font-size:1.7rem;color:var(--green-500)">SnapScan</p>
-            <h3>The quickest way to give from your phone.</h3>
-            <a class="btn-pill" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener" style="margin-top:auto">Give with SnapScan</a>
-          </article>
-          <article class="card reveal">
-            <p class="for" style="font-family:var(--font-hand);font-size:1.7rem;color:var(--yellow)">EFT (bank transfer)</p>
-            <dl class="bank">
-              {bank_row("Account name", "Social Transformation Action Defined")}
-              {bank_row("Bank", "FNB", copy=False)}
-              {bank_row("Account number", "62759591623")}
-              {bank_row("Branch code", "250655")}
-              {bank_row("SWIFT (international)", "FIRNZAJJ")}
-              {bank_row("Reference", "Your name + TRACE", copy=False)}
-            </dl>
-            <p class="give-note">South African gifts are Section 18A tax-deductible (PBO 930063426). For a certificate, email <a href="mailto:stacey@standaction.co.za">stacey@standaction.co.za</a> with your reference.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-""" + cta(
-    "Pass it on",
-    "Sharing costs nothing and reaches people we never could alone.",
-    ['<a class="btn-pill" href="https://wa.me/" data-share-wa target="_blank" rel="noopener">Share on WhatsApp</a>',
-     pill("track-her-case.html", "About Track Her Case", ghost=True)],
-)
-page("give.html", "Track Her Case | Give | STAND", "Track Her Case follows every reported case through the police, health, social services and the courts. Help us keep it running and take it across the district.", give)
-
-# Share image for the appeal page
-g = (ROOT / "give.html").read_text()
-g = g.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="website">\n  <meta property="og:image" content="assets/stand/give-share.jpg">', 1)
-g = g.replace('<meta property="og:title" content="Track Her Case | Give | STAND">', '<meta property="og:title" content="When a woman asks for help, the system should answer.">')
-(ROOT / "give.html").write_text(g)

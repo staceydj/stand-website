@@ -1650,3 +1650,5 @@ a.video-btn { text-decoration: none; text-align: center; }
 }
 .backpack .snap { max-width: 22rem; margin-inline: auto; transform: rotate(-2deg); }
 .backpack .snap img { aspect-ratio: 4 / 5; }
+.footer-support { margin-top: 1.5rem; align-self: flex-start; }
+.footer-main { display: flex; flex-direction: column; }
