@@ -1,11 +1,11 @@
 # STAND homepage report (layout from the to-top.ch/en remake, STAND pictures and copy)
 
-Generated: 2026-11-13T11:29:03.097Z
+Generated: 2026-11-13T13:45:27.405Z
 
 | Result | Check | Detail |
 |---|---|---|
 | PASS | Local files referenced by all 9 pages and the CSS exist | 705 references OK |
-| PASS | Every image is from the new STAND sets (generated, STAND photos, new line art) | 99 distinct images, all in assets/gen/, assets/stand/, assets/art/ |
+| PASS | Every image is from the new STAND sets (generated, STAND photos, new line art) | 98 distinct images, all in assets/gen/, assets/stand/, assets/art/ |
 | PASS | No file in assets/ is a copy of an original TO TOP image | 141 shipped files compared against 110 originals |
 | PASS | Every link between pages lands on an existing page and anchor | 283 internal links OK |
 | PASS | No TO TOP names, contacts or copy remain (text, alt text, links) | 11 TO TOP terms and 88 original sentences checked |

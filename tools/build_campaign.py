@@ -23,11 +23,7 @@ SHORT_URL = "standaction.co.za/give"
 TITLE = "When a woman asks for help, the system should answer."
 DESC = ("Track Her Case follows every reported case of violence against women in the Overstrand "
         "through police, health, social services and the courts. Give now and pass it on.")
-WA_TEXT = ("When a woman asks for help, the system should answer.\n\n"
-           "Track Her Case follows every reported case of violence against women in the Overstrand "
-           "through the police, health, social services and the courts, until it is resolved. "
-           "During the 16 Days of Activism we're raising R150,000 to keep it running through the festive season. "
-           "R150 keeps it running for an hour.\n\nGive or share: " + PAGE_URL)
+WA_TEXT = ("Two women asked for help. The system sent them both home.\n\nSo we built Track Her Case. Every reported case of violence against a woman in the Overstrand is now followed through the police, health, social services and the courts, until it is resolved. It is live and it is working.\n\nThis 16 Days of Activism, help us keep it running. R150 keeps it going for an hour.\n\nWatch the 90-second film and give: https://standaction.co.za/give")
 GOAL = 150000
 SOCIAL_TEXT = "When a woman asks for help, the system should answer. Back Track Her Case:"
 
@@ -96,7 +92,7 @@ if CAMPAIGN_VIDEO:
     <section class="sec sec--dark watch" id="watch" aria-labelledby="watch-title">
       <div class="wrap watch-grid">
         <div>
-          <p class="eyebrow">Watch · 80 seconds</p>
+          <p class="eyebrow">Watch · 90 seconds</p>
           <h2 id="watch-title">Two women asked for help. The system sent them home.</h2>
           <p class="watch-lead">Our founder, Stacey Doorly-Jones, on why we built Track Her Case.</p>
         </div>

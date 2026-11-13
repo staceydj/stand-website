@@ -21,7 +21,7 @@
     if (!navigator.share) return;
     a.addEventListener('click', (ev) => {
       ev.preventDefault();
-      navigator.share({ title: 'Track Her Case', text: a.dataset.shareText.replace(/\s*Give or share: \S+$/, ''), url: a.dataset.shareUrl })
+      navigator.share({ title: 'Track Her Case', text: a.dataset.shareText.replace(/\s*Watch the 90-second film and give: \S+$/, ''), url: a.dataset.shareUrl })
         .catch(() => {});
     });
   });

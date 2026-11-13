@@ -178,7 +178,7 @@
   document.querySelectorAll('[data-share-wa]').forEach((a) => {
     const url = a.dataset.shareUrl || window.location.href.split('#')[0];
     const lead = a.dataset.shareText || 'STAND works where justice, health, protection and implementation meet.';
-    a.href = 'https://wa.me/?text=' + encodeURIComponent(lead + '\n\n' + url);
+    a.href = 'https://wa.me/?text=' + encodeURIComponent(lead + (/[:\s]$/.test(lead) ? ' ' : '\n\n') + url);
   });
 
   /* ---------- Land exactly where a link points ----------
