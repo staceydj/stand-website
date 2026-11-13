@@ -89,7 +89,7 @@ h3 { font-weight: 700; font-size: 1.2rem; }
 .cta-row { display: flex; flex-wrap: wrap; gap: .75rem; }
 .cta-row .btn { flex: 1 1 11rem; }
 .hero-photo { margin: 1.25rem -1rem 0; position: relative; }
-.hero-photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 35% 30%; }
+.hero-photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 28%; }
 .hero-photo figcaption { position: absolute; left: 1rem; right: 1rem; bottom: .9rem; font-size: .8rem; color: var(--white); text-shadow: 0 1px 6px rgba(0,0,0,.7); }
 
 /* Sections */
