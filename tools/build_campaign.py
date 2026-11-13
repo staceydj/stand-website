@@ -198,6 +198,10 @@ doc = f"""<!doctype html>
           <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
         </div>
         <p class="why-now"><b>Why now.</b> South Africa has classified gender-based violence as a national disaster and committed billions to fight it. More social workers, more courts and more care centres mean more handovers, and every handover is a place where a woman's case can be lost. Track Her Case makes sure it isn't.</p>
+        <figure class="wide-photo">
+          <img src="assets/stand/ambassadors-certificates-colour.jpg" alt="Track Her Case ambassadors holding their certificates with the Western Cape Department of Social Development" width="1930" height="710" loading="lazy">
+          <figcaption>Our ambassadors receive their certificates after training with the Western Cape Department of Social Development.</figcaption>
+        </figure>
         <ul class="proof" aria-label="Proof it works">
           <li><b>24 Aug</b><span>Live in the Overstrand since 24 August 2026</span></li>
           <li><b>3 days</b><span>From going live to the first case dispatched to the police</span></li>

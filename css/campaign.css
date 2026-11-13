@@ -253,3 +253,9 @@ h3 { font-weight: 700; font-size: 1.2rem; }
   .sponsor { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; }
   .sponsor p { margin: 0; }
 }
+
+/* Ambassadors' certificate day, full width */
+.wide-photo { margin: 1.75rem 0 0; }
+.wide-photo img { width: 100%; height: auto; aspect-ratio: 1930 / 710; object-fit: cover; border-radius: var(--radius); box-shadow: 0 10px 28px rgba(8, 52, 60, .14); }
+.wide-photo figcaption { margin-top: .6rem; font-size: .85rem; color: var(--muted); }
+@media (max-width: 600px) { .wide-photo img { aspect-ratio: 4 / 3; object-position: 55% 50%; } }

@@ -4,12 +4,26 @@ Every post points to one link: **standaction.co.za/give**. It opens the campaign
 
 **Timing.** The 16 Days of Activism against Gender-Based Violence runs from 25 November to 10 December. Launch on 25 November, post the teaser twice a week, and close with the full film on 10 December.
 
+## Which film goes where (quick view)
+
+| Platform | Film |
+|---|---|
+| WhatsApp Status, Instagram and Facebook Stories | `teaser_9x16` (24s) |
+| Instagram and Facebook Reels, TikTok, YouTube Shorts | `main_9x16` (about 90s) |
+| LinkedIn, Facebook feed, X | `main_1x1`, or `teaser_1x1` for reminders |
+| YouTube channel (the full story) | `long_16x9` |
+| GlobalGiving page (via a YouTube link) | `gg_16x9` (57s) |
+| BackaBuddy page (via a YouTube link) | `long_16x9` |
+| WhatsApp messages to people you know | attach `teaser_9x16`, then send the message below with the link |
+
+Copy for the GlobalGiving and BackaBuddy pages is in **PLATFORM_PAGES_COPY.md**.
+
 ## What is in this folder
 
 | File | Use it for |
 |---|---|
-| `STAND_TrackHerCase_main_9x16.mp4` (82s) | Instagram and Facebook Reels, TikTok, YouTube Shorts |
-| `STAND_TrackHerCase_main_1x1.mp4` (82s) | LinkedIn, Facebook feed, X |
+| `STAND_TrackHerCase_main_9x16.mp4` (about 90s) | Instagram and Facebook Reels, TikTok, YouTube Shorts |
+| `STAND_TrackHerCase_main_1x1.mp4` (about 90s) | LinkedIn, Facebook feed, X |
 | `STAND_TrackHerCase_teaser_9x16.mp4` (24s) | WhatsApp Status, Instagram and Facebook Stories |
 | `STAND_TrackHerCase_teaser_1x1.mp4` (24s) | X, LinkedIn reminders, paid boosts |
 | `STAND_TrackHerCase_long_16x9.mp4` (2 min 15s) | YouTube (the full story), the website, presentations |
