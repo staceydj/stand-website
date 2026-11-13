@@ -14,7 +14,8 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
-from links import BACKABUDDY_URL, CAMPAIGN_VIDEO, CAMPAIGN_VIDEO_POSTER, GLOBALGIVING_URL, SNAPSCAN_URL  # noqa: E402
+from links import (BACKABUDDY_URL, CAMPAIGN_VIDEO, CAMPAIGN_VIDEO_POSTER, GLOBALGIVING_URL,  # noqa: E402
+                   MATCH_AMOUNT, MATCH_NAME, SNAPSCAN_URL)
 
 SITE = "https://standaction.co.za/"
 PAGE_URL = SITE + "campaign.html"
@@ -23,9 +24,11 @@ TITLE = "When a woman asks for help, the system should answer."
 DESC = ("Track Her Case follows every reported case of violence against women in the Overstrand "
         "through police, health, social services and the courts. Give now and pass it on.")
 WA_TEXT = ("When a woman asks for help, the system should answer.\n\n"
-           "STAND's Track Her Case follows every reported case of violence against women in the Overstrand "
+           "Track Her Case follows every reported case of violence against women in the Overstrand "
            "through the police, health, social services and the courts, until it is resolved. "
-           "R150 keeps a trained ambassador on duty for a day.\n\nGive or share: " + PAGE_URL)
+           "During the 16 Days of Activism we're raising R150,000 to keep it running through the festive season. "
+           "R150 keeps it running for an hour.\n\nGive or share: " + PAGE_URL)
+GOAL = 150000
 SOCIAL_TEXT = "When a woman asks for help, the system should answer. Back Track Her Case:"
 
 PHOTOS = json.loads((ROOT / "tools/stand-photos.json").read_text())
@@ -104,20 +107,38 @@ if CAMPAIGN_VIDEO:
     </section>"""
 
 
-GIFTS = [
-    ("R150", "One day's stipend for an ambassador on active duty"),
-    ("R250", "A month of data so an ambassador can log and follow cases"),
-    ("R3,000", "A month of community awareness on how to get help"),
-    ("R7,750", "Data for all 31 ambassadors for a full month"),
-    ("R12,000", "A month of case tracing across police, health, social services and the courts"),
-]
-gifts_html = "".join(
-    f'<li><a href="#give"><b>{e(amt)}</b><span>{e(txt)}</span><i aria-hidden="true">&rarr;</i></a></li>' for amt, txt in GIFTS)
+# Fund the 16 Days: R150 keeps Track Her Case running for an hour (full year R1,230,870).
+# Overseas amounts follow the playbook's ladder at USD 1 = ZAR 16.43 (19 October 2026).
+LADDER = {
+    "ZAR": [("R150", "keeps it running for an hour"), ("R500", "more than three hours"), ("R1,000", "about seven hours"),
+            ("R3,370", "a full day"), ("R23,600", "a full week"), ("R54,000", "all 16 days"),
+            ("R150,000", "six weeks: the whole 16 Days target")],
+    "USD": [("$10", "more than an hour"), ("$25", "almost three hours"), ("$50", "about six hours"), ("$100", "half a day"),
+            ("$205", "a full day"), ("$500", "more than two days"), ("$1,440", "a full week"), ("$9,000", "six weeks")],
+    "GBP": [("£10", "more than an hour"), ("£20", "almost three hours"), ("£40", "about six hours"), ("£80", "half a day"),
+            ("£155", "a full day"), ("£400", "more than two days"), ("£1,080", "a full week"), ("£6,860", "six weeks")],
+    "EUR": [("€10", "more than an hour"), ("€25", "about three hours"), ("€50", "about six hours"), ("€95", "half a day"),
+            ("€185", "a full day"), ("€450", "more than two days"), ("€1,280", "a full week"), ("€8,120", "six weeks")],
+}
+CUR_LABEL = {"ZAR": "Rand", "USD": "Dollars", "GBP": "Pounds", "EUR": "Euros"}
+cur_buttons = "".join(
+    f'<button type="button" data-cur="{c}" aria-pressed="{"true" if c == "ZAR" else "false"}">{CUR_LABEL[c]}</button>' for c in LADDER)
+ladders = "".join(
+    f'<ul class="ladder" data-cur="{c}"{"" if c == "ZAR" else " hidden"}>'
+    + "".join(f'<li><a href="#give" data-door="{"sa" if c == "ZAR" else "abroad"}"><b>{e(amt)}</b><span>{e(txt)}</span>'
+              f'<i aria-hidden="true">&rarr;</i></a></li>' for amt, txt in rows)
+    + "</ul>" for c, rows in LADDER.items())
+
+match_html = ""
+if MATCH_NAME and MATCH_AMOUNT:
+    match_html = (f'<p class="match"><b>Every gift doubled.</b> {e(MATCH_NAME)} will match every gift made during the '
+                  f'16 Days of Activism, up to {e(MATCH_AMOUNT)}.</p>')
 
 doc = f"""<!doctype html>
-<html lang="en-ZA">
+<html lang="en-ZA" class="no-js">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.remove('no-js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Track Her Case: Give now | STAND</title>
   <meta name="description" content="{a(DESC)}">
@@ -142,7 +163,7 @@ doc = f"""<!doctype html>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
-    <a class="brand" href="index.html" aria-label="STAND home"><img src="assets/stand/stand-mark-teal.svg" alt="" width="34" height="35"><span>STAND</span></a>
+    <a class="brand" href="index.html" aria-label="STAND home"><img src="assets/stand/stand-mark-colour.png" alt="" width="400" height="330"><span class="brand-words"><span>STAND</span><small>Evidence. Advocacy. Justice.</small></span></a>
     <a class="btn btn--give btn--sm" href="#give">Give now</a>
   </header>
 
@@ -150,7 +171,7 @@ doc = f"""<!doctype html>
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-head">
-          <p class="eyebrow">Track Her Case</p>
+          <p class="eyebrow">Track Her Case · Fund the 16 Days</p>
           <h1 id="hero-title">When a woman asks for help, <em>the system should answer.</em></h1>
         </div>
         <figure class="hero-photo">
@@ -158,11 +179,16 @@ doc = f"""<!doctype html>
           <figcaption>A trained ambassador, ready to log and follow cases on her phone.</figcaption>
         </figure>
         <div class="hero-body">
-          <p class="lead">We built a live system in the Overstrand that follows every reported case of violence against women until it is resolved. Help us keep it running and take it across the district.</p>
+          <p class="lead">We built a live system in the Overstrand that follows every reported case of violence against women until it is resolved. During the 16 Days of Activism we're raising R150,000 to keep it running through the festive season. <b>R150 keeps it running for an hour.</b></p>
           <div class="cta-row">
             <a class="btn btn--give" href="#give">Give now</a>
             <a class="btn btn--wa" href="{a(wa_href)}" target="_blank" rel="noopener">{WA_ICON}Share on WhatsApp</a>
           </div>
+          <div class="progress" data-goal="{GOAL}" hidden>
+            <p class="progress-line"><b data-raised>R0</b> raised of R150,000 for the 16 Days</p>
+            <div class="bar" role="progressbar" aria-label="Raised towards R150,000" aria-valuemin="0" aria-valuemax="{GOAL}" aria-valuenow="0"><span></span></div>
+          </div>
+          {match_html}
         </div>
       </div>
     </section>
@@ -175,6 +201,7 @@ doc = f"""<!doctype html>
           <p>South Africa has some of the strongest laws on gender-based violence (GBV) in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her.</p>
           <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
         </div>
+        <p class="why-now"><b>Why now.</b> South Africa has classified gender-based violence as a national disaster and committed billions to fight it. More social workers, more courts and more care centres mean more handovers, and every handover is a place where a woman's case can be lost. Track Her Case makes sure it isn't.</p>
         <ul class="proof" aria-label="Proof it works">
           <li><b>24 Aug</b><span>Live in the Overstrand since 24 August 2026</span></li>
           <li><b>3 days</b><span>From going live to the first case dispatched to the police</span></li>
@@ -208,40 +235,69 @@ doc = f"""<!doctype html>
     <section class="sec" id="gift" aria-labelledby="gift-title">
       <div class="wrap">
         <p class="eyebrow">What your gift does</p>
-        <h2 id="gift-title">Every rand keeps a case moving</h2>
-        <ul class="gifts">{gifts_html}</ul>
-        <p class="small">Amounts are taken from the approved programme budget.</p>
+        <h2 id="gift-title">R150 keeps Track Her Case running for an hour</h2>
+        <p class="gift-lead">Every gift keeps the whole system running: the coordinator following each case, the ambassadors walking alongside women, and the partners making sure cases reach court.</p>
+        <div class="cur-switch" role="group" aria-label="Show amounts in">{cur_buttons}</div>
+        {ladders}
+        <p class="small cur-note">Because of the exchange rate, £20 or $25 becomes about R410 to R440 here, almost three hours of Track Her Case. Amounts in other currencies are approximate, at $1 = R16.43 (19 October 2026). The full year costs R1,230,870, everything included.</p>
+        <aside class="sponsor">
+          <h3>Sponsor a day</h3>
+          <p><b>R3,370</b>, about <b>$205</b>, <b>£155</b> or <b>€185</b>, keeps Track Her Case running for a full day. Choose your date and, if you'd like, we'll thank you publicly on it.</p>
+          <a class="btn btn--give btn--sm" href="mailto:info@standaction.co.za?subject=Sponsor%20a%20day%20of%20Track%20Her%20Case">Sponsor a day</a>
+        </aside>
       </div>
     </section>
 
     <section class="sec sec--dark" id="give" aria-labelledby="give-title">
       <div class="wrap">
         <p class="eyebrow">Give now</p>
-        <h2 id="give-title">Choose the way that suits you</h2>
-        <div class="give-grid">
-          <article class="give-card give-card--snap">
-            <h3>SnapScan</h3>
-            <p>The quickest way to give from your phone.</p>
-            <a class="btn btn--give" href="{a(SNAPSCAN_URL)}" target="_blank" rel="noopener">Give with SnapScan</a>
-            <figure class="qr"><img src="assets/stand/snapscan-qr.png" alt="SnapScan QR code for STAND" width="396" height="396" loading="lazy"><figcaption>On a computer? Scan this with the SnapScan app.</figcaption></figure>
-          </article>
-
-          <article class="give-card give-card--eft">
-            <h3>EFT (bank transfer)</h3>
-            <dl class="bank">
-              {copy_row("Account name", "Social Transformation Action Defined")}
-              {copy_row("Bank", "First National Bank (FNB)", copy=False)}
-              {copy_row("Account number", "62759591623")}
-              {copy_row("Branch code", "250655")}
-              {copy_row("Reference", "Your name + TRACK", copy=False)}
-              {copy_row("SWIFT (international)", "FIRNZAJJ")}
-            </dl>
-            <p class="small">Use <b>your name + TRACK</b> as the reference so we can tell campaign gifts apart.</p>
-          </article>
-{online("GlobalGiving", GLOBALGIVING_URL, "Give online from anywhere in the world, by card.", GG_NOTE)}
-{online("BackaBuddy", BACKABUDDY_URL, "Give online in South Africa.", BB_NOTE)}
+        <h2 id="give-title">Where are you giving from?</h2>
+        <div class="doors" role="tablist" aria-label="Where are you giving from?">
+          <button type="button" role="tab" id="tab-sa" aria-controls="door-sa" aria-selected="true">South Africa</button>
+          <button type="button" role="tab" id="tab-abroad" aria-controls="door-abroad" aria-selected="false">Outside South Africa</button>
         </div>
-        <p class="note-18a"><b>Section 18A.</b> STAND is a registered Public Benefit Organisation (PBO 930063426). South African gifts are tax-deductible. For a certificate, email <a href="mailto:info@standaction.co.za?subject=Section%2018A%20certificate">info@standaction.co.za</a> with your EFT reference.</p>
+
+        <div class="door" id="door-sa" role="tabpanel" aria-labelledby="tab-sa">
+          <div class="give-grid">
+            <article class="give-card give-card--snap">
+              <h3>SnapScan</h3>
+              <p>The quickest way to give from your phone. Tap the button, or scan the code with the SnapScan app on a computer. STAND never sees your card details.</p>
+              <a class="snap-badge" href="{a(SNAPSCAN_URL)}" target="_blank" rel="noopener"><img src="assets/stand/snapscan-badge.png" alt="SnapScan code: snap here to pay STAND" width="520" height="741" loading="lazy"></a>
+              <a class="btn btn--give" href="{a(SNAPSCAN_URL)}" target="_blank" rel="noopener">Give now with SnapScan</a>
+            </article>
+
+            <article class="give-card give-card--eft">
+              <h3>EFT (bank transfer)</h3>
+              <dl class="bank">
+                {copy_row("Account name", "Social Transformation Action Defined")}
+                {copy_row("Bank", "First National Bank (FNB)", copy=False)}
+                {copy_row("Account number", "62759591623")}
+                {copy_row("Branch code", "250655")}
+                {copy_row("Reference", "Your name + TRACK", copy=False)}
+              </dl>
+              <p class="small">Use <b>your name + TRACK</b> as the reference so we can tell campaign gifts apart.</p>
+            </article>
+{online("BackaBuddy", BACKABUDDY_URL, "Prefer to give by card? Give online through BackaBuddy.", BB_NOTE)}
+          </div>
+          <p class="note-18a"><b>Section 18A.</b> STAND is a registered Public Benefit Organisation (PBO 930063426), so South African gifts are tax-deductible. For a certificate, email <a href="mailto:info@standaction.co.za?subject=Section%2018A%20certificate">info@standaction.co.za</a> with your EFT reference or the date of your gift.</p>
+        </div>
+
+        <div class="door" id="door-abroad" role="tabpanel" aria-labelledby="tab-abroad">
+          <div class="give-grid">
+{online("GlobalGiving", GLOBALGIVING_URL, "Give securely in your own currency, by card, from anywhere in the world. You can also give monthly, and many employers match their staff's gifts.", GG_NOTE)}
+            <article class="give-card">
+              <h3>International bank transfer</h3>
+              <dl class="bank">
+                {copy_row("Account name", "Social Transformation Action Defined")}
+                {copy_row("Bank", "First National Bank (FNB), South Africa", copy=False)}
+                {copy_row("Account number", "62759591623")}
+                {copy_row("SWIFT", "FIRNZAJJ")}
+                {copy_row("Reference", "Your name + TRACK", copy=False)}
+              </dl>
+              <p class="small">Email <a href="mailto:info@standaction.co.za?subject=International%20gift">info@standaction.co.za</a> and we'll confirm when your gift arrives.</p>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 

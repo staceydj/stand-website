@@ -181,20 +181,36 @@
     a.href = 'https://wa.me/?text=' + encodeURIComponent(lead + '\n\n' + url);
   });
 
-  /* ---------- Land exactly on #section links ----------
-     Images and web fonts can change the page height after the browser has jumped
-     to an anchor. Re-align the target once they have settled. */
-  const settle = () => {
-    if (!location.hash || location.hash.length < 2) return;
+  /* ---------- Land exactly where a link points ----------
+     Every page sets its own position when it opens: the top of the page, or,
+     for a #section link, that section's heading just below the menu bar.
+     It re-aligns after photos and fonts settle, and does the same for links
+     within a page. */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const headingFor = (el) => (el.matches('h1, h2, h3') ? el : el.querySelector('h1, h2, h3')) || el;
+  const align = (hash, smooth) => {
     let el = null;
-    try { el = document.querySelector(decodeURIComponent(location.hash)); } catch (err) { return; }
-    if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (hash && hash.length > 1) {
+      try { el = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (err) { el = null; }
+    }
+    if (!el) { if (!hash || hash.length < 2) window.scrollTo({ top: 0, behavior: 'instant' }); return; }
+    const bar = nav ? nav.getBoundingClientRect().height : 0;
+    const top = headingFor(el).getBoundingClientRect().top + window.scrollY - bar - 20;
+    window.scrollTo({ top: Math.max(0, top), behavior: smooth && !reduceMotion ? 'smooth' : 'instant' });
   };
-  if (location.hash) {
-    const imgs = [...document.images].filter((i) => !i.complete);
-    imgs.forEach((i) => { i.loading = 'eager'; });
-    const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-    fonts.then(settle);
-    window.addEventListener('load', () => { settle(); setTimeout(settle, 250); });
-  }
+  const land = () => align(location.hash, false);
+  if (location.hash) document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
+  land();
+  if (document.fonts) document.fonts.ready.then(land);
+  window.addEventListener('load', () => { land(); setTimeout(land, 300); setTimeout(land, 1200); });
+  window.addEventListener('pageshow', (e) => { if (e.persisted) land(); });
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href*="#"]');
+    if (!a || a.target === '_blank') return;
+    const url = new URL(a.href, location.href);
+    if (url.pathname !== location.pathname || url.hash.length < 2 || !document.getElementById(url.hash.slice(1))) return;
+    e.preventDefault();
+    history.pushState(null, '', url.hash);
+    align(url.hash, true);
+  });
 })();

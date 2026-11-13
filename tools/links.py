@@ -11,3 +11,7 @@ SNAPSCAN_URL = "https://pos.snapscan.io/qr/XAGQiq-2"
 # Optional: the campaign video, once exported (for example "assets/video/track-her-case-16x9.mp4").
 CAMPAIGN_VIDEO = "assets/video/track-her-case-9x16.mp4"
 CAMPAIGN_VIDEO_POSTER = "assets/video/track-her-case-poster.jpg"
+
+# Optional: a 16 Days match. Fill both to show "Every gift doubled" on the campaign page.
+MATCH_NAME = ""      # for example "The XYZ Trust"
+MATCH_AMOUNT = ""    # for example "R50,000"

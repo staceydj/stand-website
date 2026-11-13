@@ -21,10 +21,10 @@ SPECIFIC = {
     "Substance-Related Harms": "work.html#harms",
     "Systems Strengthening": "work.html#systems",
     "Alternatives to Incarceration": "work.html#alternatives",
-    "Training and facilitation": "work.html#capabilities",
-    "Stakeholder convening": "work.html#capabilities",
-    "Research and assessment": "work.html#capabilities",
-    "Policy and technical writing": "work.html#capabilities",
+    "Training and facilitation": "work.html#training",
+    "Stakeholder convening": "work.html#convening",
+    "Research and assessment": "work.html#research",
+    "Policy and technical writing": "work.html#writing",
     "Partner with us": "support.html#partner",
     "Fund the work": "support.html#fund",
     "Collaborate": "support.html#collaborate",
@@ -341,35 +341,58 @@ work = hero(
     </section>
 
     <section class="band band--cream" id="capabilities" aria-labelledby="cap-title">
-      <div class="container split">
-        <div>
+      <div class="container">
+        <div class="head center">
           <h2 class="title reveal" id="cap-title">Technical capabilities across every programme</h2>
           <p class="lead reveal" style="margin-top:1rem">Cross-cutting services available to partners in any focus area.</p>
-          <div class="reveal" style="margin-top:2rem">
-          {ul(["Rapid assessment and situational analysis",
-               "Qualitative research and key-informant interviewing",
-               "Technical report writing and documentation",
-               "Training design and facilitation",
-               "Stakeholder engagement and convening",
-               "Strategic and institutional planning support",
-               "Monitoring, evaluation, and learning frameworks",
-               "Policy drafting and technical advocacy",
-               "Proposal and concept-note development",
-               "Capability statement and positioning document production"])}
+        </div>
+        <div class="caps">
+          <article class="cap reveal" id="training" aria-labelledby="training-title">
+            <img src="assets/art/icon-workshop.svg" alt="" aria-hidden="true">
+            <h3 id="training-title">Training design and facilitation</h3>
+            <p>STAND designs and facilitates training for law-enforcement, health, justice and social-services personnel, and for community ambassadors. Recent work includes the first regional Gender and Harm Reduction Workshop for INTERPOL and SARPCCO, with representatives from 11 SADC member states; two-day sensitisation training for Overstrand Law Enforcement and South African Police Service officers; and the training of 31 gender-based violence (GBV) ambassadors. Across her career, Stacey Doorly-Jones has trained and facilitated more than 3,500 people.</p>
+          </article>
+          <article class="cap reveal" id="convening" aria-labelledby="convening-title">
+            <img src="assets/art/icon-groups.svg" alt="" aria-hidden="true">
+            <h3 id="convening-title">Stakeholder engagement and convening</h3>
+            <p>We bring separate institutions to one table and keep them working together. For the Red Dot Process, STAND convened statutory partners through the Western Cape Violence Prevention Unit to map legal mandates, response timelines and handovers. We hosted the national dialogue for Harm Reduction International's South Africa rapid assessment, and convened <em>Decriminalisation of Drug Use: The Plight of the African Woman</em> at the 68th Commission on Narcotic Drugs in Vienna.</p>
+          </article>
+          <article class="cap reveal" id="research" aria-labelledby="research-title">
+            <img src="assets/art/icon-strategy.svg" alt="" aria-hidden="true">
+            <h3 id="research-title">Rapid assessment and qualitative research</h3>
+            <p>Rapid assessment and situational analysis, qualitative research and key-informant interviewing. STAND led the South Africa country rapid assessment of the impact of donor-funding withdrawal on harm reduction: 34 key-informant interviews, 128 desk reviews and a national dialogue. Its earlier community-based treatment work was run in research partnership with the South African Medical Research Council.</p>
+          </article>
+          <article class="cap reveal" id="writing" aria-labelledby="writing-title">
+            <img src="assets/art/icon-notes.svg" alt="" aria-hidden="true">
+            <h3 id="writing-title">Policy drafting and technical writing</h3>
+            <p>Technical reports, policy drafts, protocols, proposals and capability statements. Recent outputs include <em>Breaking Point: The Impact of US Funding Cuts on Harm Reduction in South Africa</em>; three published Divest/Invest country studies (South Africa, Mauritius and Ghana); the advocacy report <em>From Field Evidence to National Endorsement</em>, which secured written support from the National Department of Health; and the INTERPOL and SARPCCO report setting out ten regional recommendations.</p>
+          </article>
+        </div>
+        <div class="split" style="margin-top:clamp(3rem,6vw,5rem)">
+          <div class="reveal">
+            <h3 class="title" style="font-size:clamp(1.4rem,2.2vw,1.9rem)">Also available</h3>
+            <div style="margin-top:1.25rem">
+            {ul(["Monitoring, evaluation, and learning frameworks",
+                 "Strategic and institutional planning support",
+                 "Proposal and concept-note development",
+                 "Capability statement and positioning document production",
+                 "Technical report writing and documentation",
+                 "Policy drafting and technical advocacy"])}
+            </div>
+          </div>
+          <div class="photo-stack">
+            {fig("suicide-risk-training.jpg", "wide")}
+            {fig("wits-podium.jpg")}
           </div>
         </div>
-        <div class="photo-stack">
-          {fig("suicide-risk-training.jpg", "wide")}
-          {fig("wits-podium.jpg")}
+        <div class="photos" style="margin-top:clamp(3rem,6vw,5rem)">
+          {fig("training-2022.jpg")}
+          {fig("inhsu-delegate.jpg")}
+          {fig("hr25-panel-c.jpg")}
+          {fig("interpol-2025-group.jpg", caption="")}
+          {fig("inhsu-2025.jpg")}
+          {fig("hr25-sign.jpg", "tall")}
         </div>
-      </div>
-      <div class="container photos" style="margin-top:clamp(3rem,6vw,5rem)">
-        {fig("training-2022.jpg")}
-        {fig("inhsu-delegate.jpg")}
-        {fig("hr25-panel-c.jpg")}
-        {fig("interpol-2025-group.jpg", caption="")}
-        {fig("inhsu-2025.jpg")}
-        {fig("hr25-sign.jpg", "tall")}
       </div>
     </section>
 """ + cta(
@@ -706,6 +729,8 @@ def ways(ref="Your name, plus “donation”", cta="Give with SnapScan"):
           <article class="card reveal">
             <p class="for">SnapScan</p>
             <h3>The quickest way to give from your phone.</h3>
+            <p class="give-note"><b>Scan or tap to give</b>On your phone, tap the button. On a computer, scan the code with the SnapScan app. Payments are handled securely by SnapScan; STAND never sees your card details.</p>
+            <a class="snap-badge" href="{SNAPSCAN_URL}" target="_blank" rel="noopener"><img src="assets/stand/snapscan-badge.png" alt="SnapScan code: snap here to pay STAND" width="520" height="741" loading="lazy"></a>
             <a class="btn-pill" href="{SNAPSCAN_URL}" target="_blank" rel="noopener">{cta}</a>
           </article>
           {online_card("GlobalGiving", "Give online from anywhere in the world.", GLOBALGIVING_URL, "Give through GlobalGiving", GG_NOTE)}
