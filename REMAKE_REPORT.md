@@ -1,6 +1,6 @@
 # STAND homepage report (layout from the to-top.ch/en remake, STAND pictures and copy)
 
-Generated: 2026-11-13T14:05:27.955Z
+Generated: 2026-11-13T15:19:30.159Z
 
 | Result | Check | Detail |
 |---|---|---|

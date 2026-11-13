@@ -236,7 +236,7 @@ doc = f"""<!doctype html>
       <div class="wrap">
         <p class="eyebrow">What your gift does</p>
         <h2 id="gift-title">R150 keeps Track Her Case running for an hour</h2>
-        <p class="gift-lead">Every gift keeps the whole system running: the coordinator following each case, the ambassadors walking alongside women, and the partners making sure cases reach court.</p>
+        <p class="gift-lead">Every gift keeps the whole system running: the coordinator following each case, the training and transport that equip our volunteer ambassadors to walk alongside women, and the partners making sure cases reach court.</p>
         <div class="cur-switch" role="group" aria-label="Show amounts in">{cur_buttons}</div>
         {ladders}
         <p class="small cur-note">Because of the exchange rate, £20 or $25 becomes about R410 to R440 here, almost three hours of Track Her Case. Amounts in other currencies are approximate, at $1 = R16.43 (19 October 2026). The full year costs R1,230,870, everything included.</p>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<title>Track Her Case: Project Brief | STAND</title>
+<style>
+@font-face { font-family: "Poppins"; src: url("../../assets/fonts/poppins-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Poppins"; src: url("../../assets/fonts/poppins-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "Poppins"; src: url("../../assets/fonts/poppins-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Poppins"; src: url("../../assets/fonts/poppins-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+@page { size: A4; margin: 0; }
+:root { --teal: #0f7c80; --deep: #083b44; --ink: #16343a; --muted: #4f676c; --line: #d6e4e6; --tint: #eef8f8; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Poppins", Arial, sans-serif; color: var(--ink); font-size: 9.6pt; line-height: 1.5; }
+.page { width: 210mm; height: 297mm; padding: 13mm 15mm 20mm; position: relative; page-break-after: always; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 5mm; border-bottom: 2.5px solid var(--teal); }
+.kicker { font-size: 7.5pt; font-weight: 700; letter-spacing: .22em; color: var(--teal); text-transform: uppercase; margin: 0; }
+.top p.sub { margin: 1mm 0 0; font-size: 9.5pt; }
+.logo { width: 17mm; height: 17mm; border-radius: 3mm; background: var(--teal); display: grid; place-items: center; }
+.logo img { width: 12mm; }
+h1 { font-size: 25pt; line-height: 1.12; font-weight: 800; color: var(--deep); margin: 2mm 0 3mm; }
+h2 { font-size: 11.5pt; font-weight: 700; color: var(--teal); margin: 4.5mm 0 1.5mm; }
+p { margin: 0 0 2.5mm; }
+.lead { font-size: 11pt; color: var(--muted); }
+.cols { display: grid; grid-template-columns: 1fr 58mm; gap: 9mm; margin-top: 2mm; }
+.photo { width: 100%; height: 58mm; object-fit: cover; object-position: 50% 22%; border-radius: 3mm; display: block; }
+.stats { background: var(--teal); color: #fff; border-radius: 3mm; padding: 5mm; margin-top: 4mm; }
+.stats b { display: block; font-size: 17pt; font-weight: 800; line-height: 1.1; }
+.stats span { display: block; font-size: 8.5pt; margin-bottom: 4mm; opacity: .95; }
+.stats span:last-child { margin-bottom: 0; }
+.how img { width: 100%; border-radius: 3mm; border: 1px solid var(--line); display: block; }
+.foot { position: absolute; left: 15mm; right: 15mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 2.5mm; }
+table { width: 100%; border-collapse: collapse; margin-top: 1mm; }
+td { padding: 1.1mm 0; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 8.1pt; line-height: 1.35; }
+td.amt { text-align: right; font-weight: 700; white-space: nowrap; padding-left: 6mm; }
+td b { display: block; font-size: 9pt; color: var(--deep); }
+tr.sub td { font-weight: 700; color: var(--deep); }
+.total { display: flex; justify-content: space-between; background: var(--deep); color: #fff; font-weight: 800; font-size: 11.5pt; padding: 2.4mm 4mm; border-radius: 2mm; margin-top: 2mm; }
+.note { font-size: 8pt; color: var(--muted); margin-top: 2mm; }
+.fund { background: var(--deep); color: #fff; border-radius: 3mm; padding: 4mm 5mm; margin-top: 3.5mm; }
+.fund .kicker { color: #5fd3e3; }
+.fund h3 { font-size: 11.5pt; margin: 1.2mm 0 2.5mm; line-height: 1.3; }
+.ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+.ladder div { background: rgba(255,255,255,.1); border-radius: 2mm; text-align: center; padding: 1.8mm; }
+.ladder b { display: block; font-size: 13pt; color: #5fd3e3; }
+.ladder span { font-size: 8pt; }
+.fund p { font-size: 7.8pt; margin: 2.5mm 0 0; opacity: .9; }
+.miles { font-size: 8pt; margin-top: 2.5mm; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="top">
+    <div><p class="kicker">Project brief</p><p class="sub">Social Transformation Action Defined (STAND), South Africa</p></div>
+    <div class="logo"><img src="../../assets/stand/stand-mark-colour.png" alt="STAND"></div>
+  </div>
+  <p class="kicker" style="margin-top:7mm">Track Her Case</p>
+  <h1>Following every case of violence against women to justice</h1>
+  <p class="lead">A live case tracking system in the Overstrand, Western Cape, that follows each report through the police, hospitals, social services and the courts until it is resolved.</p>
+  <div class="cols">
+    <div>
+      <h2>The challenge</h2>
+      <p>South Africa has some of the strongest laws on gender-based violence in the world. The services exist and the mandates exist. What breaks is the handover between them.</p>
+      <p>A woman reports violence to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her. By the time a case reaches court it is often incomplete, and it is struck from the roll for want of clarity rather than merit.</p>
+      <p>These gaps fall hardest on marginalised and underserved women, who are the most likely to need every service at once.</p>
+      <h2>Our solution</h2>
+      <p>The Red Dot Process, designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS, runs on the municipality's existing Citizen App. Each case receives a private reference number, so no names are recorded, and every handover is mapped across police, prosecutors, the courts, health, social development and child protection services.</p>
+      <p>A community layer of 31 trained volunteer ambassadors supports survivors on the ground and helps them follow their cases through every service. We equip them with skills and practical support, including transport to get survivors to the police, clinics, social services and court.</p>
+    </div>
+    <div>
+      <img class="photo" src="../../assets/stand/ambassador-smile.jpg" alt="A Track Her Case ambassador">
+      <div class="stats">
+        <b>24 Aug 2026</b><span>System went live</span>
+        <b>3 days</b><span>Until the first case was dispatched to the police</span>
+        <b>31</b><span>Trained volunteer community ambassadors</span>
+        <b>130,000+</b><span>People living in the Overstrand</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>STAND NPC · PBO 930063426 · Section 18A tax-exempt · Level 1 B-BBEE</span><span>Page 1 of 3</span></div>
+</section>
+
+<section class="page">
+  <div class="top">
+    <div><p class="kicker">Project brief</p><p class="sub">Track Her Case</p></div>
+    <div class="logo"><img src="../../assets/stand/stand-mark-colour.png" alt="STAND"></div>
+  </div>
+  <h2 style="margin-top:7mm">How it works</h2>
+  <div class="how"><img src="../../assets/stand/tracking-process.jpg" alt="How we follow every case to justice"></div>
+  <h2>Why now</h2>
+  <p>South Africa has classified gender-based violence as a national disaster and committed billions to more social workers and courts. More services mean more handovers, and every handover is a place a case can be lost. Track Her Case is live and ready to scale; your gift keeps it running while institutional funding is secured.</p>
+  <h2>Long-term impact</h2>
+  <p>Every case followed to its outcome shows where the system holds and where it can be strengthened. Over time this builds a district-wide evidence base that helps police, prosecutors and health and social services work as one system, so more cases reach court complete and more women see justice.</p>
+  <h2>Who we are</h2>
+  <p>STAND is a women-led South African organisation working where justice, health and protection meet. Since 2018 we have trained more than 500 officials and practitioners, reached more than 700 women and community members directly, trained 29 INTERPOL officers from 11 Southern African states, and managed more than R16.9 million in donor funding, under an independent Board of Directors.</p>
+  <div class="foot"><span>STAND NPC · PBO 930063426 · Section 18A tax-exempt · Level 1 B-BBEE</span><span>Page 2 of 3</span></div>
+</section>
+
+<section class="page">
+  <div class="top">
+    <div><p class="kicker">Project brief</p><p class="sub">Track Her Case</p></div>
+    <div class="logo"><img src="../../assets/stand/stand-mark-colour.png" alt="STAND"></div>
+  </div>
+  <h2 style="margin-top:4mm;font-size:12.5pt;color:var(--deep)">What your support delivers: USD 75,000 for a full year of Track Her Case</h2>
+  <table>
+    <tr><td><b>Programme leadership and multi-sector coordination</b>Meetings, stakeholder engagement and manual case tracking across police, health, social services and the courts</td><td class="amt">$16,069</td></tr>
+    <tr class="new"><td><b>Training and skills development</b>Training for volunteer ambassadors, law enforcement and service providers</td><td class="amt">$15,674</td></tr>
+    <tr><td><b>Case tracing coordinator</b>Day-to-day follow-up of every case through each handover</td><td class="amt">$8,765</td></tr>
+    <tr><td><b>Analysis and endline report</b>Independent analysis of case outcomes and handover gaps</td><td class="amt">$6,087</td></tr>
+    <tr><td><b>Ambassador data</b>Mobile data so volunteer ambassadors can log and follow cases</td><td class="amt">$5,661</td></tr>
+    <tr class="new"><td><b>Fieldwork and community follow-up visits</b>Follow-up visits to survivors and communities across the Overstrand</td><td class="amt">$4,722</td></tr>
+    <tr class="new"><td><b>Survivor transport support</b>Transport so volunteer ambassadors can get survivors to the police, clinics, social services and court</td><td class="amt">$3,500</td></tr>
+    <tr class="new"><td><b>Travel</b>Travel across the Overstrand for coordination, follow-up and court support</td><td class="amt">$3,215</td></tr>
+    <tr><td><b>Awareness</b>Community information on how to use the system</td><td class="amt">$2,191</td></tr>
+    <tr><td><b>Independent audit</b>Annual audited financial statements</td><td class="amt">$1,826</td></tr>
+    <tr><td><b>Devices</b>Phones for volunteer ambassadors</td><td class="amt">$1,217</td></tr>
+    <tr class="sub"><td>Programme subtotal</td><td class="amt">$68,927</td></tr>
+    <tr><td><b>Platform and payment fees</b>Online giving and transfer costs (8% of gifts)</td><td class="amt">$5,994</td></tr>
+  </table>
+  <div class="total"><span>Total, 12 months</span><span>$74,921</span></div>
+  <p class="note">Converted at USD 1 = ZAR 16.43 (19 October 2026). Our 31 community ambassadors are volunteers: the budget equips them with training, data, phones and transport support rather than stipends. Programme leadership is the largest line by design: it covers the meetings, stakeholder engagement and manual tracking that keep every service working together.</p>
+  <div class="fund">
+    <p class="kicker">Fund the 16 Days · 25 November to 10 December 2026</p>
+    <h3>R150,000 keeps Track Her Case running for six weeks, through the festive season.</h3>
+    <div class="ladder">
+      <div><b>R150</b><span>an hour</span></div>
+      <div><b>R3,370</b><span>a day</span></div>
+      <div><b>R23,600</b><span>a week</span></div>
+      <div><b>R150,000</b><span>six weeks</span></div>
+    </div>
+    <p>The full year costs R1,230,870, everything included: about R140 an hour. From abroad, $25 or £20 becomes about R410 to R440.</p>
+  </div>
+  <p class="miles"><b>Milestones to USD 75,000 by 31 March 2027:</b> $20,000 by 30 November · $40,000 by 31 December · $52,000 by 31 January · $64,000 by 28 February · $75,000 by 31 March.</p>
+  <div class="foot"><span>Contact: Stacey Doorly-Jones, Founder and Chief Executive Officer · stacey@standaction.co.za</span><span>Page 3 of 3</span></div>
+</section>
+</body>
+</html>
