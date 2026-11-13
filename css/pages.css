@@ -533,3 +533,4 @@ ol.stages, ol.timeline { list-style: none; margin: 0; padding: 0; }
 .timeline a, .cap a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .profile .prose a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .timeline .btn-learn { margin-top: .75rem; display: inline-flex; }
+.btn-pill.is-pending { white-space: normal; text-align: center; max-width: 100%; line-height: 1.3; }

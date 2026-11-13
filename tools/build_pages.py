@@ -77,6 +77,10 @@ def page(slug, title, desc, body, current=None, share_img=None):
         head = head.replace('assets/social/stand-share.jpg', share_img)
     head = head.replace('<link rel="stylesheet" href="css/styles.css">', '<link rel="stylesheet" href="css/styles.css">\n  <link rel="stylesheet" href="css/pages.css">')
     nav = header
+    here = {"about.html": "About", "work.html": "Our work", "track-her-case.html": "Track Her Case", "board.html": "Board",
+            "founder.html": "Founder", "support.html": '<span class="here-long">Support the work</span><span class="here-short">Support</span>', "privacy.html": "Privacy"}.get(slug)
+    if here:  # shown beside the menu button when the tabs are folded away (laptops and phones)
+        nav = nav.replace('<button class="burger" id="burger"', f'<span class="nav-here" aria-hidden="true">{here}</span>\n        <button class="burger" id="burger"', 1)
     if current == "involved":
         nav = nav.replace('<button class="nav-toggle" aria-expanded="false" aria-controls="dd-involved"', '<button class="nav-toggle is-current" aria-expanded="false" aria-controls="dd-involved"', 1)
     elif current:

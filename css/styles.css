@@ -1692,3 +1692,30 @@ a.video-btn { text-decoration: none; text-align: center; }
 .contact-bar { text-align: left; }
 .contact-bar dl div { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.75rem; align-items: baseline; }
 @media (max-width: 700px) { .contact-bar > span { width: 100%; } }
+
+/* Where am I: the page name beside the menu button when the tabs are folded away */
+.nav-here { display: none; }
+@media (max-width: 1100px) {
+  .nav-here { display: inline-flex; align-items: center; padding: .45rem .95rem; border-radius: 40px; background: var(--yellow); color: var(--green-800); font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+  .nav.menu-open .nav-here { visibility: hidden; }
+}
+@media (max-width: 420px) {
+  .nav-here { font-size: .66rem; padding: .4rem .7rem; letter-spacing: .03em; }
+  .nav .brand-strap { font-size: .56rem; }
+  .nav-inner { gap: .6rem; }
+}
+@media (max-width: 420px) {
+  .nav .brand-strap { white-space: nowrap; font-size: .54rem; letter-spacing: .01em; }
+  .nav .brand-mark { width: 2.2rem; }
+  .nav .brand-wm { font-size: .98rem; }
+  .nav-logo { gap: .5rem; }
+  .nav-here { font-size: .6rem; padding: .38rem .6rem; letter-spacing: .02em; }
+  .nav-right { gap: .5rem; }
+  .burger { width: 2.75rem; height: 2.75rem; }
+}
+@media (max-width: 370px) {
+  .nav .brand-strap { font-size: .5rem; }
+  .nav-here { font-size: .55rem; padding: .35rem .5rem; }
+}
+.here-short { display: none; }
+@media (max-width: 370px) { .here-long { display: none; } .here-short { display: inline; } }

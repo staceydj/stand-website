@@ -187,6 +187,20 @@
      It re-aligns after photos and fonts settle, and does the same for links
      within a page. */
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  /* On the work page, a focus area lights up "Focus areas" rather than "Our work" */
+  const focusIds = ['focus-areas', 'justice', 'harms', 'systems', 'alternatives'];
+  const markFocus = () => {
+    if (!/work\.html$/.test(location.pathname)) return;
+    const focusLink = nav && nav.querySelector('.nav-link[href="work.html#focus-areas"]');
+    const workLink = nav && nav.querySelector('.nav-link[href="work.html"]');
+    if (!focusLink || !workLink) return;
+    const inFocus = focusIds.includes(location.hash.slice(1));
+    focusLink.toggleAttribute('aria-current', inFocus); if (inFocus) focusLink.setAttribute('aria-current', 'page');
+    workLink.toggleAttribute('aria-current', !inFocus); if (!inFocus) workLink.setAttribute('aria-current', 'page');
+    const here = nav.querySelector('.nav-here'); if (here) here.textContent = inFocus ? 'Focus areas' : 'Our work';
+  };
+  markFocus();
+  window.addEventListener('hashchange', markFocus);
   const headingFor = (el) => (el.matches('h1, h2, h3') ? el : el.querySelector('h1, h2, h3')) || el;
   const align = (hash, smooth) => {
     let el = null;
@@ -211,6 +225,7 @@
     if (url.pathname !== location.pathname || url.hash.length < 2 || !document.getElementById(url.hash.slice(1))) return;
     e.preventDefault();
     history.pushState(null, '', url.hash);
+    markFocus();
     align(url.hash, true);
   });
 })();
