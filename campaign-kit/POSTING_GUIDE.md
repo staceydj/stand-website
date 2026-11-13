@@ -12,12 +12,14 @@ Every post points to one link: **standaction.co.za/give**. It opens the campaign
 | `STAND_TrackHerCase_main_1x1.mp4` (82s) | LinkedIn, Facebook feed, X |
 | `STAND_TrackHerCase_teaser_9x16.mp4` (24s) | WhatsApp Status, Instagram and Facebook Stories |
 | `STAND_TrackHerCase_teaser_1x1.mp4` (24s) | X, LinkedIn reminders, paid boosts |
+| `STAND_TrackHerCase_long_16x9.mp4` (2 min 15s) | YouTube (the full story), the website, presentations |
+| `STAND_TrackHerCase_gg_16x9.mp4` (57s) | Your GlobalGiving project page (upload to YouTube, then paste the link into GlobalGiving) |
 | `STAND_TrackHerCase_post_1080x1080.jpg` | Instagram, Facebook and LinkedIn image posts |
 | `STAND_TrackHerCase_post_1080x1350.jpg` | Instagram portrait post (fills more of the feed) |
 | `STAND_TrackHerCase_story_1080x1920.jpg` | Stories and WhatsApp Status, with the QR code |
 | `STAND_TrackHerCase_link-preview_1200x630.jpg` | The link preview card (already set on the website) |
 
-Every film has burned-in captions, because most people watch with the sound off. Each ends with a Give now card, the link and a QR code.
+Every film has burned-in captions, because most people watch with the sound off, and a small STAND watermark so it stays yours when it is reposted. Each ends with a Give now card, the link and a QR code.
 
 ## WhatsApp
 
@@ -27,7 +29,7 @@ Every film has burned-in captions, because most people watch with the sound off.
 >
 > Two women I know asked for help. The system sent them both home. So we built something. Track Her Case follows every reported case of violence against women in the Overstrand, from the first report all the way to court.
 >
-> It is live and it is working. R150 keeps a trained ambassador on duty for a day.
+> It is live and it is working. During the 16 Days of Activism we're raising R150,000 to keep it running through the festive season. R150 keeps it running for an hour.
 >
 > Watch, give or share: https://standaction.co.za/give
 

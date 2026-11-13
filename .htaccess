@@ -1,0 +1,34 @@
+# STAND website: settings for xneelo (Apache)
+
+# Always use the secure address (https)
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Open the homepage at the domain root
+DirectoryIndex index.html
+
+# The campaign progress number must never be cached
+<Files "progress.txt">
+  Header set Cache-Control "no-store"
+</Files>
+
+# Video and fonts
+AddType video/mp4 .mp4
+AddType font/woff2 .woff2
+
+# Cache images, fonts and video for a week; pages stay fresh
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Compress text files
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
