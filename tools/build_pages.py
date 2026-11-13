@@ -180,7 +180,7 @@ about = hero(
           </div>
         </div>
         <div class="photo-stack">
-          {fig("training-2020-a.jpg", "wide", label="STAND training", caption="Training and facilitation in practice.")}
+          {fig("le-training-stand.jpg", "wide", label="STAND training in practice")}
           {fig("hr-session.jpg", "wide")}
         </div>
       </div>
