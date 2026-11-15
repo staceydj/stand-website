@@ -432,7 +432,7 @@ trace = hero(
           <h2 class="title reveal" id="dot-title">The Red Dot Process: live and working in the Overstrand</h2>
           <div class="reveal" style="margin-top:1.5rem">
             <p>The Red Dot Process is the working pilot of Track Her Case, operating now in the Overstrand.</p>
-            <p>Designed by STAND in collaboration with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS, the Red Dot Process is a seven-stage, privacy-conscious GBV track-and-trace workflow built onto Overstrand Municipality's existing Citizen App. The GBV reporting function went live on 24 August 2026. The first incident was dispatched to law enforcement (the South African Police Service) on 27 August 2026.</p>
+            <p>Designed by STAND in collaboration with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and Aidsfonds, the Red Dot Process is a seven-stage, privacy-conscious GBV track-and-trace workflow built onto Overstrand Municipality's existing Citizen App. The GBV reporting function went live on 24 August 2026. The first incident was dispatched to law enforcement (the South African Police Service) on 27 August 2026.</p>
           </div>
         </div>
         <div class="phones">
@@ -480,7 +480,7 @@ trace = hero(
             <div class="stat"><b>130,000+</b><span>People living in the Overstrand</span></div>
           </div>
         </div>
-        <p class="center reveal" style="margin-top:2rem;font-weight:600">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS.</p>
+        <p class="center reveal" style="margin-top:2rem;font-weight:600">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and Aidsfonds.</p>
         <div class="photos" style="margin-top:clamp(2.5rem,5vw,4rem)">
           {fig("redot-focus-group.jpg", "wide")}
           {fig("ambassadors-certificates.jpg", "wide")}
@@ -514,7 +514,7 @@ trace = hero(
         <div class="prose reveal">
           <p>The Red Dot Process is live in the Overstrand and dispatched its first case three days after launch. Phase 1 is built and running, and the back end is ready for the next step. Phase 2 takes it across the whole district, and that is where funding partners come in. With the right support, it scales.</p>
           <h3>What we are seeking</h3>
-          <p>Track Her Case is the vision the Red Dot Process proves: a model that any district can adopt to make GBV response visible, coordinated, and accountable, without new systems or new mandates. The pilot is working. The method is documented. The next step is scale.</p>
+          <p>Track Her Case is the vision the Red Dot Process is putting into practice: a model that any district can adopt to make GBV response visible, coordinated, and accountable, without new systems or new mandates. The pilot is working. The method is documented. The next step is scale.</p>
           <p>We are seeking grantmakers, funders, corporate social investment partners and individual supporters to carry this across the Global South, beginning with Phase 2 of the Overstrand rollout and extending into new districts.</p>
         </div>
       </div>
@@ -821,7 +821,7 @@ support = hero(
       <div class="container">
         <div class="head center"><h2 class="title reveal" id="partners-title">Who we work alongside</h2></div>
         <div class="cards cards--plain">
-          <article class="card reveal"><h3>Funders and commissioning partners</h3>{ul(["UN Office on Drugs & Crime", "Netherlands Ministry of Foreign Affairs", "DG Murray Trust", "AIDSFONDS", "Elton John AIDS Foundation", "Graham & Rhona Beck Development Trust", "Harm Reduction International"])}</article>
+          <article class="card reveal"><h3>Funders and commissioning partners</h3>{ul(["UN Office on Drugs & Crime", "Netherlands Ministry of Foreign Affairs", "DG Murray Trust", "Aidsfonds", "Elton John AIDS Foundation", "Graham & Rhona Beck Development Trust", "Harm Reduction International"])}</article>
           <article class="card reveal"><h3>Research and delivery partners</h3>{ul(["University of Cape Town", "SA Medical Research Council", "Open Society Foundations", "Harm Reduction International", "United Nations Office on Drugs and Crime", "SANPUD"])}</article>
           <article class="card reveal"><h3>Government partners we work alongside</h3>{ul(["National Department of Health", "Western Cape Department of Health and Wellness", "National and Western Cape Departments of Social Development", "Department of Justice", "National Prosecuting Authority", "South African Police Service, including the FCS units", "Western Cape Violence Prevention Unit", "Overstrand Municipality", "INTERPOL Regional Bureau for Southern Africa and SARPCCO", "Drug Enforcement Commission, Zambia"])}</article>
         </div>
@@ -835,7 +835,7 @@ support = hero(
 """ + cta(
     "Pass it on",
     "Sharing costs nothing and reaches people we never could alone.",
-    ['<a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/give" data-share-text="Two women asked for help. The system sent them both home.&#10;&#10;So we built Track Her Case. Every reported case of violence against a woman in the Overstrand is now followed through the police, health, social services and the courts, until it is resolved. It is live and it is working.&#10;&#10;This 16 Days of Activism, help us keep it running. R150 keeps it going for an hour.&#10;&#10;Watch the 90-second film and give:" target="_blank" rel="noopener">Share on WhatsApp</a>',
+    ['<a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/give" data-share-text="💙 When a woman asks for help, the system should answer.&#10;&#10;Too often in South Africa, a woman&#x27;s case gets lost between the police station, the hospital and the court. Track Her Case, live in the Overstrand, gives every case a private tracking number and follows it all the way to justice.&#10;&#10;During the 16 Days of Activism we&#x27;re raising R150,000 to keep it running through the festive season, the most dangerous time of year for women.&#10;&#10;🇿🇦 R150 keeps it running for an hour&#10;🌍 Abroad? $10 or £8 goes much further here&#10;&#10;Please forward this to one person 🙏🏽" target="_blank" rel="noopener">Share on WhatsApp</a>',
      pill("index.html#contact", "Send an enquiry", ghost=True)],
     small="You don't have to be an institution to move this. Individuals can back the work directly and help a live system reach more women.",
 )

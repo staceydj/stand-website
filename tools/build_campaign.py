@@ -23,7 +23,14 @@ SHORT_URL = "standaction.co.za/give"
 TITLE = "When a woman asks for help, the system should answer."
 DESC = ("Track Her Case follows every reported case of violence against women in the Overstrand "
         "through police, health, social services and the courts. Give now and pass it on.")
-WA_TEXT = ("Two women asked for help. The system sent them both home.\n\nSo we built Track Her Case. Every reported case of violence against a woman in the Overstrand is now followed through the police, health, social services and the courts, until it is resolved. It is live and it is working.\n\nThis 16 Days of Activism, help us keep it running. R150 keeps it going for an hour.\n\nWatch the 90-second film and give: https://standaction.co.za/give")
+WA_TEXT = ("\U0001F499 When a woman asks for help, the system should answer.\n\n"
+           "Too often in South Africa, a woman's case gets lost between the police station, the hospital and the court. "
+           "Track Her Case, live in the Overstrand, gives every case a private tracking number and follows it all the way to justice.\n\n"
+           "During the 16 Days of Activism we're raising R150,000 to keep it running through the festive season, "
+           "the most dangerous time of year for women.\n\n"
+           "\U0001F1FF\U0001F1E6 R150 keeps it running for an hour\n\U0001F30D Abroad? $10 or \u00a38 goes much further here\n\n"
+           "standaction.co.za/give\n\n"
+           "Please forward this to one person \U0001F64F\U0001F3FD")
 GOAL = 150000
 SOCIAL_TEXT = "When a woman asks for help, the system should answer. Back Track Her Case:"
 
@@ -197,6 +204,7 @@ doc = f"""<!doctype html>
           <p>South Africa has some of the strongest laws on gender-based violence (GBV) in the world. What fails is the handover between services. A woman reports to the police and her case stalls before it reaches the prosecutor. She is referred for medical care and social services never hear of her.</p>
           <p>Track Her Case closes those gaps. Each case gets a private tracking number, so no names are shared, and every handover is followed to the end.</p>
         </div>
+        <p class="why-now"><b>Why this December.</b> The festive season is the most dangerous time of year for women in South Africa, and it is when the Overstrand is at its fullest. Violence against women happens behind every kind of front door: in farmhouses and townhouses, holiday homes and family homes. If you live here, holiday here or have family here, this is your community.</p>
         <p class="why-now"><b>Why now.</b> South Africa has classified gender-based violence as a national disaster and committed billions to fight it. More social workers, more courts and more care centres mean more handovers, and every handover is a place where a woman's case can be lost. Track Her Case makes sure it isn't.</p>
         <figure class="wide-photo">
           <img src="assets/stand/ambassadors-certificates-colour.jpg" alt="Track Her Case ambassadors holding their certificates with the Western Cape Department of Social Development" width="1930" height="710" loading="lazy">
@@ -205,7 +213,7 @@ doc = f"""<!doctype html>
         <ul class="proof" aria-label="Proof it works">
           <li><b>24 Aug</b><span>Live in the Overstrand since 24 August 2026</span></li>
           <li><b>3 days</b><span>From going live to the first case dispatched to the police</span></li>
-          <li><b>31</b><span>Trained community ambassadors</span></li>
+          <li><b>31</b><span>Trained volunteer community ambassadors</span></li>
           <li><b>130,000+</b><span>People living in the Overstrand</span></li>
         </ul>
       </div>
@@ -229,7 +237,7 @@ doc = f"""<!doctype html>
         {slide("ambassador-training.jpg", "STAND's community GBV response training, multi-sectoral referral networking.")}
       </div>
       <p class="wrap swipe-hint" aria-hidden="true">Swipe for more &rarr;</p>
-      <p class="wrap credit">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS.</p>
+      <p class="wrap credit">Designed by STAND with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and Aidsfonds.</p>
     </section>
 
     <section class="sec" id="gift" aria-labelledby="gift-title">
@@ -245,6 +253,24 @@ doc = f"""<!doctype html>
           <p><b>R3,370</b>, about <b>$205</b>, <b>£155</b> or <b>€185</b>, keeps Track Her Case running for a full day. Choose your date and, if you'd like, we'll thank you publicly on it.</p>
           <a class="btn btn--give btn--sm" href="mailto:info@standaction.co.za?subject=Sponsor%20a%20day%20of%20Track%20Her%20Case">Sponsor a day</a>
         </aside>
+        <div class="money">
+          <div>
+            <h3>How your money is used</h3>
+            <ul class="ticks">
+              <li>A case coordinator who follows every case and steps in when something stalls</li>
+              <li>Programme leadership that keeps police, prosecutors, health and social services working together</li>
+              <li>Support for our volunteer ambassadors: training, phones, data and transport to get women to the police, clinics, social services and court</li>
+              <li>Training for police and service providers, and community awareness so women know how to reach help</li>
+              <li>Independent analysis of outcomes, and an annual independent audit</li>
+            </ul>
+            <p class="small">Our ambassadors are volunteers: there are no stipends. STAND is lean and senior-led by design.</p>
+          </div>
+          <div>
+            <h3>Built to scale</h3>
+            <p>Track Her Case runs on systems that already exist: the municipality's app, the police docket, the hospital record and the court roll. So it can be taken into a new district without building anything new.</p>
+            <p><b>Phase 1</b> is built and live in the Overstrand. <b>Phase 2</b> takes it across the Overberg district, and the Western Cape Violence Prevention Unit has confirmed its support for extending the work into other priority areas. Your gift keeps a working system running this December, and builds the case for every district that needs it.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -313,6 +339,7 @@ doc = f"""<!doctype html>
           <a href="{a(mail_href)}">Email</a>
           <button type="button" data-copy="{PAGE_URL}">Copy link</button>
         </div>
+        <p class="small" style="margin-top:1.25rem">Helping us spread the word? <a href="share/">Get the WhatsApp share kit</a>: ready-made messages and Status images.</p>
       </div>
     </section>
   </main>

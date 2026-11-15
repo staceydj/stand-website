@@ -79,7 +79,7 @@ Upload the square film natively (videos uploaded to LinkedIn reach more people t
 
 > Gender-based violence systems rarely fail at the policy. They fail at the handover.
 >
-> In the Overstrand, STAND built Track Her Case with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and AIDSFONDS. Every case gets a non-identifying tracking number, and every handover between police, health, social services and the courts is visible. The first case was dispatched to the police three days after launch.
+> In the Overstrand, STAND built Track Her Case with Overstrand Municipality and the Overberg Violence Prevention Unit, with the support of the DG Murray Trust and Aidsfonds. Every case gets a non-identifying tracking number, and every handover between police, health, social services and the courts is visible. The first case was dispatched to the police three days after launch.
 >
 > Phase 2 takes it across the district. If you fund, partner or simply care, the link is here: https://standaction.co.za/give
 >
