@@ -93,4 +93,29 @@
       requestAnimationFrame(() => { bar.firstElementChild.style.width = Math.min(100, (raised / goal) * 100) + '%'; });
     }).catch(() => {});
   }
+
+  /* ---------- Giving links from giving-links.txt ----------
+     Buttons waiting for a GlobalGiving or BackaBuddy link switch on as soon as
+     the link is pasted into giving-links.txt on the server. No rebuild needed. */
+  (() => {
+    const waiting = [...document.querySelectorAll('[data-giving]')];
+    if (!waiting.length || !window.fetch) return;
+    const allowed = { GlobalGiving: /^https:\/\/(www\.)?globalgiving\.org\//i, BackaBuddy: /^https:\/\/(www\.)?backabuddy\.co\.za\//i };
+    fetch('giving-links.txt', { cache: 'no-store' }).then((r) => (r.ok ? r.text() : '')).then((txt) => {
+      const links = {};
+      String(txt).split(/\r?\n/).forEach((line) => {
+        const m = line.match(/^\s*(GlobalGiving|BackaBuddy)\s*:\s*(\S+)\s*$/i);
+        if (m) links[m[1].toLowerCase()] = m[2];
+      });
+      waiting.forEach((el) => {
+        const name = el.dataset.giving;
+        const url = links[name.toLowerCase()];
+        if (!url || !(allowed[name] || /^https:\/\//).test(url)) return;
+        const a = document.createElement('a');
+        a.className = el.dataset.liveClass; a.href = url; a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = el.dataset.liveLabel;
+        el.replaceWith(a);
+      });
+    }).catch(() => {});
+  })();
 })();

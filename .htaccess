@@ -9,9 +9,9 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 DirectoryIndex index.html
 
 # The campaign progress number must never be cached
-<Files "progress.txt">
+<FilesMatch "^(progress|giving-links)\.txt$">
   Header set Cache-Control "no-store"
-</Files>
+</FilesMatch>
 
 # Video and fonts
 AddType video/mp4 .mp4

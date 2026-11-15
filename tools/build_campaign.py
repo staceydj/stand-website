@@ -62,7 +62,8 @@ def online(name, url, blurb, note):
     if url:
         btn = f'<a class="btn btn--give" href="{a(url)}" target="_blank" rel="noopener">Give through {e(name)}</a>'
     else:
-        btn = f'<span class="btn btn--pending" aria-disabled="true">{e(name)} link coming soon</span>'
+        btn = (f'<span class="btn btn--pending" aria-disabled="true" data-giving="{e(name)}" '
+               f'data-live-class="btn btn--give" data-live-label="Give through {e(name)}">{e(name)} link coming soon</span>')
     return f"""
           <article class="give-card">
             <h3>{e(name)}</h3>

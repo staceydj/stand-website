@@ -714,7 +714,8 @@ def online_card(name, text, url, label, note=""):
     if url:
         btn = f'<a class="btn-pill" href="{url}" target="_blank" rel="noopener">{e(label)}</a>'
     else:  # until the page link is pasted in above
-        btn = f'<span class="btn-pill is-pending" aria-disabled="true">{e(name)} page opening soon</span>'
+        btn = (f'<span class="btn-pill is-pending" aria-disabled="true" data-giving="{e(name)}" '
+               f'data-live-class="btn-pill" data-live-label="{e(label)}">{e(name)} page opening soon</span>')
     return f'<article class="card reveal"><p class="for">{e(name)}</p><h3>{e(text)}</h3>{nt}{btn}</article>'
 
 
