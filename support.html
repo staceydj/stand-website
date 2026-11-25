@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="assets/stand/webclip.png">
   <link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/pages.css?v=20261116b">
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body class="page">
@@ -151,15 +151,15 @@
           <p class="lead reveal">Give in the way that suits you. All South African giving is Section 18A tax-deductible (PBO 930063426).</p>
         </div>
         <div class="ways">
-          <article class="card reveal">
+          <article class="card reveal" data-card-link>
             <p class="for">SnapScan</p>
             <h3>The quickest way to give from your phone.</h3>
+            <a class="btn-pill" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a>
             <p class="give-note"><b>Scan or tap to give</b>On your phone, tap the button. On a computer, scan the code with the SnapScan app. Payments are handled securely by SnapScan; STAND never sees your card details.</p>
             <a class="snap-badge" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener"><img src="assets/stand/snapscan-badge.png" alt="SnapScan code: snap here to pay STAND" width="520" height="741" loading="lazy"></a>
-            <a class="btn-pill" href="https://pos.snapscan.io/qr/XAGQiq-2" target="_blank" rel="noopener">Give with SnapScan</a>
           </article>
-          <article class="card reveal"><p class="for">GlobalGiving</p><h3>Give online from anywhere in the world.</h3><p class="give-note"><b>Tax relief by country</b>GlobalGiving is a US 501(c)(3) charity (EIN 30-0108263), so gifts are tax-deductible for US taxpayers. UK taxpayers giving in pounds can add Gift Aid at checkout (an extra 25p for every £1). Donors in Belgium, Bulgaria, France, Germany, Greece, Hungary, Italy, Spain and Switzerland can claim local relief through Transnational Giving Europe. Gifts in euros, Canadian or Australian dollars are generally not deductible; Canadian donors may qualify under the Canada-US tax treaty. Check with your tax adviser.</p><span class="btn-pill is-pending" aria-disabled="true" data-giving="GlobalGiving" data-live-class="btn-pill" data-live-label="Give through GlobalGiving">GlobalGiving page opening soon</span></article>
-          <article class="card reveal"><p class="for">BackaBuddy</p><h3>Give online in South Africa.</h3><p class="give-note"><b>Section 18A</b>South African donors can request a Section 18A tax certificate from STAND. Email <a href="mailto:info@standaction.co.za">info@standaction.co.za</a> with your name and the date of your gift.</p><span class="btn-pill is-pending" aria-disabled="true" data-giving="BackaBuddy" data-live-class="btn-pill" data-live-label="Give through BackaBuddy">BackaBuddy page opening soon</span></article>
+          <article class="card reveal" data-card-link><p class="for">GlobalGiving</p><h3>Give online from anywhere in the world.</h3><span class="btn-pill is-pending" aria-disabled="true" data-giving="GlobalGiving" data-live-class="btn-pill" data-live-label="Give through GlobalGiving">GlobalGiving page opening soon</span><p class="give-note"><b>Tax relief by country</b>GlobalGiving is a US 501(c)(3) charity (EIN 30-0108263), so gifts are tax-deductible for US taxpayers. UK taxpayers giving in pounds can add Gift Aid at checkout (an extra 25p for every £1). Donors in Belgium, Bulgaria, France, Germany, Greece, Hungary, Italy, Spain and Switzerland can claim local relief through Transnational Giving Europe. Gifts in euros, Canadian or Australian dollars are generally not deductible; Canadian donors may qualify under the Canada-US tax treaty. Check with your tax adviser.</p></article>
+          <article class="card reveal" data-card-link><p class="for">BackaBuddy</p><h3>Give online in South Africa.</h3><span class="btn-pill is-pending" aria-disabled="true" data-giving="BackaBuddy" data-live-class="btn-pill" data-live-label="Give through BackaBuddy">BackaBuddy page opening soon</span><p class="give-note"><b>Section 18A</b>South African donors can request a Section 18A tax certificate. SARS now requires your ID or registration number and your income tax reference number before we can issue one. <a href="#section-18a">See what you need to provide</a>.</p></article>
           <article class="card reveal ways-eft">
             <p class="for">EFT (bank transfer)</p>
             <dl class="bank">
@@ -171,12 +171,30 @@
               <div><dt>Reference</dt><dd>Your name, plus “donation”</dd></div>
             </dl>
             <p class="give-note"><b>International donors</b>You can give by international bank transfer using the SWIFT code in the EFT details. Email us and we will confirm receipt.</p>
-            <p class="give-note">For a South African Section 18A certificate, email <a href="mailto:info@standaction.co.za">info@standaction.co.za</a> with your EFT reference.</p>
+            <p class="give-note">For a South African Section 18A certificate, <a href="#section-18a">see what SARS requires</a> and keep your EFT reference.</p>
           </article>
 
         </div>
       </div>
     </section>
+
+    <section class="band band--cream2" id="section-18a" aria-labelledby="s18a-title">
+      <div class="container">
+        <div class="head center">
+          <p class="eyebrow reveal">For South African donors</p>
+          <h2 class="title reveal" id="s18a-title">Section 18A tax certificates</h2>
+          <p class="lead reveal" style="margin-top:1rem">STAND is a registered Public Benefit Organisation (PBO 930063426), so South African donations are tax-deductible. Since 1 March 2026, SARS requires more information on every Section 18A certificate, and we report each certificate to SARS. We cannot issue a certificate without these details.</p>
+        </div>
+        <div class="cards cards--plain s18a-cards">
+          <article class="card reveal"><h3>Individuals</h3><ul class="ticks"><li>Full name, as it appears on your ID or passport</li><li>South African ID number, or passport number and country of issue</li><li>SARS income tax reference number</li><li>Physical or postal address</li><li>Contact number and email address</li></ul></article>
+          <article class="card reveal"><h3>Companies, close corporations and trusts</h3><ul class="ticks"><li>Registered name, and trading name if different</li><li>Company or trust registration number</li><li>SARS income tax reference number</li><li>Physical or postal address</li><li>Contact person, contact number and email address</li></ul></article>
+          <article class="card reveal"><h3>About your donation</h3><ul class="ticks"><li>Date of the donation</li><li>Amount in rand</li><li>How you gave (EFT, SnapScan or BackaBuddy)</li><li>Your payment reference</li><li>For goods or assets: a description, the value and proof of value</li></ul></article>
+        </div>
+        <div class="actions center reveal" style="justify-content:center"><a class="btn-pill" href="mailto:info@standaction.co.za?subject=Section%2018A%20certificate%20request&amp;body=Please%20issue%20a%20Section%2018A%20tax%20certificate%20for%20my%20donation%20to%20STAND.%0A%0ADonor%20type%20%28individual%2C%20company%2C%20trust%20or%20other%29%3A%0AFull%20name%2C%20or%20registered%20name%20for%20a%20company%20or%20trust%3A%0ATrading%20name%20%28if%20different%29%3A%0ASouth%20African%20ID%20number%2C%20or%20passport%20number%20and%20country%20of%20issue%20%28individuals%29%3A%0ACompany%20or%20trust%20registration%20number%20%28companies%20and%20trusts%29%3A%0ASARS%20income%20tax%20reference%20number%3A%0APhysical%20or%20postal%20address%3A%0AContact%20number%3A%0AEmail%20address%3A%0A%0ADate%20of%20donation%3A%0AAmount%20%28R%29%3A%0AHow%20I%20gave%20%28EFT%2C%20SnapScan%20or%20BackaBuddy%29%20and%20payment%20reference%3A%0A%0AI%20confirm%20these%20details%20are%20correct.%20I%20consent%20to%20STAND%20processing%20them%20and%20reporting%20them%20to%20SARS%2C%20as%20Section%2018A%20requires.">Request your certificate</a></div>
+        <p class="center small reveal s18a-note">The button opens an email with every field listed, ready to fill in. Your details are used only to issue your certificate and to report it to SARS, as the law requires. See our <a href="privacy.html">Privacy and terms</a>.</p>
+      </div>
+    </section>
+
 
     <section class="band band--cream" aria-labelledby="partners-title">
       <div class="container">
@@ -199,7 +217,7 @@
       <div class="container">
         <h2 class="title reveal" id="cta-title">Pass it on</h2>
         <p class="lead reveal">Sharing costs nothing and reaches people we never could alone.</p>
-        <div class="actions reveal"><a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/give" data-share-text="💙 When a woman asks for help, the system should answer.&#10;&#10;Too often in South Africa, a woman&#x27;s case gets lost between the police station, the hospital and the court. Track Her Case, live in the Overstrand, gives every case a private tracking number and follows it all the way to justice.&#10;&#10;During the 16 Days of Activism we&#x27;re raising R150,000 to keep it running through the festive season, the most dangerous time of year for women.&#10;&#10;🇿🇦 R150 keeps it running for an hour&#10;🌍 Abroad? $10 or £8 goes much further here&#10;&#10;Please forward this to one person 🙏🏽" target="_blank" rel="noopener">Share on WhatsApp</a><a class="btn-ghost" href="index.html#contact">Send an enquiry</a></div>
+        <div class="actions reveal"><a class="btn-pill" href="https://wa.me/" data-share-wa data-share-url="https://standaction.co.za/campaign.html?s=wa" data-share-text="💙 When a woman asks for help, the system should answer.&#10;&#10;Too often in South Africa, a woman&#x27;s case gets lost between the police station, the hospital and the court. Track Her Case, live in the Overstrand, gives every case a private tracking number and follows it all the way to justice.&#10;&#10;During the 16 Days of Activism we&#x27;re raising R150,000 to keep it running through the festive season, the most dangerous time of year for women.&#10;&#10;🇿🇦 R150 keeps it running for an hour&#10;🌍 Abroad? $10 or £8 goes much further here&#10;&#10;Please forward this to one person 🙏🏽" target="_blank" rel="noopener">Share on WhatsApp</a><a class="btn-ghost" href="index.html#contact">Send an enquiry</a></div>
         <p class="small">You don't have to be an institution to move this. Individuals can back the work directly and help a live system reach more women.</p>
       </div>
     </section>
@@ -258,7 +276,7 @@
           <a href="https://linkedin.com/company/standactionza" target="_blank" rel="noopener" aria-label="STAND on LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></svg>
           </a>
-          <a href="https://www.facebook.com/standactionza" target="_blank" rel="noopener" aria-label="STAND on Facebook">
+          <a href="https://www.facebook.com/standaction" target="_blank" rel="noopener" aria-label="STAND on Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1.3 1.4-1.3H17V2.2C16.3 2.1 15.3 2 14.3 2 11.9 2 10.4 3.5 10.4 6.2v2.3H8v3.6h2.4V22H14v-9.9h2.7l.4-3.6z"/></svg>
           </a>
           <a href="https://instagram.com/standactionza" target="_blank" rel="noopener" aria-label="STAND on Instagram">
@@ -272,7 +290,7 @@
           </a>
         </div>
         <div class="legal">
-          <span>&copy; 2026 STAND | Social Transformation Action Defined NPC</span>
+          <span>&copy; 2026 STAND (Social Transformation Action Defined NPC). All rights reserved.</span>
           <span>PBO No. 930063426 | Section 18A | Level 1 B-BBEE</span>
           <a href="privacy.html">Privacy and terms</a>
         </div>
@@ -285,6 +303,6 @@
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 10l6-6 6 6" stroke="currentColor" stroke-width="2"/></svg>
   </a>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20261116b" defer></script>
 </body>
 </html>

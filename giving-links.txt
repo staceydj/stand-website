@@ -1,2 +1,2 @@
-GlobalGiving:
-BackaBuddy:
+GlobalGiving: https://www.globalgiving.org/projects/tractrack-gender-based-violence-cases-in-south-africa/
+BackaBuddy: https://www.backabuddy.co.za/campaign/when-she-asks-for-help-the-system-should-answer

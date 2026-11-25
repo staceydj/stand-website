@@ -173,12 +173,12 @@
     });
   });
   /* ---------- WhatsApp share ----------
-     The message is a pull phrase plus the page's public link. WhatsApp builds the
-     preview card (image, title, description) from that page's og: tags. */
+     The link goes first, so WhatsApp builds the picture card (image, title,
+     description) from that page's og: tags and shows it above the message. */
   document.querySelectorAll('[data-share-wa]').forEach((a) => {
     const url = a.dataset.shareUrl || window.location.href.split('#')[0];
     const lead = a.dataset.shareText || 'STAND works where justice, health, protection and implementation meet.';
-    a.href = 'https://wa.me/?text=' + encodeURIComponent(lead + (/[:\s]$/.test(lead) ? ' ' : '\n\n') + url);
+    a.href = 'https://wa.me/?text=' + encodeURIComponent(url + '\n\n' + lead);
   });
 
   /* ---------- Land exactly where a link points ----------
@@ -212,9 +212,18 @@
     const top = headingFor(el).getBoundingClientRect().top + window.scrollY - bar - 20;
     window.scrollTo({ top: Math.max(0, top), behavior: smooth && !reduceMotion ? 'smooth' : 'instant' });
   };
-  const land = () => align(location.hash, false);
+  /* Keep the landing spot steady while photos and fonts arrive on a slow
+     connection, until the visitor starts scrolling themselves. */
+  let userMoved = false;
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => window.addEventListener(ev, () => { userMoved = true; }, { passive: true, once: true }));
+  const land = () => { if (!userMoved) align(location.hash, false); };
   if (location.hash) document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
   land();
+  if (location.hash && 'ResizeObserver' in window) {
+    const ro = new ResizeObserver(() => land());
+    ro.observe(document.body);
+    setTimeout(() => ro.disconnect(), 6000);
+  }
   if (document.fonts) document.fonts.ready.then(land);
   window.addEventListener('load', () => { land(); setTimeout(land, 300); setTimeout(land, 1200); });
   window.addEventListener('pageshow', (e) => { if (e.persisted) land(); });
@@ -227,6 +236,16 @@
     history.pushState(null, '', url.hash);
     markFocus();
     align(url.hash, true);
+  });
+
+
+  /* ---------- Giving cards: the whole card opens the platform ---------- */
+  document.querySelectorAll('[data-card-link]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button, summary, details, input, label')) return;
+      const go = card.querySelector('a.btn-pill[href^="http"]');
+      if (go) window.open(go.href, '_blank', 'noopener');
+    });
   });
 
   /* ---------- Giving links from giving-links.txt ----------

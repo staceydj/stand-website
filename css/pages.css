@@ -534,3 +534,37 @@ ol.stages, ol.timeline { list-style: none; margin: 0; padding: 0; }
 .profile .prose a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .timeline .btn-learn { margin-top: .75rem; display: inline-flex; }
 .btn-pill.is-pending { white-space: normal; text-align: center; max-width: 100%; line-height: 1.3; }
+
+/* ---------- Proof beside the capability photos ---------- */
+.cap-stats { margin-top: clamp(1.75rem, 3vw, 2.5rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cap-stats .stat { padding: 1.15rem 1.25rem; }
+.cap-stats .stat b { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+.cap-stats .stat span { font-size: 0.86rem; }
+.cap-note { margin-top: 1.25rem; font-size: 0.95rem; line-height: 1.55; border-left: 3px solid var(--yellow); padding-left: 1rem; }
+@media (max-width: 30rem) { .cap-stats { grid-template-columns: 1fr 1fr; gap: .75rem; } .cap-stats .stat { padding: 1rem; } }
+
+/* ---------- Track Her Case: two clear routes, then Support the work ---------- */
+.cta-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 1rem; width: min(100%, 50rem); margin-top: 1.5rem; }
+.cta-path { display: grid; justify-items: center; align-content: start; gap: .9rem; padding: 1.6rem 1.4rem; border-radius: var(--radius-md); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
+.cta-path h3 { font-family: var(--font-serif); font-size: 1.35rem; color: var(--white); }
+.cta-path p { color: rgba(255,255,255,.78); font-size: .95rem; line-height: 1.5; max-width: 30ch; }
+.cta-brief { color: var(--yellow); font-weight: 700; font-size: .85rem; text-decoration: underline; text-underline-offset: 3px; }
+.cta-brief:hover { color: #ffc61a; }
+.btn-pill--lg { margin-top: 1.75rem; padding: 1.35rem 2.6rem; font-size: .95rem; box-shadow: 0 12px 30px rgba(239,179,0,.28); }
+
+/* ---------- Technical services: overview cards link to full sections ---------- */
+.cap-more { display: inline-block; margin-top: 1rem; font-weight: 700; font-size: .85rem; letter-spacing: .03em; color: var(--green-700) !important; text-decoration: none !important; }
+.cap-more:hover { color: var(--green-900) !important; text-decoration: underline !important; }
+.service .focus-cols a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.service .actions { margin-top: clamp(1.5rem, 3vw, 2.25rem); }
+.btn-ghost--dark { color: var(--green-800); border-color: var(--green-800); }
+
+/* ---------- Section 18A ---------- */
+.s18a-cards { margin-top: clamp(1.5rem, 3vw, 2.25rem); }
+.s18a-note { margin-top: 1rem; max-width: 40rem; margin-inline: auto; opacity: .85; }
+.s18a-note a { font-weight: 700; color: inherit; text-decoration: underline; }
+
+/* ---------- Giving cards are clickable ---------- */
+.ways [data-card-link] { cursor: pointer; transition: transform .3s var(--ease), box-shadow .3s; }
+.ways [data-card-link]:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+.ways [data-card-link] h3 + .btn-pill { margin: .25rem 0 1rem; }

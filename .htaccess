@@ -5,6 +5,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Old links that were already shared keep working
+Redirect 301 /give.html /give/
+
 # Open the homepage at the domain root
 DirectoryIndex index.html
 
